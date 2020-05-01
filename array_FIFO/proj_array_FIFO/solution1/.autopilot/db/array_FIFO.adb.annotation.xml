@@ -1,0 +1,6 @@
+<annotationInfo>
+<annotationInfo>
+<item  id="13" filename="array_FIFO.c" linenumber="100" name="icmp_ln100" contextFuncName="array_FIFO" moduleName="array_FIFO" rtlName="icmp_ln100_fu_63_p2" latency="0" BRAM="-1" DSP="-1" FF="0" LUT="9" fileDirectory="E:\Vivado\array_FIFO\array_FIFO"><\/item>
+<item  id="15" filename="array_FIFO.c" linenumber="100" name="i" contextFuncName="array_FIFO" moduleName="array_FIFO" rtlName="i_fu_69_p2" latency="0" BRAM="-1" DSP="-1" FF="0" LUT="12" fileDirectory="E:\Vivado\array_FIFO\array_FIFO"><\/item>
+<\/annotationInfo>
+</annotationInfo>

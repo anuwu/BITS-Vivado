@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vivadoHLSLog:LogRoot xmlns:vivadoHLSLog="www.xilinx.com/vivadoHLSLog">
+  <errorLogs>
+    <logs>
+      <synLog/>
+      <simLog/>
+      <mgLog/>
+      <packageLog/>
+      <csimLog/>
+    </logs>
+  </errorLogs>
+  <warningLogs>
+    <logs>
+      <synLog>
+        <logs message="WARNING: [RTGEN 206-101] Port 'array_FIFO/idx_q1' has no fanin or fanout and is left dangling.&#xD;&#xA;               Please use C simulation to confirm this function argument can be read from or written to." projectName="proj_array_FIFO" solutionName="solution1" date="2020-05-01T09:06:38.618+0530" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'array_FIFO/idx_d1' to 0." projectName="proj_array_FIFO" solutionName="solution1" date="2020-05-01T09:06:38.618+0530" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Port 'array_FIFO/idx_d1' has no fanin or fanout and is left dangling.&#xD;&#xA;               Please use C simulation to confirm this function argument can be read from or written to." projectName="proj_array_FIFO" solutionName="solution1" date="2020-05-01T09:06:38.586+0530" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'array_FIFO/idx_we1' to 0." projectName="proj_array_FIFO" solutionName="solution1" date="2020-05-01T09:06:38.571+0530" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Port 'array_FIFO/idx_we1' has no fanin or fanout and is left dangling.&#xD;&#xA;               Please use C simulation to confirm this function argument can be read from or written to." projectName="proj_array_FIFO" solutionName="solution1" date="2020-05-01T09:06:38.555+0530" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'array_FIFO/idx_ce1' to 0." projectName="proj_array_FIFO" solutionName="solution1" date="2020-05-01T09:06:38.555+0530" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Port 'array_FIFO/idx_ce1' has no fanin or fanout and is left dangling.&#xD;&#xA;               Please use C simulation to confirm this function argument can be read from or written to." projectName="proj_array_FIFO" solutionName="solution1" date="2020-05-01T09:06:38.540+0530" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'array_FIFO/idx_address1' to 0." projectName="proj_array_FIFO" solutionName="solution1" date="2020-05-01T09:06:38.540+0530" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Port 'array_FIFO/idx_address1' has no fanin or fanout and is left dangling.&#xD;&#xA;               Please use C simulation to confirm this function argument can be read from or written to." projectName="proj_array_FIFO" solutionName="solution1" date="2020-05-01T09:06:38.540+0530" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Port 'array_FIFO/idx_q0' has no fanin or fanout and is left dangling.&#xD;&#xA;               Please use C simulation to confirm this function argument can be read from or written to." projectName="proj_array_FIFO" solutionName="solution1" date="2020-05-01T09:06:38.524+0530" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'array_FIFO/idx_d0' to 0." projectName="proj_array_FIFO" solutionName="solution1" date="2020-05-01T09:06:38.524+0530" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Port 'array_FIFO/idx_d0' has no fanin or fanout and is left dangling.&#xD;&#xA;               Please use C simulation to confirm this function argument can be read from or written to." projectName="proj_array_FIFO" solutionName="solution1" date="2020-05-01T09:06:38.508+0530" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'array_FIFO/idx_we0' to 0." projectName="proj_array_FIFO" solutionName="solution1" date="2020-05-01T09:06:38.508+0530" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Port 'array_FIFO/idx_we0' has no fanin or fanout and is left dangling.&#xD;&#xA;               Please use C simulation to confirm this function argument can be read from or written to." projectName="proj_array_FIFO" solutionName="solution1" date="2020-05-01T09:06:38.493+0530" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'array_FIFO/idx_ce0' to 0." projectName="proj_array_FIFO" solutionName="solution1" date="2020-05-01T09:06:38.493+0530" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Port 'array_FIFO/idx_ce0' has no fanin or fanout and is left dangling.&#xD;&#xA;               Please use C simulation to confirm this function argument can be read from or written to." projectName="proj_array_FIFO" solutionName="solution1" date="2020-05-01T09:06:38.477+0530" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'array_FIFO/idx_address0' to 0." projectName="proj_array_FIFO" solutionName="solution1" date="2020-05-01T09:06:38.477+0530" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Port 'array_FIFO/idx_address0' has no fanin or fanout and is left dangling.&#xD;&#xA;               Please use C simulation to confirm this function argument can be read from or written to." projectName="proj_array_FIFO" solutionName="solution1" date="2020-05-01T09:06:38.461+0530" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-124] Array  'd_i': may have improper streaming access(es), possible reasons: (1) some entries are accessed more than once; (2) some entries are not used; (3) the entries are not accessed in sequential order." projectName="proj_array_FIFO" solutionName="solution1" date="2020-05-01T09:06:38.102+0530" type="Warning"/>
+      </synLog>
+      <simLog/>
+      <mgLog/>
+      <packageLog/>
+      <csimLog/>
+    </logs>
+  </warningLogs>
+</vivadoHLSLog:LogRoot>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
+  <source>
+    <originFiles name="array_FIFO.c" path="E:\Vivado\array_FIFO\array_FIFO\array_FIFO.c"/>
+  </source>
+  <testbench>
+    <originFiles name="result.golden.dat" path="E:\Vivado\array_FIFO\array_FIFO\result.golden.dat"/>
+    <originFiles name="array_FIFO_test.c" path="E:\Vivado\array_FIFO\array_FIFO\array_FIFO_test.c"/>
+  </testbench>
+</autopilotfilemapping:AutoPilotFileMapping>
