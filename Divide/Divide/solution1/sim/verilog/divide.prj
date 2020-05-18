@@ -1,0 +1,4 @@
+sv work "glbl.v"
+sv xil_defaultlib "divide.autotb.v"
+sv xil_defaultlib "divide.v"
+
