@@ -1,0 +1,6 @@
+sv work "glbl.v"
+sv xil_defaultlib "AESL_autofifo_in_vec.v"
+sv xil_defaultlib "AESL_autofifo_out_vec.v"
+sv xil_defaultlib "find.autotb.v"
+sv xil_defaultlib "find.v"
+

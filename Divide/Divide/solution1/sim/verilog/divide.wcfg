@@ -11,10 +11,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
+      <ZoomStartTime time="0fs"></ZoomStartTime>
+      <ZoomEndTime time="328001fs"></ZoomEndTime>
+      <Cursor1Time time="286746fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
+      <NameColumnWidth column_width="146"></NameColumnWidth>
+      <ValueColumnWidth column_width="145"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="2" />
+   <WVObjectSize size="9" />
    <wvobject fp_name="group1" type="group">
       <obj_property name="label">Design Top Signals</obj_property>
       <obj_property name="DisplayName">label</obj_property>
@@ -217,5 +222,33 @@
             </wvobject>
          </wvobject>
       </wvobject>
+   </wvobject>
+   <wvobject fp_name="/apatb_divide_top/AESL_start" type="logic">
+      <obj_property name="ElementShortName">AESL_start</obj_property>
+      <obj_property name="ObjectShortName">AESL_start</obj_property>
+   </wvobject>
+   <wvobject fp_name="/apatb_divide_top/AESL_idle" type="logic">
+      <obj_property name="ElementShortName">AESL_idle</obj_property>
+      <obj_property name="ObjectShortName">AESL_idle</obj_property>
+   </wvobject>
+   <wvobject fp_name="/apatb_divide_top/AESL_done" type="logic">
+      <obj_property name="ElementShortName">AESL_done</obj_property>
+      <obj_property name="ObjectShortName">AESL_done</obj_property>
+   </wvobject>
+   <wvobject fp_name="/apatb_divide_top/N" type="array">
+      <obj_property name="ElementShortName">N[7:0]</obj_property>
+      <obj_property name="ObjectShortName">N[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/apatb_divide_top/D" type="array">
+      <obj_property name="ElementShortName">D[7:0]</obj_property>
+      <obj_property name="ObjectShortName">D[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/apatb_divide_top/Q" type="array">
+      <obj_property name="ElementShortName">Q[7:0]</obj_property>
+      <obj_property name="ObjectShortName">Q[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/apatb_divide_top/R" type="array">
+      <obj_property name="ElementShortName">R[7:0]</obj_property>
+      <obj_property name="ObjectShortName">R[7:0]</obj_property>
    </wvobject>
 </wave_config>

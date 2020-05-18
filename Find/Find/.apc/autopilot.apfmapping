@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
+  <source>
+    <originFiles name="find.cpp" path="E:\Vivado\Find\Find\find.cpp"/>
+  </source>
+  <testbench>
+    <originFiles name="find_tb.cpp" path="E:\Vivado\Find\Find\find_tb.cpp"/>
+  </testbench>
+</autopilotfilemapping:AutoPilotFileMapping>

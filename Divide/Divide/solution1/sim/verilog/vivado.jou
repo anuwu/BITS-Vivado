@@ -16,3 +16,5 @@ current_wave_config {divide.wcfg}
 add_wave {{/apatb_divide_top/AESL_start}} {{/apatb_divide_top/AESL_idle}} {{/apatb_divide_top/AESL_done}} 
 current_wave_config {divide.wcfg}
 add_wave {{/apatb_divide_top/N}} {{/apatb_divide_top/D}} {{/apatb_divide_top/Q}} {{/apatb_divide_top/R}} 
+save_wave_config {E:/Vivado/Divide/Divide/solution1/sim/verilog/divide.wcfg}
+close_sim
