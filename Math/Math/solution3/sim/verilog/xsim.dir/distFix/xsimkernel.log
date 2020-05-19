@@ -1,0 +1,7 @@
+Running: xsim.dir/distFix/xsimk.exe -simmode gui -wdb distFix.wdb -simrunnum 0 -socket 51196
+Design successfully loaded
+Design Loading Memory Usage: 6152 KB (Peak: 6152 KB)
+Design Loading CPU Usage: 31 ms
+Simulation completed
+Simulation Memory Usage: 8448 KB (Peak: 8448 KB)
+Simulation CPU Usage: 62 ms

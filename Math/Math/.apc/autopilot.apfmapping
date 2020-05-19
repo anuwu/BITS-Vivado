@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
+  <source>
+    <originFiles name="math.cpp" path="E:\Vivado\Math\math.cpp"/>
+  </source>
+  <testbench>
+    <originFiles name="math_tb.cpp" path="E:\Vivado\Math\math_tb.cpp"/>
+  </testbench>
+</autopilotfilemapping:AutoPilotFileMapping>

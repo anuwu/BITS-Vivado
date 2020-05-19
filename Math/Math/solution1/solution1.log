@@ -1,0 +1,166 @@
+==============================================================
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.2 (64-bit)
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+WARNING: [HLS 200-40] Cannot find library 'C:/Xilinx/Vivado/2019.2/common/technology/xilinx/Virtex-7/Virtex-7.lib'.
+WARNING: [HLS 200-40] Cannot find library 'xilinx/Virtex-7/Virtex-7'.
+INFO: [HLS 200-10] Setting target device to 'xc7vx485t-ffg1157-1'
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'math.cpp' ... 
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:01 ; elapsed = 00:00:59 . Memory (MB): peak = 152.313 ; gain = 62.645
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:01 ; elapsed = 00:00:59 . Memory (MB): peak = 152.313 ; gain = 62.645
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:04 ; elapsed = 00:01:06 . Memory (MB): peak = 313.313 ; gain = 223.645
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [XFORM 203-602] Inlining function 'fp_struct<double>::data' into 'fp_struct<double>::to_double' (r:/builds/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/src/hls\utils/x_hls_utils.h:512) automatically.
+INFO: [XFORM 203-602] Inlining function 'fp_struct<double>::to_double' into 'fp_struct<double>::to_ieee' (r:/builds/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/src/hls\utils/x_hls_utils.h:526) automatically.
+INFO: [XFORM 203-602] Inlining function 'pow_reduce::log_range_reduce<ap_fixed<121, 12, (ap_q_mode)5, (ap_o_mode)3, 0>, 4, 4, 71, 73>' into 'pow_reduce::pow_traits<double>::log_range_reduction<71>' (r:/builds/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_pow.h:225) automatically.
+INFO: [XFORM 203-602] Inlining function 'pow_reduce::log_range_reduce<ap_fixed<121, 12, (ap_q_mode)5, (ap_o_mode)3, 0>, 7, 6, 73, 83>' into 'pow_reduce::pow_traits<double>::log_range_reduction<71>' (r:/builds/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_pow.h:227) automatically.
+INFO: [XFORM 203-602] Inlining function 'pow_reduce::log_range_reduce<ap_fixed<121, 12, (ap_q_mode)5, (ap_o_mode)3, 0>, 12, 6, 83, 92>' into 'pow_reduce::pow_traits<double>::log_range_reduction<71>' (r:/builds/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_pow.h:229) automatically.
+INFO: [XFORM 203-602] Inlining function 'pow_reduce::log_range_reduce<ap_fixed<121, 12, (ap_q_mode)5, (ap_o_mode)3, 0>, 17, 6, 92, 87>' into 'pow_reduce::pow_traits<double>::log_range_reduction<71>' (r:/builds/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_pow.h:231) automatically.
+INFO: [XFORM 203-602] Inlining function 'pow_reduce::log_range_reduce<ap_fixed<121, 12, (ap_q_mode)5, (ap_o_mode)3, 0>, 22, 6, 87, 82>' into 'pow_reduce::pow_traits<double>::log_range_reduction<71>' (r:/builds/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_pow.h:233) automatically.
+INFO: [XFORM 203-602] Inlining function 'pow_reduce::log_range_reduce<ap_fixed<121, 12, (ap_q_mode)5, (ap_o_mode)3, 0>, 27, 6, 82, 77>' into 'pow_reduce::pow_traits<double>::log_range_reduction<71>' (r:/builds/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_pow.h:235) automatically.
+INFO: [XFORM 203-602] Inlining function 'pow_reduce::log_range_reduce<ap_fixed<121, 12, (ap_q_mode)5, (ap_o_mode)3, 0>, 32, 6, 77, 72>' into 'pow_reduce::pow_traits<double>::log_range_reduction<71>' (r:/builds/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_pow.h:237) automatically.
+INFO: [XFORM 203-602] Inlining function 'fp_struct<double>::expv' into 'pow_reduce::pow_generic<double>' (r:/builds/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_pow.h:334) automatically.
+INFO: [XFORM 203-602] Inlining function 'generic_isinf<double>' into 'pow_reduce::pow_generic<double>' (r:/builds/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_pow.h:373) automatically.
+INFO: [XFORM 203-602] Inlining function 'generic_isnan<double>' into 'pow_reduce::pow_generic<double>' (r:/builds/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_pow.h:375) automatically.
+INFO: [XFORM 203-602] Inlining function 'pow_reduce::pow_traits<double>::exp_Z1P_m_1' into 'pow_reduce::pow_generic<double>' (r:/builds/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_pow.h:641) automatically.
+INFO: [XFORM 203-602] Inlining function 'pow' into 'distDouble' (math.cpp:9) automatically.
+INFO: [XFORM 203-602] Inlining function 'hls::sqrt' into 'distDouble' (math.cpp:9) automatically.
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:05 ; elapsed = 00:01:08 . Memory (MB): peak = 370.348 ; gain = 280.680
+INFO: [XFORM 203-602] Inlining function 'fp_struct<double>::data' into 'fp_struct<double>::to_double' (r:/builds/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/src/hls\utils/x_hls_utils.h:512) automatically.
+INFO: [XFORM 203-602] Inlining function 'fp_struct<double>::to_double' into 'fp_struct<double>::to_ieee' (r:/builds/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/src/hls\utils/x_hls_utils.h:526) automatically.
+INFO: [XFORM 203-602] Inlining function 'pow_reduce::log_range_reduce<ap_fixed<121, 12, (ap_q_mode)5, (ap_o_mode)3, 0>, 4, 4, 71, 73>' into 'pow_reduce::pow_traits<double>::log_range_reduction<71>' (r:/builds/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_pow.h:225) automatically.
+INFO: [XFORM 203-602] Inlining function 'pow_reduce::log_range_reduce<ap_fixed<121, 12, (ap_q_mode)5, (ap_o_mode)3, 0>, 7, 6, 73, 83>' into 'pow_reduce::pow_traits<double>::log_range_reduction<71>' (r:/builds/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_pow.h:227) automatically.
+INFO: [XFORM 203-602] Inlining function 'pow_reduce::log_range_reduce<ap_fixed<121, 12, (ap_q_mode)5, (ap_o_mode)3, 0>, 12, 6, 83, 92>' into 'pow_reduce::pow_traits<double>::log_range_reduction<71>' (r:/builds/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_pow.h:229) automatically.
+INFO: [XFORM 203-602] Inlining function 'pow_reduce::log_range_reduce<ap_fixed<121, 12, (ap_q_mode)5, (ap_o_mode)3, 0>, 17, 6, 92, 87>' into 'pow_reduce::pow_traits<double>::log_range_reduction<71>' (r:/builds/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_pow.h:231) automatically.
+INFO: [XFORM 203-602] Inlining function 'pow_reduce::log_range_reduce<ap_fixed<121, 12, (ap_q_mode)5, (ap_o_mode)3, 0>, 22, 6, 87, 82>' into 'pow_reduce::pow_traits<double>::log_range_reduction<71>' (r:/builds/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_pow.h:233) automatically.
+INFO: [XFORM 203-602] Inlining function 'pow_reduce::log_range_reduce<ap_fixed<121, 12, (ap_q_mode)5, (ap_o_mode)3, 0>, 27, 6, 82, 77>' into 'pow_reduce::pow_traits<double>::log_range_reduction<71>' (r:/builds/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_pow.h:235) automatically.
+INFO: [XFORM 203-602] Inlining function 'pow_reduce::log_range_reduce<ap_fixed<121, 12, (ap_q_mode)5, (ap_o_mode)3, 0>, 32, 6, 77, 72>' into 'pow_reduce::pow_traits<double>::log_range_reduction<71>' (r:/builds/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_pow.h:237) automatically.
+INFO: [XFORM 203-602] Inlining function 'fp_struct<double>::expv' into 'pow_reduce::pow_generic<double>' (r:/builds/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_pow.h:334) automatically.
+INFO: [XFORM 203-602] Inlining function 'generic_isinf<double>' into 'pow_reduce::pow_generic<double>' (r:/builds/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_pow.h:373) automatically.
+INFO: [XFORM 203-602] Inlining function 'generic_isnan<double>' into 'pow_reduce::pow_generic<double>' (r:/builds/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_pow.h:375) automatically.
+INFO: [XFORM 203-602] Inlining function 'fp_struct<double>::to_ieee' into 'pow_reduce::pow_generic<double>' (r:/builds/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_pow.h:412) automatically.
+INFO: [XFORM 203-602] Inlining function 'pow_reduce::pow_traits<double>::exp_Z1P_m_1' into 'pow_reduce::pow_generic<double>' (r:/builds/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_pow.h:641) automatically.
+INFO: [XFORM 203-602] Inlining function 'pow' into 'distDouble' (math.cpp:9) automatically.
+INFO: [XFORM 203-602] Inlining function 'hls::sqrt' into 'distDouble' (math.cpp:9) automatically.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (r:/builds/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_pow.h:488:26) to (r:/builds/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_pow.h:657:25) in function 'pow_reduce::pow_generic<double>'... converting 7 basic blocks.
+INFO: [XFORM 203-602] Inlining function 'pow_reduce::pow_traits<double>::log_range_reduction<71>' into 'pow_reduce::pow_generic<double>' (r:/builds/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_pow.h:548) automatically.
+INFO: [XFORM 203-11] Balancing expressions in function 'pow_reduce::pow_generic<double>' (r:/builds/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_pow.h:320)...7 expression(s) balanced.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:07 ; elapsed = 00:01:10 . Memory (MB): peak = 474.031 ; gain = 384.363
+WARNING: [XFORM 203-631] Renaming function 'pow_reduce::pow_generic<double>' to 'pow_generic<double>' (r:/builds/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_pow.h:320)
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:08 ; elapsed = 00:01:11 . Memory (MB): peak = 490.969 ; gain = 401.301
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'distDouble' ...
+WARNING: [SYN 201-103] Legalizing function name 'pow_generic<double>' to 'pow_generic_double_s'.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'pow_generic_double_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining function 'pow_generic<double>'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 38.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 72.777 seconds; current allocated memory: 422.101 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.529 seconds; current allocated memory: 423.356 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'distDouble' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.588 seconds; current allocated memory: 423.648 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.599 seconds; current allocated memory: 424.171 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'pow_generic_double_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SYN 201-210] Renamed object name 'pow_generic_double_s_pow_reduce_anonymo_20' to 'pow_generic_doublbkb' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'pow_generic_double_s_pow_reduce_anonymo_19' to 'pow_generic_doublcud' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'pow_generic_double_s_pow_reduce_anonymo_16' to 'pow_generic_doubldEe' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'pow_generic_double_s_pow_reduce_anonymo_17' to 'pow_generic_doubleOg' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'pow_generic_double_s_pow_reduce_anonymo_9' to 'pow_generic_doublfYi' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'pow_generic_double_s_pow_reduce_anonymo_12' to 'pow_generic_doublg8j' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'pow_generic_double_s_pow_reduce_anonymo_13' to 'pow_generic_doublhbi' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'pow_generic_double_s_pow_reduce_anonymo_14' to 'pow_generic_doublibs' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'pow_generic_double_s_pow_reduce_anonymo_15' to 'pow_generic_doubljbC' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'pow_generic_double_s_pow_reduce_anonymo_18' to 'pow_generic_doublkbM' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'pow_generic_double_s_pow_reduce_anonymo' to 'pow_generic_doubllbW' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'pow_generic_double_s_pow_reduce_anonymo_21' to 'pow_generic_doublmb6' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'distDouble_mul_54s_6ns_54_2_1' to 'distDouble_mul_54ncg' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'distDouble_mul_71ns_4ns_75_2_1' to 'distDouble_mul_71ocq' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'distDouble_mul_73ns_6ns_79_2_1' to 'distDouble_mul_73pcA' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'distDouble_mul_83ns_6ns_89_2_1' to 'distDouble_mul_83qcK' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'distDouble_mul_92ns_6ns_98_2_1' to 'distDouble_mul_92rcU' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'distDouble_mul_87ns_6ns_93_2_1' to 'distDouble_mul_87sc4' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'distDouble_mul_82ns_6ns_88_2_1' to 'distDouble_mul_82tde' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'distDouble_mul_77ns_6ns_83_2_1' to 'distDouble_mul_77udo' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'distDouble_mul_80ns_12s_90_2_1' to 'distDouble_mul_80vdy' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'distDouble_mul_72ns_13s_83_2_1' to 'distDouble_mul_72wdI' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'distDouble_mac_muladd_16ns_16s_19s_31_1_1' to 'distDouble_mac_muxdS' due to the length limit 20
+INFO: [RTGEN 206-104] Estimated max fanout for 'pow_generic_double_s' is 5237 from HDL expression: (1'b0 == ap_block_pp0_stage0_11001)
+INFO: [RTGEN 206-100] Generating core module 'distDouble_mac_muxdS': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'distDouble_mul_54ncg': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'distDouble_mul_71ocq': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'distDouble_mul_72wdI': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'distDouble_mul_73pcA': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'distDouble_mul_77udo': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'distDouble_mul_80vdy': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'distDouble_mul_82tde': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'distDouble_mul_83qcK': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'distDouble_mul_87sc4': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'distDouble_mul_92rcU': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'pow_generic_double_s'.
+INFO: [HLS 200-111]  Elapsed time: 1.379 seconds; current allocated memory: 427.737 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'distDouble' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'distDouble/x1' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'distDouble/y1' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'distDouble/x2' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'distDouble/y2' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'distDouble' to 'ap_ctrl_hs'.
+INFO: [SYN 201-210] Renamed object name 'distDouble_dadddsub_64ns_64ns_64_5_full_dsp_1' to 'distDouble_dadddsyd2' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'distDouble_dsub_64ns_64ns_64_5_full_dsp_1' to 'distDouble_dsub_6zec' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'distDouble_dsqrt_64ns_64ns_64_21_1' to 'distDouble_dsqrt_Aem' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'distDouble_dadddsyd2': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'distDouble_dsqrt_Aem': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'distDouble_dsub_6zec': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'distDouble'.
+INFO: [HLS 200-111]  Elapsed time: 1.293 seconds; current allocated memory: 429.115 MB.
+INFO: [HLS 200-789] **** Estimated Fmax: 114.29 MHz
+INFO: [RTMG 210-282] Generating pipelined core: 'distDouble_mul_54ncg_MulnS_0'
+INFO: [RTMG 210-282] Generating pipelined core: 'distDouble_mul_71ocq_MulnS_1'
+INFO: [RTMG 210-282] Generating pipelined core: 'distDouble_mul_73pcA_MulnS_2'
+INFO: [RTMG 210-282] Generating pipelined core: 'distDouble_mul_83qcK_MulnS_3'
+INFO: [RTMG 210-282] Generating pipelined core: 'distDouble_mul_92rcU_MulnS_4'
+INFO: [RTMG 210-282] Generating pipelined core: 'distDouble_mul_87sc4_MulnS_5'
+INFO: [RTMG 210-282] Generating pipelined core: 'distDouble_mul_82tde_MulnS_6'
+INFO: [RTMG 210-282] Generating pipelined core: 'distDouble_mul_77udo_MulnS_7'
+INFO: [RTMG 210-282] Generating pipelined core: 'distDouble_mul_80vdy_MulnS_8'
+INFO: [RTMG 210-282] Generating pipelined core: 'distDouble_mul_72wdI_MulnS_9'
+INFO: [RTMG 210-279] Implementing memory 'pow_generic_doublbkb_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'pow_generic_doublcud_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'pow_generic_doubldEe_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'pow_generic_doubleOg_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'pow_generic_doublfYi_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'pow_generic_doublg8j_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'pow_generic_doublhbi_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'pow_generic_doublibs_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'pow_generic_doubljbC_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'pow_generic_doublkbM_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'pow_generic_doubllbW_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'pow_generic_doublmb6_rom' using auto ROMs.
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:00:13 ; elapsed = 00:01:22 . Memory (MB): peak = 526.430 ; gain = 436.762
+INFO: [VHDL 208-304] Generating VHDL RTL for distDouble.
+INFO: [VLOG 209-307] Generating Verilog RTL for distDouble.
+INFO: [HLS 200-112] Total elapsed time: 81.708 seconds; peak allocated memory: 429.115 MB.

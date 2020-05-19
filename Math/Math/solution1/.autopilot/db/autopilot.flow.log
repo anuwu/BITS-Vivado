@@ -1,0 +1,907 @@
+INFO-FLOW: Workspace E:/Vivado/Math/Math/solution1 opened at Tue May 19 10:58:42 +0530 2020
+Execute     config_clock -quiet -name default -period 10 -default=false 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+WARNING: [HLS 200-40] Cannot find library 'C:/Xilinx/Vivado/2019.2/common/technology/xilinx/Virtex-7/Virtex-7.lib'.
+WARNING: [HLS 200-40] Cannot find library 'xilinx/Virtex-7/Virtex-7'.
+Execute     set_part xc7vx485tffg1157-1 
+Execute       ap_part_info -name xc7vx485tffg1157-1 -data single -quiet 
+Command       ap_part_info done; 0.53 sec.
+Execute       ap_part_info -name xc7vx485tffg1157-1 -data info 
+Execute       add_library xilinx/virtex7/virtex7:xc7vx485t:-ffg1157:-1 
+Execute         get_default_platform 
+Execute         open_platform DefaultPlatform 
+Execute         import_lib C:/Xilinx/Vivado/2019.2/common/technology/xilinx/virtex7/virtex7 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx.lib 
+Execute             source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/xilinx_interface.lib 
+Execute               source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/plb46.lib 
+Execute               source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/fsl.lib 
+Execute               source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/axi4.lib 
+Execute               source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/maxi.lib 
+Execute               source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/saxilite.lib 
+Execute             source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/dsp48.lib 
+Execute             source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/dds_compiler.lib 
+Execute             source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/xfft.lib 
+Execute             source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/xfir.lib 
+Command           ap_source done; 0.104 sec.
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx.hlp 
+Execute             source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/target_info.tcl 
+Execute             source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute               source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/maxi.hlp 
+Execute               source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/saxilite.hlp 
+Execute             source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/dsp48.hlp 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/virtex7/dsp48e1.hlp 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx.hlp 
+Execute             source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/target_info.tcl 
+Execute             source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute               source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/maxi.hlp 
+Execute               source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/saxilite.hlp 
+Execute             source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/dsp48.hlp 
+Command         import_lib done; 0.278 sec.
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/virtex7/virtex7.gen 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx.gen 
+Execute             source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/plb46.gen 
+Execute             source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/fsl.gen 
+Execute             source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/axi4.gen 
+Execute             source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute               source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/saxilite.gen 
+Execute               source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/maxi.gen 
+Execute             source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute             source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute             source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/dds_compiler.gen 
+Execute             source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/util.gen 
+Execute             source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/xfft.gen 
+Execute             source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/xfir.gen 
+Execute             source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/dsp48.gen 
+Command           ap_source done; 0.143 sec.
+Command         ap_source done; 0.173 sec.
+Execute         ap_part_info -data single -name xc7vx485t-ffg1157-1 
+Execute         ap_part_info -name xc7vx485t-ffg1157-1 -data resources 
+Execute         ap_part_info -name xc7vx485t-ffg1157-1 -data info 
+Execute         ap_part_info -name xc7vx485t-ffg1157-1 -data info 
+Execute         config_chip_info -quiet -resource {SLICE 75900} {LUT 303600} {FF 607200} {DSP48E 2800} {BRAM 2060} {URAM 0} 
+Execute         ap_part_info -name xc7vx485t-ffg1157-1 -data info 
+Execute         config_chip_info -quiet -speed slow 
+Command       add_library done; 0.482 sec.
+Execute       add_library xilinx/virtex7/virtex7_fpv6 
+Execute         get_default_platform 
+Execute         open_platform DefaultPlatform 
+Execute         import_lib C:/Xilinx/Vivado/2019.2/common/technology/xilinx/virtex7/virtex7_fpv6 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx_fp.lib 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx_fp.hlp 
+Execute             source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx.hlp 
+Execute               source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/target_info.tcl 
+Execute               source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute                 source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/maxi.hlp 
+Execute                 source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/saxilite.hlp 
+Execute               source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/dsp48.hlp 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/virtex7/virtex7_fpv6.gen 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx_fp.gen 
+INFO: [HLS 200-10] Setting target device to 'xc7vx485t-ffg1157-1'
+Execute       ap_part_info -name xc7vx485t-ffg1157-1 -data info 
+Execute       get_default_platform 
+Command     set_part done; 1.216 sec.
+Execute     ap_part_info -data single -name xc7vx485tffg1157-1 
+Execute     ap_part_info -name xc7vx485tffg1157-1 -data resources 
+Execute     ap_part_info -name xc7vx485tffg1157-1 -data info 
+Execute     ap_part_info -name xc7vx485tffg1157-1 -data info 
+Execute     config_chip_info -quiet -resource {SLICE 75900} {LUT 303600} {FF 607200} {DSP48E 2800} {BRAM 2060} {URAM 0} 
+Execute     ap_part_info -name xc7vx485tffg1157-1 -data info 
+Execute     config_chip_info -quiet -speed slow 
+Command   open_solution done; 1.307 sec.
+Execute   set_part xc7vx485tffg1157-1 
+Execute     ap_part_info -name xc7vx485tffg1157-1 -data single -quiet 
+Execute     ap_part_info -name xc7vx485tffg1157-1 -data info 
+Execute     add_library xilinx/virtex7/virtex7:xc7vx485t:-ffg1157:-1 
+Execute       get_default_platform 
+Execute       open_platform DefaultPlatform 
+Execute       import_lib C:/Xilinx/Vivado/2019.2/common/technology/xilinx/virtex7/virtex7 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx.lib 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/xilinx_interface.lib 
+Execute             source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/plb46.lib 
+Execute             source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/fsl.lib 
+Execute             source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/axi4.lib 
+Execute             source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/maxi.lib 
+Execute             source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/saxilite.lib 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/dsp48.lib 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/dds_compiler.lib 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/xfft.lib 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/xfir.lib 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx.hlp 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/target_info.tcl 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute             source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/maxi.hlp 
+Execute             source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/saxilite.hlp 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/dsp48.hlp 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/virtex7/dsp48e1.hlp 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx.hlp 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/target_info.tcl 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute             source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/maxi.hlp 
+Execute             source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/saxilite.hlp 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/dsp48.hlp 
+Execute       source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/virtex7/virtex7.gen 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx.gen 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/plb46.gen 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/fsl.gen 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/axi4.gen 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute             source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/saxilite.gen 
+Execute             source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/maxi.gen 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/dds_compiler.gen 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/util.gen 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/xfft.gen 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/xfir.gen 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/dsp48.gen 
+Command         ap_source done; 0.142 sec.
+Command       ap_source done; 0.142 sec.
+Execute       ap_part_info -data single -name xc7vx485t-ffg1157-1 
+Execute       ap_part_info -name xc7vx485t-ffg1157-1 -data resources 
+Execute       ap_part_info -name xc7vx485t-ffg1157-1 -data info 
+Execute       ap_part_info -name xc7vx485t-ffg1157-1 -data info 
+Execute       config_chip_info -quiet -resource {SLICE 75900} {LUT 303600} {FF 607200} {DSP48E 2800} {BRAM 2060} {URAM 0} 
+Execute       ap_part_info -name xc7vx485t-ffg1157-1 -data info 
+Execute       config_chip_info -quiet -speed slow 
+Command     add_library done; 0.209 sec.
+Execute     add_library xilinx/virtex7/virtex7_fpv6 
+Execute       get_default_platform 
+Execute       open_platform DefaultPlatform 
+Execute       import_lib C:/Xilinx/Vivado/2019.2/common/technology/xilinx/virtex7/virtex7_fpv6 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx_fp.lib 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx_fp.hlp 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx.hlp 
+Execute             source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/target_info.tcl 
+Execute             source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute               source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/maxi.hlp 
+Execute               source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/saxilite.hlp 
+Execute             source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/dsp48.hlp 
+Execute       source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/virtex7/virtex7_fpv6.gen 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx_fp.gen 
+Execute     ap_part_info -name xc7vx485t-ffg1157-1 -data info 
+Execute     get_default_platform 
+Command   set_part done; 0.325 sec.
+Execute   create_clock -period 10 -name default 
+Execute     config_clock -quiet -name default -period 10 -default=false 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+Execute   csynth_design 
+Execute     get_config_compile -dump_cfg 
+Execute     get_config_compile -effort 
+Execute     get_config_compile -enable_clang39 
+Execute     get_config_compile -g 
+Execute     get_config_compile -ng 
+Execute     get_config_compile -opt_fp 
+Execute     get_config_compile -skip_cdt 
+Execute     get_config_compile -skip_syncheck 
+Execute     get_config_compile -skip_transform 
+Execute     get_config_compile -keep_printf 
+Execute     elaborate -effort=medium -skip_syncheck=0 -keep_printf=0 -skip_cdt=0 -skip_transform=0 -ng=0 -g=0 -opt_fp=0 -from_csynth_design=1 
+Execute       get_config_schedule -relax_ii_for_timing 
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+Execute       get_config_schedule -suppress_dependence_error_break 
+INFO: [HLS 200-10] Analyzing design file 'math.cpp' ... 
+INFO-FLOW: Compiling one TU...
+Execute       is_m_axi_addr64 
+INFO-FLOW: Handling math.cpp as C++
+Execute       ap_part_info -name xc7vx485t-ffg1157-1 -data info 
+Execute       is_encrypted math.cpp 
+Execute       ap_part_info -name xc7vx485t-ffg1157-1 -data info 
+INFO-FLOW: Running: GCC PP
+INFO-FLOW: Source preprocessing
+Execute       clang  -fno-limit-debug-info -gcc-toolchain "C:/Xilinx/Vivado/2019.2/msys" -hls  -fno-exceptions  -D__llvm__  -E "math.cpp"     -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit  -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -D__cdecl= -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "C:/Xilinx/Vivado/2019.2/common/technology/autopilot" -I "C:/Xilinx/Vivado/2019.2/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__DSP48E1__  -o "E:/Vivado/Math/Math/solution1/.autopilot/db/math.pp.0.cpp" 
+INFO-FLOW: exec C:/Xilinx/Vivado/2019.2/win64/tools/clang/bin/clang -fno-limit-debug-info -gcc-toolchain C:/Xilinx/Vivado/2019.2/msys -hls -fno-exceptions -D__llvm__ -E math.cpp -fno-math-errno -c -emit-llvm -O0 -mllvm -disable-llvm-optzns -fno-threadsafe-statics -fno-use-cxa-atexit -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -D__cdecl= -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I C:/Xilinx/Vivado/2019.2/common/technology/autopilot -I C:/Xilinx/Vivado/2019.2/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -o E:/Vivado/Math/Math/solution1/.autopilot/db/math.pp.0.cpp
+Command       clang done; 3.418 sec.
+Execute       tidy_31 xilinx-xfmat-array-geometry E:/Vivado/Math/Math/solution1/.autopilot/db/math.pp.0.cpp std=gnu++98 
+INFO-FLOW: exec C:/Xilinx/Vivado/2019.2/win64/tools/clang-3.9-csynth/bin/tidy-3.1 -header-filter=.* -checks=-*,xilinx-xfmat-array-geometry -quiet -fix E:/Vivado/Math/Math/solution1/.autopilot/db/math.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0
+Command       tidy_31 done; 6.317 sec.
+INFO-FLOW: Syntax Checking before pre-processing...
+Execute       clang -syntaxcheck -src E:/Vivado/Math/Math/solution1/.autopilot/db/math.pp.0.cpp  -fno-limit-debug-info -gcc-toolchain "C:/Xilinx/Vivado/2019.2/msys" -hls    -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit  -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -D__cdecl= -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "C:/Xilinx/Vivado/2019.2/common/technology/autopilot" -I "C:/Xilinx/Vivado/2019.2/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__DSP48E1__  "E:/Vivado/Math/Math/solution1/.autopilot/db/math.pp.0.cpp"  -o "E:/Vivado/Math/Math/solution1/.autopilot/db/useless.bc"  
+INFO-FLOW: exec C:/Xilinx/Vivado/2019.2/win64/tools/clang/bin/clang -fno-limit-debug-info -gcc-toolchain C:/Xilinx/Vivado/2019.2/msys -hls -fno-math-errno -c -emit-llvm -O0 -mllvm -disable-llvm-optzns -fno-threadsafe-statics -fno-use-cxa-atexit -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -D__cdecl= -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I C:/Xilinx/Vivado/2019.2/common/technology/autopilot -I C:/Xilinx/Vivado/2019.2/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ E:/Vivado/Math/Math/solution1/.autopilot/db/math.pp.0.cpp -o E:/Vivado/Math/Math/solution1/.autopilot/db/useless.bc
+Command       clang done; 5.19 sec.
+INFO-FLOW: Done: GCC PP time: 14.9 seconds per iteration
+Execute       source C:/Xilinx/Vivado/2019.2/tps/tcl/tcllib1.11.1/yaml/huddle.tcl 
+Execute       source C:/Xilinx/Vivado/2019.2/tps/tcl/tcllib1.11.1/yaml/json2huddle.tcl 
+Execute         source C:/Xilinx/Vivado/2019.2/tps/tcl/tcllib1.11.1/try/try.tcl 
+Execute       list_core -type functional_unit 
+Execute       tidy_31 xilinx-systemc-detector E:/Vivado/Math/Math/solution1/.autopilot/db/math.pp.0.cpp std=gnu++98 -directive=E:/Vivado/Math/Math/solution1/.autopilot/db/.systemc_flag 
+INFO-FLOW: exec C:/Xilinx/Vivado/2019.2/win64/tools/clang-3.9-csynth/bin/tidy-3.1 -header-filter=.* -checks=-*,xilinx-systemc-detector -import-directive=E:/Vivado/Math/Math/solution1/.autopilot/db/.systemc_flag -quiet -fix-errors E:/Vivado/Math/Math/solution1/.autopilot/db/math.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0
+Command       tidy_31 done; 3.751 sec.
+INFO-FLOW: Running: tidy-3.1 CDT preprocess
+Execute       tidy_31 xilinx-directive2pragma E:/Vivado/Math/Math/solution1/.autopilot/db/math.pp.0.cpp std=gnu++98 -directive=E:/Vivado/Math/Math/solution1/.autopilot/db/all.directive.json 
+INFO-FLOW: exec C:/Xilinx/Vivado/2019.2/win64/tools/clang-3.9-csynth/bin/tidy-3.1 -header-filter=.* -checks=-*,xilinx-directive2pragma -import-directive=E:/Vivado/Math/Math/solution1/.autopilot/db/all.directive.json -quiet -fix-errors E:/Vivado/Math/Math/solution1/.autopilot/db/math.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0
+Command       tidy_31 done; 3.667 sec.
+Execute       get_config_dataflow -strict_mode 
+Execute       ap_eval exec -ignorestderr C:/Xilinx/Vivado/2019.2/win64/tools/clang-3.9-csynth/bin/xilinx-dataflow-lawyer -export-fixes=E:/Vivado/Math/Math/solution1/.autopilot/db/xilinx-dataflow-lawyer.math.pp.0.cpp.diag.yml E:/Vivado/Math/Math/solution1/.autopilot/db/math.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0 -fstrict-dataflow > E:/Vivado/Math/Math/solution1/.autopilot/db/xilinx-dataflow-lawyer.math.pp.0.cpp.out.log 2> E:/Vivado/Math/Math/solution1/.autopilot/db/xilinx-dataflow-lawyer.math.pp.0.cpp.err.log 
+Command       ap_eval done; 6.16 sec.
+Execute       tidy_31 -errorcheck xilinx-constantarray-param,xilinx-resource-pragma-transformer,xilinx-xfmat-array-geometry E:/Vivado/Math/Math/solution1/.autopilot/db/math.pp.0.cpp std=gnu++98 
+Execute         ap_eval exec -ignorestderr C:/Xilinx/Vivado/2019.2/win64/tools/clang-3.9-csynth/bin/tidy-3.1 -export-fixes=E:/Vivado/Math/Math/solution1/.autopilot/db/tidy-3.1.math.pp.0.cpp.diag.yml -header-filter=.* -checks=-*,xilinx-constantarray-param,xilinx-resource-pragma-transformer,xilinx-xfmat-array-geometry -quiet -fix-errors E:/Vivado/Math/Math/solution1/.autopilot/db/math.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0 > E:/Vivado/Math/Math/solution1/.autopilot/db/tidy-3.1.math.pp.0.cpp.out.log 2> E:/Vivado/Math/Math/solution1/.autopilot/db/tidy-3.1.math.pp.0.cpp.err.log 
+Command         ap_eval done; 5.076 sec.
+Execute         source C:/Xilinx/Vivado/2019.2/tps/tcl/tcllib1.11.1/yaml/yaml.tcl 
+Execute           source C:/Xilinx/Vivado/2019.2/tps/tcl/tcllib1.11.1/cmdline/cmdline.tcl 
+Execute         ap_eval exec -ignorestderr C:/Xilinx/Vivado/2019.2/win64/tools/clang-3.9-csynth/bin/xilinx-legacy-rewriter E:/Vivado/Math/Math/solution1/.autopilot/db/math.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0 > E:/Vivado/Math/Math/solution1/.autopilot/db/xilinx-legacy-rewriter.math.pp.0.cpp.out.log 2> E:/Vivado/Math/Math/solution1/.autopilot/db/xilinx-legacy-rewriter.math.pp.0.cpp.err.log 
+Command         ap_eval done; 3.22 sec.
+Command       tidy_31 done; 8.366 sec.
+INFO-FLOW: Done: tidy-3.1 CDT preprocess time: 18.2 seconds per iteration
+INFO-FLOW: Pragma Handling...
+Execute       tidy_31 xilinx-ssdm-intrinsics-arguments E:/Vivado/Math/Math/solution1/.autopilot/db/math.pragma.1.cpp std=gnu++98 
+INFO-FLOW: exec C:/Xilinx/Vivado/2019.2/win64/tools/clang-3.9-csynth/bin/tidy-3.1 -header-filter=.* -checks=-*,xilinx-ssdm-intrinsics-arguments -quiet -fix-errors E:/Vivado/Math/Math/solution1/.autopilot/db/math.pragma.1.cpp -- -std=gnu++98 -fhls -ferror-limit=0
+Command       tidy_31 done; 4.094 sec.
+Execute       ap_part_info -name xc7vx485t-ffg1157-1 -data info 
+INFO-FLOW: Processing labels
+Execute       clang -src E:/Vivado/Math/Math/solution1/.autopilot/db/math.pragma.2.cpp  -fno-limit-debug-info -gcc-toolchain C:/Xilinx/Vivado/2019.2/msys -hls -hls-analyze-label -hls-analyze-pragma -fno-exceptions  -D__llvm__  -w  "E:/Vivado/Math/Math/solution1/.autopilot/db/math.pragma.2.cpp"    -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "C:/Xilinx/Vivado/2019.2/common/technology/autopilot" -I "C:/Xilinx/Vivado/2019.2/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -g -o "E:/Vivado/Math/Math/solution1/.autopilot/db/math.bc" 
+INFO-FLOW: exec C:/Xilinx/Vivado/2019.2/win64/tools/clang/bin/clang -fno-limit-debug-info -gcc-toolchain C:/Xilinx/Vivado/2019.2/msys -hls -hls-analyze-label -hls-analyze-pragma -fno-exceptions -D__llvm__ -w E:/Vivado/Math/Math/solution1/.autopilot/db/math.pragma.2.cpp -fno-math-errno -c -emit-llvm -O0 -mllvm -disable-llvm-optzns -fno-threadsafe-statics -fno-use-cxa-atexit -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I C:/Xilinx/Vivado/2019.2/common/technology/autopilot -I C:/Xilinx/Vivado/2019.2/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -g -o E:/Vivado/Math/Math/solution1/.autopilot/db/math.bc
+Command       clang done; 5.185 sec.
+INFO-FLOW: Linking Debug ...
+Execute       llvm-ld E:/Vivado/Math/Math/solution1/.autopilot/db/math.g.bc -hls-opt -except-internalize distDouble -LC:/Xilinx/Vivado/2019.2/win64/lib -lhlsm -lhlsmc++ -o E:/Vivado/Math/Math/solution1/.autopilot/db/a.g 
+Command       llvm-ld done; 10.527 sec.
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:01 ; elapsed = 00:00:59 . Memory (MB): peak = 152.313 ; gain = 62.645
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:01 ; elapsed = 00:00:59 . Memory (MB): peak = 152.313 ; gain = 62.645
+Execute       get_config_sdx -target 
+Execute       opt_and_import_c a -opt_level=2 -skip_syncheck=0 -ng=0 -keep_printf=0 
+Execute         cleanup_all_models 
+INFO: [HLS 200-10] Starting code transformations ...
+Execute         transform -promote-dbg-pointer E:/Vivado/Math/Math/solution1/.autopilot/db/a.pp.bc -o E:/Vivado/Math/Math/solution1/.autopilot/db/a.pp.0.bc -f 
+Command         transform done; 0.99 sec.
+Execute         llvm-ld E:/Vivado/Math/Math/solution1/.autopilot/db/a.pp.0.bc -disable-opt -LC:/Xilinx/Vivado/2019.2/win64/lib -lfloatconversion -o E:/Vivado/Math/Math/solution1/.autopilot/db/a.g.0 
+Command         llvm-ld done; 2.665 sec.
+INFO-FLOW: Running Standard Transforms...
+Execute         transform -hls -share-std-xform -demangle-name -inline-byval-memcpy -always-inline -promote-dbg-pointer -interface-preproc -mem2reg -scalarrepl -mem2reg -keep-read-access -instcombine -dce -promote-dbg-pointer -bitop-raise -loop-simplify -indvarspre -indvars -loop-simplify -xunroll -constprop -instcombine -simplifycfg -indvars -simplifycfg -dce -globaldce -basicaa -simplifycfg -mem2reg -globalopt -global-constprop -deadargelim -instcombine -simplifycfg -prune-eh -simplifycfg -scalarrepl -instcombine -reassociate -licm -simplifycfg -loop-simplify -indvars -instcombine -simplifycfg -mem2reg -loop-simplify -indvars -instcombine -gvn -gvn -instcombine -adce -break-crit-edges -simplifycfg -loop-delete -global-array-opt -dce -dse -adce -find-syn-modules -top distDouble -deadargelim -mem2reg -instcombine -dce -presyn-prepare -auto-rom-infer -interface-preproc -syn-check -check-rec-only -find-region -simplifycfg -func-extr -function-inline -globaldce -mem2reg -instcombine -dce -gvn -globaldce -adce -adse -constprop -instcombine -bit-constprop -instcombine -dce -simplifycfg -bitop-raise -simplifycfg -dce -loop-delete -reassociate -globalopt -global-privatize -mem2reg -dce -global-constprop -pointer-simplify -constprop -dce -func-inst -deadargelim -auto-shift-reg-idiom -promote-dbg-pointer -norm-name E:/Vivado/Math/Math/solution1/.autopilot/db/a.g.0.bc -o E:/Vivado/Math/Math/solution1/.autopilot/db/a.g.1.bc -f -phase std-opt 
+Command         transform done; 2.316 sec.
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:04 ; elapsed = 00:01:06 . Memory (MB): peak = 313.313 ; gain = 223.645
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO-FLOW: Checking Synthesizability 1/2..
+Execute         transform -hls -syn-check -check-rec-only -disaggr -scalarrepl -norm-name -dce -mem2reg -instcombine -function-uniquify -directive-preproc -mem2reg -dse -dce -auto-rom-infer -dce -pag -array-normalize -instcombine -dce -warn-fifo-pointer -array-seg-normalize -instcombine -dce -array-flatten -instcombine -dce -array-burst -dce -deadargelim -promote-global-argument -simplifycfg -mem2reg -globaldce -dce -deadargelim -dce -instcombine -function-inline -globaldce -dce -doublePtrSimplify -doublePtrElim -dce -doublePtrSimplify -promote-dbg-pointer -dce -scalarrepl -dse -adse -instcombine -ptrLegalization -simplifycfg -dce -instcombine -pointer-simplify -ptrArgReplace -dce -instcombine -resolve-double-ptr -disaggr -scalarrepl -norm-name -dce -mem2reg -instcombine -ptrLegalization -simplifycfg -deadargelim -instcombine -dce -inst-simplify -function-uniquify -directive-preproc -mem2reg -dse -dce -globaldce -check-dspbuiltin E:/Vivado/Math/Math/solution1/.autopilot/db/a.g.1.bc -o E:/Vivado/Math/Math/solution1/.autopilot/db/a.g.2.prechk.bc -f 
+INFO: [XFORM 203-602] Inlining function 'fp_struct<double>::data' into 'fp_struct<double>::to_double' (r:/builds/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/src/hls\utils/x_hls_utils.h:512) automatically.
+INFO: [XFORM 203-602] Inlining function 'fp_struct<double>::to_double' into 'fp_struct<double>::to_ieee' (r:/builds/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/src/hls\utils/x_hls_utils.h:526) automatically.
+INFO: [XFORM 203-602] Inlining function 'pow_reduce::log_range_reduce<ap_fixed<121, 12, (ap_q_mode)5, (ap_o_mode)3, 0>, 4, 4, 71, 73>' into 'pow_reduce::pow_traits<double>::log_range_reduction<71>' (r:/builds/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_pow.h:225) automatically.
+INFO: [XFORM 203-602] Inlining function 'pow_reduce::log_range_reduce<ap_fixed<121, 12, (ap_q_mode)5, (ap_o_mode)3, 0>, 7, 6, 73, 83>' into 'pow_reduce::pow_traits<double>::log_range_reduction<71>' (r:/builds/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_pow.h:227) automatically.
+INFO: [XFORM 203-602] Inlining function 'pow_reduce::log_range_reduce<ap_fixed<121, 12, (ap_q_mode)5, (ap_o_mode)3, 0>, 12, 6, 83, 92>' into 'pow_reduce::pow_traits<double>::log_range_reduction<71>' (r:/builds/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_pow.h:229) automatically.
+INFO: [XFORM 203-602] Inlining function 'pow_reduce::log_range_reduce<ap_fixed<121, 12, (ap_q_mode)5, (ap_o_mode)3, 0>, 17, 6, 92, 87>' into 'pow_reduce::pow_traits<double>::log_range_reduction<71>' (r:/builds/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_pow.h:231) automatically.
+INFO: [XFORM 203-602] Inlining function 'pow_reduce::log_range_reduce<ap_fixed<121, 12, (ap_q_mode)5, (ap_o_mode)3, 0>, 22, 6, 87, 82>' into 'pow_reduce::pow_traits<double>::log_range_reduction<71>' (r:/builds/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_pow.h:233) automatically.
+INFO: [XFORM 203-602] Inlining function 'pow_reduce::log_range_reduce<ap_fixed<121, 12, (ap_q_mode)5, (ap_o_mode)3, 0>, 27, 6, 82, 77>' into 'pow_reduce::pow_traits<double>::log_range_reduction<71>' (r:/builds/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_pow.h:235) automatically.
+INFO: [XFORM 203-602] Inlining function 'pow_reduce::log_range_reduce<ap_fixed<121, 12, (ap_q_mode)5, (ap_o_mode)3, 0>, 32, 6, 77, 72>' into 'pow_reduce::pow_traits<double>::log_range_reduction<71>' (r:/builds/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_pow.h:237) automatically.
+INFO: [XFORM 203-602] Inlining function 'fp_struct<double>::expv' into 'pow_reduce::pow_generic<double>' (r:/builds/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_pow.h:334) automatically.
+INFO: [XFORM 203-602] Inlining function 'generic_isinf<double>' into 'pow_reduce::pow_generic<double>' (r:/builds/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_pow.h:373) automatically.
+INFO: [XFORM 203-602] Inlining function 'generic_isnan<double>' into 'pow_reduce::pow_generic<double>' (r:/builds/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_pow.h:375) automatically.
+INFO: [XFORM 203-602] Inlining function 'pow_reduce::pow_traits<double>::exp_Z1P_m_1' into 'pow_reduce::pow_generic<double>' (r:/builds/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_pow.h:641) automatically.
+INFO: [XFORM 203-602] Inlining function 'pow' into 'distDouble' (math.cpp:9) automatically.
+INFO: [XFORM 203-602] Inlining function 'hls::sqrt' into 'distDouble' (math.cpp:9) automatically.
+Command         transform done; 1.574 sec.
+INFO-FLOW: Checking Synthesizability 2/2..
+Execute         transform -syn-check E:/Vivado/Math/Math/solution1/.autopilot/db/a.g.2.prechk.bc -o E:/Vivado/Math/Math/solution1/.autopilot/db/a.g.2.bc -f -phase syn-check 
+Command         transform done; 0.369 sec.
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:05 ; elapsed = 00:01:08 . Memory (MB): peak = 370.348 ; gain = 280.680
+INFO-FLOW: Compiler optimizing ...
+INFO-FLOW: Share syncheck's 1.bc for syn flow: copy E:/Vivado/Math/Math/solution1/.autopilot/db/a.g.1.bc to E:/Vivado/Math/Math/solution1/.autopilot/db/a.o.1.bc
+INFO-FLOW: Presyn 1...
+Execute         transform -hls -tmp E:/Vivado/Math/Math/solution1/.autopilot/db -interface-port-rename -type-info -function-uniquify -directive-preproc -mem2reg -dse -dce -disaggr -scalarrepl -norm-name -deadargelim -mem2reg -instcombine -dce -simplifycfg -auto-rom-infer -dce -function-uniquify -resource-proc -clib-intrinsic-prepare -dce -func-buffer -dce -pag -array-normalize -func-legal -instcombine -gvn -constprop -dce -simplifycfg -mem2reg -globaldce -resolve-double-ptr -dce -deadargelim -dce -instcombine -ptrArgReplace -mem2reg -dce -array-seg-normalize -deadargelim -instcombine -dce -pointer-simplify -dce -port-alignment -dce -interface-preproc -data-pack -instcombine -dce -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce -loop-simplify -indvars -instcombine -gvn -loop-simplify -mem2reg -dce -find-region -instcombine -auto-loop-pipeline -inst-simplify -interface-preproc -cfgopt -instcombine -indvars -auto-loop-unroll -loop-simplify -loop-bound -xunroll -constprop -instcombine -simplifycfg -indvars -simplifycfg -dce -globaldce -clean-region -attach-range -gvn -inst-simplify -constprop -simplifycfg -dce -pointer-simplify -dce -globalopt -constprop -dce -array-promote -constprop -dce -ptrArgReplace -mem2reg -simplifycfg -dce -auto-par -instcombine -dce -array-transform-check -array-reshape -instcombine -simplifycfg -dce -ptrArgReplace -deadargelim -mem2reg -instcombine -simplifycfg -dce -indvars -loop-simplify -loop-bound -xunroll -constprop -instcombine -simplifycfg -indvars -simplifycfg -dce -globaldce -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -duplicate-dataflow-processes -globaldce -instcombine -array-partition -instcombine -simplifycfg -dce -ptrArgReplace -global-constprop -deadargelim -mem2reg -func-legal -dce -global-constprop -deadargelim -mem2reg -simplifycfg -dce -merge-param -deadargelim -globalopt -constprop -dce -array-promote -constprop -dce -ptrArgReplace -mem2reg -simplifycfg -dce -mem-intrinsic-preproc -dce -global-internalize -global-privatize -mem2reg -globaldce -promote-global-argument -ptrArgReplace -mem2reg -dce -globalopt -mergereturn -simplify-global-access -mem2reg -dce -pointer-simplify -dce -functionattrs -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce -dce -norm-name -function-inline -complex-op-raise -inst-simplify -globaldce -func-inst -constprop -instcombine -simplifycfg -dce -func-legal -dce -loop-bound -arraycheck -bitwidthmin -on-by-dataflow -loop-delete -instcombine -simplifycfg -globaldce -dce -gvn -deadargelim -dce -loop-simplify -clean-region -simplifycfg -propagate-stable-arguments -loop-stream -instcombine -simplifycfg -dce -globaldce -duplicate-dataflow-processes -stream-intrinsic-preproc -dce -check-ap-stream -loop-simplify -eliminate-keepreads -extract-dataflow-in-loop -loop-simplify -dce -gvn -deadargelim -dse -check-dataflow-syntax -legalize-stream-variable -legalize-global -extract-subproc -dce -dead-channel-elimination -canonicalize-gep -globaldce -dce -gvn -deadargelim -annotate-dataflow-channels -scalar-propagation -deadargelim -globaldce -mem2reg -check-dataflow-channels -function-stream -dce -globaldce -prop-fifo-spec -internal-stream-gen -canonicalize-gep -globaldce -dce -gvn -deadargelim -mergereturn -indvars -loop-simplify -instcombine -array-stream -array-seg-normalize -array-partition -func-legal -instcombine -simplifycfg -dce -bundle-memfifo-ops -deadargelim -function-uniquify -directive-preproc -mem2reg -dse -dce -group-axi-access -licm -simplifycfg -dce -loop-delete -norm-name E:/Vivado/Math/Math/solution1/.autopilot/db/a.o.1.bc -o E:/Vivado/Math/Math/solution1/.autopilot/db/a.o.1.tmp.bc -f 
+INFO: [XFORM 203-602] Inlining function 'fp_struct<double>::data' into 'fp_struct<double>::to_double' (r:/builds/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/src/hls\utils/x_hls_utils.h:512) automatically.
+INFO: [XFORM 203-602] Inlining function 'fp_struct<double>::to_double' into 'fp_struct<double>::to_ieee' (r:/builds/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/src/hls\utils/x_hls_utils.h:526) automatically.
+INFO: [XFORM 203-602] Inlining function 'pow_reduce::log_range_reduce<ap_fixed<121, 12, (ap_q_mode)5, (ap_o_mode)3, 0>, 4, 4, 71, 73>' into 'pow_reduce::pow_traits<double>::log_range_reduction<71>' (r:/builds/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_pow.h:225) automatically.
+INFO: [XFORM 203-602] Inlining function 'pow_reduce::log_range_reduce<ap_fixed<121, 12, (ap_q_mode)5, (ap_o_mode)3, 0>, 7, 6, 73, 83>' into 'pow_reduce::pow_traits<double>::log_range_reduction<71>' (r:/builds/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_pow.h:227) automatically.
+INFO: [XFORM 203-602] Inlining function 'pow_reduce::log_range_reduce<ap_fixed<121, 12, (ap_q_mode)5, (ap_o_mode)3, 0>, 12, 6, 83, 92>' into 'pow_reduce::pow_traits<double>::log_range_reduction<71>' (r:/builds/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_pow.h:229) automatically.
+INFO: [XFORM 203-602] Inlining function 'pow_reduce::log_range_reduce<ap_fixed<121, 12, (ap_q_mode)5, (ap_o_mode)3, 0>, 17, 6, 92, 87>' into 'pow_reduce::pow_traits<double>::log_range_reduction<71>' (r:/builds/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_pow.h:231) automatically.
+INFO: [XFORM 203-602] Inlining function 'pow_reduce::log_range_reduce<ap_fixed<121, 12, (ap_q_mode)5, (ap_o_mode)3, 0>, 22, 6, 87, 82>' into 'pow_reduce::pow_traits<double>::log_range_reduction<71>' (r:/builds/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_pow.h:233) automatically.
+INFO: [XFORM 203-602] Inlining function 'pow_reduce::log_range_reduce<ap_fixed<121, 12, (ap_q_mode)5, (ap_o_mode)3, 0>, 27, 6, 82, 77>' into 'pow_reduce::pow_traits<double>::log_range_reduction<71>' (r:/builds/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_pow.h:235) automatically.
+INFO: [XFORM 203-602] Inlining function 'pow_reduce::log_range_reduce<ap_fixed<121, 12, (ap_q_mode)5, (ap_o_mode)3, 0>, 32, 6, 77, 72>' into 'pow_reduce::pow_traits<double>::log_range_reduction<71>' (r:/builds/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_pow.h:237) automatically.
+INFO: [XFORM 203-602] Inlining function 'fp_struct<double>::expv' into 'pow_reduce::pow_generic<double>' (r:/builds/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_pow.h:334) automatically.
+INFO: [XFORM 203-602] Inlining function 'generic_isinf<double>' into 'pow_reduce::pow_generic<double>' (r:/builds/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_pow.h:373) automatically.
+INFO: [XFORM 203-602] Inlining function 'generic_isnan<double>' into 'pow_reduce::pow_generic<double>' (r:/builds/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_pow.h:375) automatically.
+INFO: [XFORM 203-602] Inlining function 'fp_struct<double>::to_ieee' into 'pow_reduce::pow_generic<double>' (r:/builds/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_pow.h:412) automatically.
+INFO: [XFORM 203-602] Inlining function 'pow_reduce::pow_traits<double>::exp_Z1P_m_1' into 'pow_reduce::pow_generic<double>' (r:/builds/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_pow.h:641) automatically.
+INFO: [XFORM 203-602] Inlining function 'pow' into 'distDouble' (math.cpp:9) automatically.
+INFO: [XFORM 203-602] Inlining function 'hls::sqrt' into 'distDouble' (math.cpp:9) automatically.
+Command         transform done; 1.806 sec.
+INFO-FLOW: Presyn 2...
+Execute         transform -hls -keep-callgraph -scalarrepl -mem2reg -port-alignment -attach-range -dce -pipe-mux-gen -indvars -loop-bound -inst-simplify -instcombine -dce -merge-array-access -mem2reg -dce -clean-region -mergereturn -if-conv -instcombine -dce -constprop -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce -scalarrepl -mem2reg -global-constprop -deadargelim -deadargelim -instcombine -dce -simplifycfg -ptrArgReplace -mem2reg -function-inline -globaldce -mem2reg -instcombine -dce -expr-balance -instcombine -dce -bitwidthmin -interface-preproc -directive-preproc -inst-rectify -instcombine -dce -functionattrs -constprop -instcombine -bit-constprop -simplify-global-access -globalopt -globaldce -inst-simplify -instcombine -elimdeaddata -dce -loop-delete -simplifycfg -loop-simplify -auto-burst -norm-name E:/Vivado/Math/Math/solution1/.autopilot/db/a.o.1.tmp.bc -o E:/Vivado/Math/Math/solution1/.autopilot/db/a.o.2.bc -f -phase presyn 
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (r:/builds/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_pow.h:488:26) to (r:/builds/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_pow.h:657:25) in function 'pow_reduce::pow_generic<double>'... converting 7 basic blocks.
+INFO: [XFORM 203-602] Inlining function 'pow_reduce::pow_traits<double>::log_range_reduction<71>' into 'pow_reduce::pow_generic<double>' (r:/builds/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_pow.h:548) automatically.
+INFO: [XFORM 203-11] Balancing expressions in function 'pow_reduce::pow_generic<double>' (r:/builds/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_pow.h:320)...7 expression(s) balanced.
+Command         transform done; 0.731 sec.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:07 ; elapsed = 00:01:10 . Memory (MB): peak = 474.031 ; gain = 384.363
+INFO-FLOW: Building ssdm...
+Execute         transform -hls -function-uniquify -auto-function-inline -globaldce -ptrArgReplace -mem2reg -dce -reset-lda -loop-simplify -indvars -licm -loop-dep -loop-bound -licm -loop-simplify -flattenloopnest -array-flatten -gvn -instcombine -dce -array-map -dce -func-legal -gvn -adce -instcombine -cfgopt -simplifycfg -loop-simplify -array-burst -promote-global-argument -dce -ptrLegalization -axi4-lower -array-seg-normalize -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -gvn -gvn -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -dse -adse -adce -licm -inst-simplify -dce -globaldce -instcombine -array-stream -eliminate-keepreads -instcombine -dce -deadargelim -doublePtrSimplify -doublePtrElim -dce -doublePtrSimplify -promote-dbg-pointer -dce -scalarrepl -mem2reg -disaggr -norm-name -mem2reg -instcombine -dse -adse -adce -ptrLegalization -dce -auto-rom-infer -array-flatten -dce -instcombine -check-doubleptr -loop-rot -constprop -cfgopt -simplifycfg -loop-simplify -indvars -pointer-simplify -dce -loop-bound -loop-simplify -loop-preproc -constprop -global-constprop -gvn -mem2reg -instcombine -dce -loop-bound -loop-merge -dce -bitwidthmin -deadargelim -dce -canonicalize-dataflow -dce -scalar-propagation -deadargelim -globaldce -mem2reg -read-loop-dep -interface-preproc -directive-preproc -interface-gen -bram-byte-enable -deadargelim -inst-simplify -dce -gvn -mem2reg -instcombine -dce -adse -loop-bound -instcombine -cfgopt -simplifycfg -loop-simplify -clean-region -io-protocol -find-region -mem2reg -bitop-raise -complex-op-raise -inst-simplify -inst-rectify -instcombine -adce -deadargelim -loop-simplify -phi-opt -bitop-raise -cfgopt -simplifycfg -strip-dead-prototypes -interface-lower -bitop-lower -intrinsic-lower -auto-function-inline -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -inst-simplify -simplifycfg -loop-simplify -mergereturn -inst-simplify -inst-rectify -dce -load-elim -bitop-lower -loop-rewind -pointer-simplify -dce -cfgopt -dce -loop-bound -loop-dep -read-loop-dep -dce -check-stream -norm-name -legalize -validate-dataflow -inst-clarity -bitwidth -dump-loop-dep-to-ir -check-all-ssdm -cdfg-build E:/Vivado/Math/Math/solution1/.autopilot/db/a.o.2.bc -o E:/Vivado/Math/Math/solution1/.autopilot/db/a.o.3.bc -f -phase build-ssdm 
+WARNING: [XFORM 203-631] Renaming function 'pow_reduce::pow_generic<double>' to 'pow_generic<double>' (r:/builds/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_pow.h:320)
+Command         transform done; 0.973 sec.
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:08 ; elapsed = 00:01:11 . Memory (MB): peak = 490.969 ; gain = 401.301
+INFO-FLOW: Finish building internal data model.
+Command       opt_and_import_c done; 11.659 sec.
+Command     elaborate done; 68.852 sec.
+Execute     autosyn -from_csynth_design=1 
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO-FLOW: Synthesizing C/C++ design ...
+INFO: [HLS 200-10] Synthesizing 'distDouble' ...
+Execute       ap_set_top_model distDouble 
+WARNING: [SYN 201-103] Legalizing function name 'pow_generic<double>' to 'pow_generic_double_s'.
+Execute       get_model_list distDouble -filter all-wo-channel -topdown 
+Execute       preproc_iomode -model distDouble 
+Execute       preproc_iomode -model pow_generic<double> 
+Execute       get_model_list distDouble -filter all-wo-channel 
+INFO-FLOW: Model list for configure: pow_generic<double> distDouble
+INFO-FLOW: Configuring Module : pow_generic<double> ...
+Execute       set_default_model pow_generic<double> 
+Execute       apply_spec_resource_limit pow_generic<double> 
+INFO-FLOW: Configuring Module : distDouble ...
+Execute       set_default_model distDouble 
+Execute       apply_spec_resource_limit distDouble 
+INFO-FLOW: Model list for preprocess: pow_generic<double> distDouble
+INFO-FLOW: Preprocessing Module: pow_generic<double> ...
+Execute       set_default_model pow_generic<double> 
+Execute       cdfg_preprocess -model pow_generic<double> 
+Execute       rtl_gen_preprocess pow_generic<double> 
+INFO-FLOW: Preprocessing Module: distDouble ...
+Execute       set_default_model distDouble 
+Execute       cdfg_preprocess -model distDouble 
+Execute       rtl_gen_preprocess distDouble 
+INFO-FLOW: Model list for synthesis: pow_generic<double> distDouble
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'pow_generic_double_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model pow_generic<double> 
+Execute       schedule -model pow_generic<double> 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining function 'pow_generic<double>'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 38.
+INFO: [SCHED 204-11] Finished scheduling.
+Command       schedule done; 1.284 sec.
+INFO: [HLS 200-111]  Elapsed time: 72.777 seconds; current allocated memory: 422.101 MB.
+Execute       syn_report -verbosereport -o E:/Vivado/Math/Math/solution1/.autopilot/db/pow_generic_double_s.verbose.sched.rpt 
+Command       syn_report done; 0.165 sec.
+Execute       db_write -o E:/Vivado/Math/Math/solution1/.autopilot/db/pow_generic_double_s.sched.adb -f 
+Command       db_write done; 0.11 sec.
+INFO-FLOW: Finish scheduling pow_generic<double>.
+Execute       set_default_model pow_generic<double> 
+Execute       bind -model pow_generic<double> 
+BIND OPTION: model=pow_generic<double>
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+Command       bind done; 0.171 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.529 seconds; current allocated memory: 423.356 MB.
+Execute       syn_report -verbosereport -o E:/Vivado/Math/Math/solution1/.autopilot/db/pow_generic_double_s.verbose.bind.rpt 
+Command       syn_report done; 0.252 sec.
+Execute       db_write -o E:/Vivado/Math/Math/solution1/.autopilot/db/pow_generic_double_s.bind.adb -f 
+Command       db_write done; 0.139 sec.
+INFO-FLOW: Finish binding pow_generic<double>.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'distDouble' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model distDouble 
+Execute       schedule -model distDouble 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.588 seconds; current allocated memory: 423.648 MB.
+Execute       syn_report -verbosereport -o E:/Vivado/Math/Math/solution1/.autopilot/db/distDouble.verbose.sched.rpt 
+Execute       db_write -o E:/Vivado/Math/Math/solution1/.autopilot/db/distDouble.sched.adb -f 
+INFO-FLOW: Finish scheduling distDouble.
+Execute       set_default_model distDouble 
+Execute       bind -model distDouble 
+BIND OPTION: model=distDouble
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+Command       bind done; 0.406 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.599 seconds; current allocated memory: 424.171 MB.
+Execute       syn_report -verbosereport -o E:/Vivado/Math/Math/solution1/.autopilot/db/distDouble.verbose.bind.rpt 
+Command       syn_report done; 0.352 sec.
+Execute       db_write -o E:/Vivado/Math/Math/solution1/.autopilot/db/distDouble.bind.adb -f 
+INFO-FLOW: Finish binding distDouble.
+Execute       get_model_list distDouble -filter all-wo-channel 
+INFO-FLOW: Preprocessing for RTLGen ...
+Execute       rtl_gen_preprocess pow_generic<double> 
+Execute       rtl_gen_preprocess distDouble 
+INFO-FLOW: Model list for RTL generation: pow_generic<double> distDouble
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'pow_generic_double_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       get_config_rtl -module_prefix 
+Execute       get_config_rtl -module_auto_prefix 
+Execute       create_rtl_model pow_generic<double> -vendor xilinx -mg_file E:/Vivado/Math/Math/solution1/.autopilot/db/pow_generic_double_s.compgen.tcl 
+INFO: [SYN 201-210] Renamed object name 'pow_generic_double_s_pow_reduce_anonymo_20' to 'pow_generic_doublbkb' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'pow_generic_double_s_pow_reduce_anonymo_19' to 'pow_generic_doublcud' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'pow_generic_double_s_pow_reduce_anonymo_16' to 'pow_generic_doubldEe' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'pow_generic_double_s_pow_reduce_anonymo_17' to 'pow_generic_doubleOg' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'pow_generic_double_s_pow_reduce_anonymo_9' to 'pow_generic_doublfYi' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'pow_generic_double_s_pow_reduce_anonymo_12' to 'pow_generic_doublg8j' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'pow_generic_double_s_pow_reduce_anonymo_13' to 'pow_generic_doublhbi' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'pow_generic_double_s_pow_reduce_anonymo_14' to 'pow_generic_doublibs' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'pow_generic_double_s_pow_reduce_anonymo_15' to 'pow_generic_doubljbC' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'pow_generic_double_s_pow_reduce_anonymo_18' to 'pow_generic_doublkbM' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'pow_generic_double_s_pow_reduce_anonymo' to 'pow_generic_doubllbW' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'pow_generic_double_s_pow_reduce_anonymo_21' to 'pow_generic_doublmb6' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'distDouble_mul_54s_6ns_54_2_1' to 'distDouble_mul_54ncg' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'distDouble_mul_71ns_4ns_75_2_1' to 'distDouble_mul_71ocq' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'distDouble_mul_73ns_6ns_79_2_1' to 'distDouble_mul_73pcA' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'distDouble_mul_83ns_6ns_89_2_1' to 'distDouble_mul_83qcK' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'distDouble_mul_92ns_6ns_98_2_1' to 'distDouble_mul_92rcU' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'distDouble_mul_87ns_6ns_93_2_1' to 'distDouble_mul_87sc4' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'distDouble_mul_82ns_6ns_88_2_1' to 'distDouble_mul_82tde' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'distDouble_mul_77ns_6ns_83_2_1' to 'distDouble_mul_77udo' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'distDouble_mul_80ns_12s_90_2_1' to 'distDouble_mul_80vdy' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'distDouble_mul_72ns_13s_83_2_1' to 'distDouble_mul_72wdI' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'distDouble_mac_muladd_16ns_16s_19s_31_1_1' to 'distDouble_mac_muxdS' due to the length limit 20
+INFO: [RTGEN 206-104] Estimated max fanout for 'pow_generic_double_s' is 5237 from HDL expression: (1'b0 == ap_block_pp0_stage0_11001)
+INFO: [RTGEN 206-100] Generating core module 'distDouble_mac_muxdS': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'distDouble_mul_54ncg': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'distDouble_mul_71ocq': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'distDouble_mul_72wdI': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'distDouble_mul_73pcA': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'distDouble_mul_77udo': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'distDouble_mul_80vdy': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'distDouble_mul_82tde': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'distDouble_mul_83qcK': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'distDouble_mul_87sc4': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'distDouble_mul_92rcU': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'pow_generic_double_s'.
+Command       create_rtl_model done; 0.851 sec.
+INFO: [HLS 200-111]  Elapsed time: 1.379 seconds; current allocated memory: 427.737 MB.
+Execute       source E:/Vivado/Math/Math/solution1/.autopilot/db/distDouble.rtl_wrap.cfg.tcl 
+Execute       gen_rtl pow_generic<double> -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o E:/Vivado/Math/Math/solution1/syn/systemc/pow_generic_double_s -synmodules pow_generic<double> distDouble 
+Execute       gen_rtl pow_generic<double> -style xilinx -f -lang vhdl -o E:/Vivado/Math/Math/solution1/syn/vhdl/pow_generic_double_s 
+Execute       gen_rtl pow_generic<double> -style xilinx -f -lang vlog -o E:/Vivado/Math/Math/solution1/syn/verilog/pow_generic_double_s 
+Execute       syn_report -csynth -model pow_generic<double> -o E:/Vivado/Math/Math/solution1/syn/report/pow_generic_double_s_csynth.rpt 
+Command       syn_report done; 0.132 sec.
+Execute       syn_report -rtlxml -model pow_generic<double> -o E:/Vivado/Math/Math/solution1/syn/report/pow_generic_double_s_csynth.xml 
+Execute       syn_report -verbosereport -model pow_generic<double> -o E:/Vivado/Math/Math/solution1/.autopilot/db/pow_generic_double_s.verbose.rpt 
+Command       syn_report done; 0.365 sec.
+Execute       db_write -model pow_generic<double> -f -o E:/Vivado/Math/Math/solution1/.autopilot/db/pow_generic_double_s.adb 
+Command       db_write done; 0.312 sec.
+Execute       gen_tb_info pow_generic<double> -p E:/Vivado/Math/Math/solution1/.autopilot/db -o E:/Vivado/Math/Math/solution1/.autopilot/db/pow_generic_double_s 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'distDouble' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       get_config_rtl -module_prefix 
+Execute       get_config_rtl -module_auto_prefix 
+Execute       create_rtl_model distDouble -vendor xilinx -mg_file E:/Vivado/Math/Math/solution1/.autopilot/db/distDouble.compgen.tcl 
+INFO: [RTGEN 206-500] Setting interface mode on port 'distDouble/x1' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'distDouble/y1' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'distDouble/x2' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'distDouble/y2' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'distDouble' to 'ap_ctrl_hs'.
+INFO: [SYN 201-210] Renamed object name 'distDouble_dadddsub_64ns_64ns_64_5_full_dsp_1' to 'distDouble_dadddsyd2' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'distDouble_dsub_64ns_64ns_64_5_full_dsp_1' to 'distDouble_dsub_6zec' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'distDouble_dsqrt_64ns_64ns_64_21_1' to 'distDouble_dsqrt_Aem' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'distDouble_dadddsyd2': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'distDouble_dsqrt_Aem': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'distDouble_dsub_6zec': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'distDouble'.
+Command       create_rtl_model done; 0.138 sec.
+INFO: [HLS 200-111]  Elapsed time: 1.293 seconds; current allocated memory: 429.115 MB.
+Execute       source E:/Vivado/Math/Math/solution1/.autopilot/db/distDouble.rtl_wrap.cfg.tcl 
+Execute       gen_rtl distDouble -istop -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o E:/Vivado/Math/Math/solution1/syn/systemc/distDouble -synmodules pow_generic<double> distDouble 
+Execute       gen_rtl distDouble -istop -style xilinx -f -lang vhdl -o E:/Vivado/Math/Math/solution1/syn/vhdl/distDouble 
+Execute       gen_rtl distDouble -istop -style xilinx -f -lang vlog -o E:/Vivado/Math/Math/solution1/syn/verilog/distDouble 
+Execute       syn_report -csynth -model distDouble -o E:/Vivado/Math/Math/solution1/syn/report/distDouble_csynth.rpt 
+Execute       syn_report -rtlxml -model distDouble -o E:/Vivado/Math/Math/solution1/syn/report/distDouble_csynth.xml 
+Execute       syn_report -verbosereport -model distDouble -o E:/Vivado/Math/Math/solution1/.autopilot/db/distDouble.verbose.rpt 
+Command       syn_report done; 0.36 sec.
+Execute       db_write -model distDouble -f -o E:/Vivado/Math/Math/solution1/.autopilot/db/distDouble.adb 
+Execute       gen_tb_info distDouble -p E:/Vivado/Math/Math/solution1/.autopilot/db -o E:/Vivado/Math/Math/solution1/.autopilot/db/distDouble 
+Execute       export_constraint_db -f -tool general -o E:/Vivado/Math/Math/solution1/.autopilot/db/distDouble.constraint.tcl 
+Execute       syn_report -designview -model distDouble -o E:/Vivado/Math/Math/solution1/.autopilot/db/distDouble.design.xml 
+Command       syn_report done; 0.139 sec.
+Execute       get_config_rtl -disable_wave_debug 
+Execute       syn_report -wcfg -model distDouble -o E:/Vivado/Math/Math/solution1/.autopilot/db/distDouble_dataflow_ana.wcfg 
+Execute       syn_report -protoinst -model distDouble -o E:/Vivado/Math/Math/solution1/.autopilot/db/distDouble.protoinst 
+Execute       get_config_debug -directory 
+Execute       sc_get_clocks distDouble 
+Execute       get_config_export -vivado_clock 
+Execute       sc_get_portdomain distDouble 
+INFO-FLOW: Model list for RTL component generation: pow_generic<double> distDouble
+INFO-FLOW: Handling components in module [pow_generic_double_s] ... 
+Execute       source E:/Vivado/Math/Math/solution1/.autopilot/db/pow_generic_double_s.compgen.tcl 
+INFO-FLOW: Found component distDouble_mul_54ncg.
+INFO-FLOW: Append model distDouble_mul_54ncg
+INFO-FLOW: Found component distDouble_mul_71ocq.
+INFO-FLOW: Append model distDouble_mul_71ocq
+INFO-FLOW: Found component distDouble_mul_73pcA.
+INFO-FLOW: Append model distDouble_mul_73pcA
+INFO-FLOW: Found component distDouble_mul_83qcK.
+INFO-FLOW: Append model distDouble_mul_83qcK
+INFO-FLOW: Found component distDouble_mul_92rcU.
+INFO-FLOW: Append model distDouble_mul_92rcU
+INFO-FLOW: Found component distDouble_mul_87sc4.
+INFO-FLOW: Append model distDouble_mul_87sc4
+INFO-FLOW: Found component distDouble_mul_82tde.
+INFO-FLOW: Append model distDouble_mul_82tde
+INFO-FLOW: Found component distDouble_mul_77udo.
+INFO-FLOW: Append model distDouble_mul_77udo
+INFO-FLOW: Found component distDouble_mul_80vdy.
+INFO-FLOW: Append model distDouble_mul_80vdy
+INFO-FLOW: Found component distDouble_mul_72wdI.
+INFO-FLOW: Append model distDouble_mul_72wdI
+INFO-FLOW: Found component distDouble_mac_muxdS.
+INFO-FLOW: Append model distDouble_mac_muxdS
+INFO-FLOW: Found component pow_generic_doublbkb.
+INFO-FLOW: Append model pow_generic_doublbkb
+INFO-FLOW: Found component pow_generic_doublcud.
+INFO-FLOW: Append model pow_generic_doublcud
+INFO-FLOW: Found component pow_generic_doubldEe.
+INFO-FLOW: Append model pow_generic_doubldEe
+INFO-FLOW: Found component pow_generic_doubleOg.
+INFO-FLOW: Append model pow_generic_doubleOg
+INFO-FLOW: Found component pow_generic_doublfYi.
+INFO-FLOW: Append model pow_generic_doublfYi
+INFO-FLOW: Found component pow_generic_doublg8j.
+INFO-FLOW: Append model pow_generic_doublg8j
+INFO-FLOW: Found component pow_generic_doublhbi.
+INFO-FLOW: Append model pow_generic_doublhbi
+INFO-FLOW: Found component pow_generic_doublibs.
+INFO-FLOW: Append model pow_generic_doublibs
+INFO-FLOW: Found component pow_generic_doubljbC.
+INFO-FLOW: Append model pow_generic_doubljbC
+INFO-FLOW: Found component pow_generic_doublkbM.
+INFO-FLOW: Append model pow_generic_doublkbM
+INFO-FLOW: Found component pow_generic_doubllbW.
+INFO-FLOW: Append model pow_generic_doubllbW
+INFO-FLOW: Found component pow_generic_doublmb6.
+INFO-FLOW: Append model pow_generic_doublmb6
+INFO-FLOW: Handling components in module [distDouble] ... 
+Execute       source E:/Vivado/Math/Math/solution1/.autopilot/db/distDouble.compgen.tcl 
+INFO-FLOW: Found component distDouble_dadddsyd2.
+INFO-FLOW: Append model distDouble_dadddsyd2
+INFO-FLOW: Found component distDouble_dsub_6zec.
+INFO-FLOW: Append model distDouble_dsub_6zec
+INFO-FLOW: Found component distDouble_dsqrt_Aem.
+INFO-FLOW: Append model distDouble_dsqrt_Aem
+INFO-FLOW: Append model pow_generic_double_s
+INFO-FLOW: Append model distDouble
+INFO-FLOW: Generating RTL model list ...
+INFO-FLOW: All models in this session: distDouble_mul_54ncg distDouble_mul_71ocq distDouble_mul_73pcA distDouble_mul_83qcK distDouble_mul_92rcU distDouble_mul_87sc4 distDouble_mul_82tde distDouble_mul_77udo distDouble_mul_80vdy distDouble_mul_72wdI distDouble_mac_muxdS pow_generic_doublbkb pow_generic_doublcud pow_generic_doubldEe pow_generic_doubleOg pow_generic_doublfYi pow_generic_doublg8j pow_generic_doublhbi pow_generic_doublibs pow_generic_doubljbC pow_generic_doublkbM pow_generic_doubllbW pow_generic_doublmb6 distDouble_dadddsyd2 distDouble_dsub_6zec distDouble_dsqrt_Aem pow_generic_double_s distDouble
+INFO-FLOW: To file: write model distDouble_mul_54ncg
+INFO-FLOW: To file: write model distDouble_mul_71ocq
+INFO-FLOW: To file: write model distDouble_mul_73pcA
+INFO-FLOW: To file: write model distDouble_mul_83qcK
+INFO-FLOW: To file: write model distDouble_mul_92rcU
+INFO-FLOW: To file: write model distDouble_mul_87sc4
+INFO-FLOW: To file: write model distDouble_mul_82tde
+INFO-FLOW: To file: write model distDouble_mul_77udo
+INFO-FLOW: To file: write model distDouble_mul_80vdy
+INFO-FLOW: To file: write model distDouble_mul_72wdI
+INFO-FLOW: To file: write model distDouble_mac_muxdS
+INFO-FLOW: To file: write model pow_generic_doublbkb
+INFO-FLOW: To file: write model pow_generic_doublcud
+INFO-FLOW: To file: write model pow_generic_doubldEe
+INFO-FLOW: To file: write model pow_generic_doubleOg
+INFO-FLOW: To file: write model pow_generic_doublfYi
+INFO-FLOW: To file: write model pow_generic_doublg8j
+INFO-FLOW: To file: write model pow_generic_doublhbi
+INFO-FLOW: To file: write model pow_generic_doublibs
+INFO-FLOW: To file: write model pow_generic_doubljbC
+INFO-FLOW: To file: write model pow_generic_doublkbM
+INFO-FLOW: To file: write model pow_generic_doubllbW
+INFO-FLOW: To file: write model pow_generic_doublmb6
+INFO-FLOW: To file: write model distDouble_dadddsyd2
+INFO-FLOW: To file: write model distDouble_dsub_6zec
+INFO-FLOW: To file: write model distDouble_dsqrt_Aem
+INFO-FLOW: To file: write model pow_generic_double_s
+INFO-FLOW: To file: write model distDouble
+INFO-FLOW: Finished generating RTL model list.
+
+
+INFO-FLOW: RTL Generation done.
+INFO-FLOW: CAS Generation done.
+INFO-FLOW: CBC Generation done.
+Execute       syn_report -model distDouble -printsummary 
+INFO: [HLS 200-789] **** Estimated Fmax: 114.29 MHz
+INFO-FLOW: DBG:CMD: auto_generate_csynth_design
+INFO-FLOW: DBG:CMD:     auto_generate --sim-model -phase csynth_design -d E:/Vivado/Math/Math/solution1
+Execute       source E:/Vivado/Math/Math/solution1/.autopilot/db/global.setting.tcl 
+INFO-FLOW: DBG:CMD: read_platform_lib E:/Vivado/Math/Math/solution1/.autopilot/db/global.setting.tcl
+Execute       source C:/Xilinx/Vivado/2019.2/common/technology/generic/autopilot/common.gen 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/generic/autopilot/APCoreGen.gen 
+Execute       source C:/Xilinx/Vivado/2019.2/common/technology/generic/autopilot/op.gen 
+Execute       source C:/Xilinx/Vivado/2019.2/common/technology/generic/autopilot/op_simcore.gen 
+Execute       source C:/Xilinx/Vivado/2019.2/common/technology/generic/autopilot/interface.gen 
+Execute       source E:/Vivado/Math/Math/solution1/.autopilot/db/global.setting.tcl 
+Execute       source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/virtex7/virtex7.gen 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx.gen 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/plb46.gen 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/fsl.gen 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/axi4.gen 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute             source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/saxilite.gen 
+Execute             source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/maxi.gen 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/dds_compiler.gen 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/util.gen 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/xfft.gen 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/xfir.gen 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/dsp48.gen 
+Command         ap_source done; 0.137 sec.
+Command       ap_source done; 0.137 sec.
+Execute       source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/virtex7/virtex7_fpv6.gen 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx_fp.gen 
+INFO-FLOW: DBG:CMD:   using AESL_AUTOCG::g_clock_period=10.000 (was NA)
+INFO-FLOW: DBG:CMD:       generate_ip_cores sim=1 export=0 expOnly=0 dstVlogDir=syn/verilog
+Execute       source E:/Vivado/Math/Math/solution1/.autopilot/db/global.setting.tcl 
+Execute       ap_part_info -name xc7vx485t-ffg1157-1 -data names -quiet 
+Execute       ap_part_info -name xc7vx485t-ffg1157-1 -data info -quiet 
+Execute       source E:/Vivado/Math/Math/solution1/.autopilot/db/global.setting.tcl 
+Execute       source E:/Vivado/Math/Math/solution1/.autopilot/db/global.setting.tcl 
+Execute       source E:/Vivado/Math/Math/solution1/.autopilot/db/pow_generic_double_s.compgen.tcl 
+Execute         ap_part_info -name xc7vx485t-ffg1157-1 -data names -quiet 
+Execute         ap_part_info -name xc7vx485t-ffg1157-1 -data info -quiet 
+Execute         ap_part_info -name xc7vx485t-ffg1157-1 -data names -quiet 
+Execute         ap_part_info -name xc7vx485t-ffg1157-1 -data info -quiet 
+INFO: [RTMG 210-282] Generating pipelined core: 'distDouble_mul_54ncg_MulnS_0'
+Execute         ap_part_info -name xc7vx485t-ffg1157-1 -data names -quiet 
+Execute         ap_part_info -name xc7vx485t-ffg1157-1 -data info -quiet 
+Execute         ap_part_info -name xc7vx485t-ffg1157-1 -data names -quiet 
+Execute         ap_part_info -name xc7vx485t-ffg1157-1 -data info -quiet 
+INFO: [RTMG 210-282] Generating pipelined core: 'distDouble_mul_71ocq_MulnS_1'
+Execute         ap_part_info -name xc7vx485t-ffg1157-1 -data names -quiet 
+Execute         ap_part_info -name xc7vx485t-ffg1157-1 -data info -quiet 
+Execute         ap_part_info -name xc7vx485t-ffg1157-1 -data names -quiet 
+Execute         ap_part_info -name xc7vx485t-ffg1157-1 -data info -quiet 
+INFO: [RTMG 210-282] Generating pipelined core: 'distDouble_mul_73pcA_MulnS_2'
+Execute         ap_part_info -name xc7vx485t-ffg1157-1 -data names -quiet 
+Execute         ap_part_info -name xc7vx485t-ffg1157-1 -data info -quiet 
+Execute         ap_part_info -name xc7vx485t-ffg1157-1 -data names -quiet 
+Execute         ap_part_info -name xc7vx485t-ffg1157-1 -data info -quiet 
+INFO: [RTMG 210-282] Generating pipelined core: 'distDouble_mul_83qcK_MulnS_3'
+Execute         ap_part_info -name xc7vx485t-ffg1157-1 -data names -quiet 
+Execute         ap_part_info -name xc7vx485t-ffg1157-1 -data info -quiet 
+Execute         ap_part_info -name xc7vx485t-ffg1157-1 -data names -quiet 
+Execute         ap_part_info -name xc7vx485t-ffg1157-1 -data info -quiet 
+INFO: [RTMG 210-282] Generating pipelined core: 'distDouble_mul_92rcU_MulnS_4'
+Execute         ap_part_info -name xc7vx485t-ffg1157-1 -data names -quiet 
+Execute         ap_part_info -name xc7vx485t-ffg1157-1 -data info -quiet 
+Execute         ap_part_info -name xc7vx485t-ffg1157-1 -data names -quiet 
+Execute         ap_part_info -name xc7vx485t-ffg1157-1 -data info -quiet 
+INFO: [RTMG 210-282] Generating pipelined core: 'distDouble_mul_87sc4_MulnS_5'
+Execute         ap_part_info -name xc7vx485t-ffg1157-1 -data names -quiet 
+Execute         ap_part_info -name xc7vx485t-ffg1157-1 -data info -quiet 
+Execute         ap_part_info -name xc7vx485t-ffg1157-1 -data names -quiet 
+Execute         ap_part_info -name xc7vx485t-ffg1157-1 -data info -quiet 
+INFO: [RTMG 210-282] Generating pipelined core: 'distDouble_mul_82tde_MulnS_6'
+Execute         ap_part_info -name xc7vx485t-ffg1157-1 -data names -quiet 
+Execute         ap_part_info -name xc7vx485t-ffg1157-1 -data info -quiet 
+Execute         ap_part_info -name xc7vx485t-ffg1157-1 -data names -quiet 
+Execute         ap_part_info -name xc7vx485t-ffg1157-1 -data info -quiet 
+INFO: [RTMG 210-282] Generating pipelined core: 'distDouble_mul_77udo_MulnS_7'
+Execute         ap_part_info -name xc7vx485t-ffg1157-1 -data names -quiet 
+Execute         ap_part_info -name xc7vx485t-ffg1157-1 -data info -quiet 
+Execute         ap_part_info -name xc7vx485t-ffg1157-1 -data names -quiet 
+Execute         ap_part_info -name xc7vx485t-ffg1157-1 -data info -quiet 
+INFO: [RTMG 210-282] Generating pipelined core: 'distDouble_mul_80vdy_MulnS_8'
+Execute         ap_part_info -name xc7vx485t-ffg1157-1 -data names -quiet 
+Execute         ap_part_info -name xc7vx485t-ffg1157-1 -data info -quiet 
+Execute         ap_part_info -name xc7vx485t-ffg1157-1 -data names -quiet 
+Execute         ap_part_info -name xc7vx485t-ffg1157-1 -data info -quiet 
+INFO: [RTMG 210-282] Generating pipelined core: 'distDouble_mul_72wdI_MulnS_9'
+Execute         ap_part_info -name xc7vx485t-ffg1157-1 -data names -quiet 
+Execute         ap_part_info -name xc7vx485t-ffg1157-1 -data info -quiet 
+Execute         ap_part_info -name xc7vx485t-ffg1157-1 -data info 
+Execute         ap_part_info -name xc7vx485t-ffg1157-1 -data names -quiet 
+Execute         ap_part_info -name xc7vx485t-ffg1157-1 -data info -quiet 
+INFO: [RTMG 210-279] Implementing memory 'pow_generic_doublbkb_rom' using distributed ROMs.
+Execute         ap_part_info -name xc7vx485t-ffg1157-1 -data names -quiet 
+Execute         ap_part_info -name xc7vx485t-ffg1157-1 -data info -quiet 
+Execute         ap_part_info -name xc7vx485t-ffg1157-1 -data names -quiet 
+Execute         ap_part_info -name xc7vx485t-ffg1157-1 -data info -quiet 
+Execute         ap_part_info -name xc7vx485t-ffg1157-1 -data names -quiet 
+Execute         ap_part_info -name xc7vx485t-ffg1157-1 -data info -quiet 
+INFO: [RTMG 210-279] Implementing memory 'pow_generic_doublcud_rom' using auto ROMs.
+Execute         ap_part_info -name xc7vx485t-ffg1157-1 -data names -quiet 
+Execute         ap_part_info -name xc7vx485t-ffg1157-1 -data info -quiet 
+Execute         ap_part_info -name xc7vx485t-ffg1157-1 -data names -quiet 
+Execute         ap_part_info -name xc7vx485t-ffg1157-1 -data info -quiet 
+Execute         ap_part_info -name xc7vx485t-ffg1157-1 -data names -quiet 
+Execute         ap_part_info -name xc7vx485t-ffg1157-1 -data info -quiet 
+INFO: [RTMG 210-279] Implementing memory 'pow_generic_doubldEe_rom' using auto ROMs.
+Execute         ap_part_info -name xc7vx485t-ffg1157-1 -data names -quiet 
+Execute         ap_part_info -name xc7vx485t-ffg1157-1 -data info -quiet 
+Execute         ap_part_info -name xc7vx485t-ffg1157-1 -data names -quiet 
+Execute         ap_part_info -name xc7vx485t-ffg1157-1 -data info -quiet 
+Execute         ap_part_info -name xc7vx485t-ffg1157-1 -data names -quiet 
+Execute         ap_part_info -name xc7vx485t-ffg1157-1 -data info -quiet 
+INFO: [RTMG 210-279] Implementing memory 'pow_generic_doubleOg_rom' using auto ROMs.
+Execute         ap_part_info -name xc7vx485t-ffg1157-1 -data names -quiet 
+Execute         ap_part_info -name xc7vx485t-ffg1157-1 -data info -quiet 
+Execute         ap_part_info -name xc7vx485t-ffg1157-1 -data names -quiet 
+Execute         ap_part_info -name xc7vx485t-ffg1157-1 -data info -quiet 
+Execute         ap_part_info -name xc7vx485t-ffg1157-1 -data names -quiet 
+Execute         ap_part_info -name xc7vx485t-ffg1157-1 -data info -quiet 
+INFO: [RTMG 210-279] Implementing memory 'pow_generic_doublfYi_rom' using auto ROMs.
+Execute         ap_part_info -name xc7vx485t-ffg1157-1 -data names -quiet 
+Execute         ap_part_info -name xc7vx485t-ffg1157-1 -data info -quiet 
+Execute         ap_part_info -name xc7vx485t-ffg1157-1 -data names -quiet 
+Execute         ap_part_info -name xc7vx485t-ffg1157-1 -data info -quiet 
+Execute         ap_part_info -name xc7vx485t-ffg1157-1 -data names -quiet 
+Execute         ap_part_info -name xc7vx485t-ffg1157-1 -data info -quiet 
+INFO: [RTMG 210-279] Implementing memory 'pow_generic_doublg8j_rom' using auto ROMs.
+Execute         ap_part_info -name xc7vx485t-ffg1157-1 -data names -quiet 
+Execute         ap_part_info -name xc7vx485t-ffg1157-1 -data info -quiet 
+Execute         ap_part_info -name xc7vx485t-ffg1157-1 -data names -quiet 
+Execute         ap_part_info -name xc7vx485t-ffg1157-1 -data info -quiet 
+Execute         ap_part_info -name xc7vx485t-ffg1157-1 -data names -quiet 
+Execute         ap_part_info -name xc7vx485t-ffg1157-1 -data info -quiet 
+INFO: [RTMG 210-279] Implementing memory 'pow_generic_doublhbi_rom' using auto ROMs.
+Execute         ap_part_info -name xc7vx485t-ffg1157-1 -data names -quiet 
+Execute         ap_part_info -name xc7vx485t-ffg1157-1 -data info -quiet 
+Execute         ap_part_info -name xc7vx485t-ffg1157-1 -data names -quiet 
+Execute         ap_part_info -name xc7vx485t-ffg1157-1 -data info -quiet 
+Execute         ap_part_info -name xc7vx485t-ffg1157-1 -data names -quiet 
+Execute         ap_part_info -name xc7vx485t-ffg1157-1 -data info -quiet 
+INFO: [RTMG 210-279] Implementing memory 'pow_generic_doublibs_rom' using auto ROMs.
+Execute         ap_part_info -name xc7vx485t-ffg1157-1 -data names -quiet 
+Execute         ap_part_info -name xc7vx485t-ffg1157-1 -data info -quiet 
+Execute         ap_part_info -name xc7vx485t-ffg1157-1 -data names -quiet 
+Execute         ap_part_info -name xc7vx485t-ffg1157-1 -data info -quiet 
+Execute         ap_part_info -name xc7vx485t-ffg1157-1 -data names -quiet 
+Execute         ap_part_info -name xc7vx485t-ffg1157-1 -data info -quiet 
+INFO: [RTMG 210-279] Implementing memory 'pow_generic_doubljbC_rom' using auto ROMs.
+Execute         ap_part_info -name xc7vx485t-ffg1157-1 -data names -quiet 
+Execute         ap_part_info -name xc7vx485t-ffg1157-1 -data info -quiet 
+Execute         ap_part_info -name xc7vx485t-ffg1157-1 -data names -quiet 
+Execute         ap_part_info -name xc7vx485t-ffg1157-1 -data info -quiet 
+Execute         ap_part_info -name xc7vx485t-ffg1157-1 -data names -quiet 
+Execute         ap_part_info -name xc7vx485t-ffg1157-1 -data info -quiet 
+INFO: [RTMG 210-279] Implementing memory 'pow_generic_doublkbM_rom' using auto ROMs.
+Execute         ap_part_info -name xc7vx485t-ffg1157-1 -data names -quiet 
+Execute         ap_part_info -name xc7vx485t-ffg1157-1 -data info -quiet 
+Execute         ap_part_info -name xc7vx485t-ffg1157-1 -data names -quiet 
+Execute         ap_part_info -name xc7vx485t-ffg1157-1 -data info -quiet 
+Execute         ap_part_info -name xc7vx485t-ffg1157-1 -data names -quiet 
+Execute         ap_part_info -name xc7vx485t-ffg1157-1 -data info -quiet 
+INFO: [RTMG 210-279] Implementing memory 'pow_generic_doubllbW_rom' using auto ROMs.
+Execute         ap_part_info -name xc7vx485t-ffg1157-1 -data names -quiet 
+Execute         ap_part_info -name xc7vx485t-ffg1157-1 -data info -quiet 
+Execute         ap_part_info -name xc7vx485t-ffg1157-1 -data names -quiet 
+Execute         ap_part_info -name xc7vx485t-ffg1157-1 -data info -quiet 
+Execute         ap_part_info -name xc7vx485t-ffg1157-1 -data names -quiet 
+Execute         ap_part_info -name xc7vx485t-ffg1157-1 -data info -quiet 
+Execute         ap_part_info -name xc7vx485t-ffg1157-1 -data names -quiet 
+Execute         ap_part_info -name xc7vx485t-ffg1157-1 -data info -quiet 
+INFO: [RTMG 210-279] Implementing memory 'pow_generic_doublmb6_rom' using auto ROMs.
+Execute         ap_part_info -name xc7vx485t-ffg1157-1 -data names -quiet 
+Execute         ap_part_info -name xc7vx485t-ffg1157-1 -data info -quiet 
+Execute         ap_part_info -name xc7vx485t-ffg1157-1 -data names -quiet 
+Execute         ap_part_info -name xc7vx485t-ffg1157-1 -data info -quiet 
+Command       ap_source done; 1.59 sec.
+Execute       source E:/Vivado/Math/Math/solution1/.autopilot/db/distDouble.compgen.tcl 
+Execute         ap_part_info -name xc7vx485t-ffg1157-1 -data names -quiet 
+Execute         ap_part_info -name xc7vx485t-ffg1157-1 -data info -quiet 
+Execute         ap_part_info -name xc7vx485t-ffg1157-1 -data names -quiet 
+Execute         ap_part_info -name xc7vx485t-ffg1157-1 -data info -quiet 
+Execute         ap_part_info -name xc7vx485t-ffg1157-1 -data names -quiet 
+Execute         ap_part_info -name xc7vx485t-ffg1157-1 -data info -quiet 
+Command       ap_source done; 0.254 sec.
+INFO-FLOW: DBG:CMD:     auto_generate -export -impltomg_flag -rtl both -tool Vivado -pcore_version 1.00.a -phase csynth_design -d E:/Vivado/Math/Math/solution1
+Execute       source E:/Vivado/Math/Math/solution1/.autopilot/db/global.setting.tcl 
+INFO-FLOW: DBG:CMD: read_platform_lib E:/Vivado/Math/Math/solution1/.autopilot/db/global.setting.tcl
+Execute       source C:/Xilinx/Vivado/2019.2/common/technology/generic/autopilot/common.gen 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/generic/autopilot/APCoreGen.gen 
+Execute       source C:/Xilinx/Vivado/2019.2/common/technology/generic/autopilot/op.gen 
+Execute       source C:/Xilinx/Vivado/2019.2/common/technology/generic/autopilot/op_simcore.gen 
+Execute       source C:/Xilinx/Vivado/2019.2/common/technology/generic/autopilot/interface.gen 
+Execute       source E:/Vivado/Math/Math/solution1/.autopilot/db/global.setting.tcl 
+Execute       source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/virtex7/virtex7.gen 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx.gen 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/plb46.gen 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/fsl.gen 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/axi4.gen 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute             source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/saxilite.gen 
+Execute             source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/maxi.gen 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/dds_compiler.gen 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/util.gen 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/xfft.gen 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/ip/xfir.gen 
+Execute           source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/dsp48.gen 
+Command         ap_source done; 0.133 sec.
+Command       ap_source done; 0.134 sec.
+Execute       source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/virtex7/virtex7_fpv6.gen 
+Execute         source C:/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx_fp.gen 
+INFO-FLOW: DBG:CMD:       initCTypeInfo top_module=distDouble xml_exists=0
+Execute       source E:/Vivado/Math/Math/solution1/.autopilot/db/distDouble.rtl_wrap.cfg.tcl 
+Execute       source E:/Vivado/Math/Math/solution1/.autopilot/db/distDouble.rtl_wrap.cfg.tcl 
+Execute       source E:/Vivado/Math/Math/solution1/.autopilot/db/distDouble.rtl_wrap.cfg.tcl 
+Execute       source E:/Vivado/Math/Math/solution1/.autopilot/db/distDouble.tbgen.tcl 
+Execute       source E:/Vivado/Math/Math/solution1/.autopilot/db/distDouble.tbgen.tcl 
+INFO-FLOW: DBG:CMD:       export_impl_rtl
+INFO-FLOW: DBG:CMD:       generate_ip_cores sim=0 export=0 expOnly=0 dstVlogDir=impl/.verilog
+Execute       source E:/Vivado/Math/Math/solution1/.autopilot/db/global.setting.tcl 
+Execute       source E:/Vivado/Math/Math/solution1/.autopilot/db/pow_generic_double_s.compgen.tcl 
+Execute       source E:/Vivado/Math/Math/solution1/.autopilot/db/distDouble.compgen.tcl 
+Execute         ap_part_info -name xc7vx485t-ffg1157-1 -data names -quiet 
+Execute         ap_part_info -name xc7vx485t-ffg1157-1 -data info -quiet 
+Execute         ap_part_info -name xc7vx485t-ffg1157-1 -data names -quiet 
+Execute         ap_part_info -name xc7vx485t-ffg1157-1 -data info -quiet 
+Execute         ap_part_info -name xc7vx485t-ffg1157-1 -data names -quiet 
+Execute         ap_part_info -name xc7vx485t-ffg1157-1 -data info -quiet 
+Command       ap_source done; 0.117 sec.
+INFO-FLOW: DBG:CMD:       generate_ip_cores sim=0 export=1 expOnly=1 dstVlogDir=impl/.pcores/verilog
+Execute       source E:/Vivado/Math/Math/solution1/.autopilot/db/global.setting.tcl 
+Execute       source E:/Vivado/Math/Math/solution1/.autopilot/db/pow_generic_double_s.compgen.tcl 
+Execute       source E:/Vivado/Math/Math/solution1/.autopilot/db/distDouble.compgen.tcl 
+Execute         ap_part_info -name xc7vx485t-ffg1157-1 -data names -quiet 
+Execute         ap_part_info -name xc7vx485t-ffg1157-1 -data info -quiet 
+Execute         ap_part_info -name xc7vx485t-ffg1157-1 -data names -quiet 
+Execute         ap_part_info -name xc7vx485t-ffg1157-1 -data info -quiet 
+Execute         ap_part_info -name xc7vx485t-ffg1157-1 -data names -quiet 
+Execute         ap_part_info -name xc7vx485t-ffg1157-1 -data info -quiet 
+Execute         ap_part_info -name xc7vx485t-ffg1157-1 -data names -quiet 
+Execute         ap_part_info -name xc7vx485t-ffg1157-1 -data info -quiet 
+Execute         ap_part_info -name xc7vx485t-ffg1157-1 -data names -quiet 
+Execute         ap_part_info -name xc7vx485t-ffg1157-1 -data info -quiet 
+Execute         ap_part_info -name xc7vx485t-ffg1157-1 -data names -quiet 
+Execute         ap_part_info -name xc7vx485t-ffg1157-1 -data info -quiet 
+Execute         ap_part_info -name xc7vx485t-ffg1157-1 -data names -quiet 
+Execute         ap_part_info -name xc7vx485t-ffg1157-1 -data info -quiet 
+Execute         ap_part_info -name xc7vx485t-ffg1157-1 -data names -quiet 
+Execute         ap_part_info -name xc7vx485t-ffg1157-1 -data info -quiet 
+Execute         ap_part_info -name xc7vx485t-ffg1157-1 -data names -quiet 
+Execute         ap_part_info -name xc7vx485t-ffg1157-1 -data info -quiet 
+Execute         ap_part_info -name xc7vx485t-ffg1157-1 -data names -quiet 
+Execute         ap_part_info -name xc7vx485t-ffg1157-1 -data info -quiet 
+Execute         ap_part_info -name xc7vx485t-ffg1157-1 -data names -quiet 
+Execute         ap_part_info -name xc7vx485t-ffg1157-1 -data info -quiet 
+Execute         ap_part_info -name xc7vx485t-ffg1157-1 -data names -quiet 
+Execute         ap_part_info -name xc7vx485t-ffg1157-1 -data info -quiet 
+Command       ap_source done; 0.12 sec.
+Execute       ap_part_info -name xc7vx485t-ffg1157-1 -data names -quiet 
+Execute       ap_part_info -name xc7vx485t-ffg1157-1 -data info -quiet 
+INFO-FLOW: DBG:CMD:       generate_ip_cores sim=0 export=0 expOnly=0 dstVlogDir=impl/.pcores/verilog_sim
+Execute       source E:/Vivado/Math/Math/solution1/.autopilot/db/global.setting.tcl 
+Execute       source E:/Vivado/Math/Math/solution1/.autopilot/db/pow_generic_double_s.compgen.tcl 
+Execute       source E:/Vivado/Math/Math/solution1/.autopilot/db/distDouble.compgen.tcl 
+Execute       ap_part_info -name xc7vx485t-ffg1157-1 -data names -quiet 
+Execute       ap_part_info -name xc7vx485t-ffg1157-1 -data info -quiet 
+Execute       ap_part_info -name xc7vx485t-ffg1157-1 -data names -quiet 
+Execute       ap_part_info -name xc7vx485t-ffg1157-1 -data info -quiet 
+Execute       source E:/Vivado/Math/Math/solution1/.autopilot/db/global.setting.tcl 
+Execute       ap_part_info -name xc7vx485t-ffg1157-1 -data names -quiet 
+Execute       ap_part_info -name xc7vx485t-ffg1157-1 -data info -quiet 
+Execute       source E:/Vivado/Math/Math/solution1/.autopilot/db/distDouble.constraint.tcl 
+Execute       source E:/Vivado/Math/Math/solution1/.autopilot/db/distDouble.tbgen.tcl 
+INFO-FLOW: DBG:CMD:       hasPcoreIpAdapter=false #gSsdmPorts=12
+INFO-FLOW: DBG:CMD: Skipping loadAnalyze_DB, #g_database=5
+INFO-FLOW: DBG:CMD:       generate_json is_phase_csynth=1 g_has_adaptors=false generate_bd_files=0 #modelList=28 #gSsdmPorts=12
+Execute       source C:/Xilinx/Vivado/2019.2/tps/tcl/tcllib1.11.1/fileutil/fileutil.tcl 
+Execute       source E:/Vivado/Math/Math/solution1/.autopilot/db/global.setting.tcl 
+Execute       source E:/Vivado/Math/Math/solution1/.autopilot/db/global.setting.tcl 
+Execute       get_config_export -xo 
+Execute       source E:/Vivado/Math/Math/solution1/.autopilot/db/distDouble.tbgen.tcl 
+Execute       source E:/Vivado/Math/Math/solution1/.autopilot/db/distDouble.tbgen.tcl 
+Execute       source E:/Vivado/Math/Math/solution1/.autopilot/db/distDouble.tbgen.tcl 
+Execute       source E:/Vivado/Math/Math/solution1/.autopilot/db/global.setting.tcl 
+Execute       get_config_sdx -target 
+Execute       source E:/Vivado/Math/Math/solution1/.autopilot/db/distDouble.rtl_wrap.cfg.tcl 
+Execute       source E:/Vivado/Math/Math/solution1/.autopilot/db/distDouble.compgen.dataonly.tcl 
+Execute       source E:/Vivado/Math/Math/solution1/.autopilot/db/global.setting.tcl 
+Execute       ap_part_info -name xc7vx485t-ffg1157-1 -data names -quiet 
+Execute       ap_part_info -name xc7vx485t-ffg1157-1 -data info -quiet 
+Execute       source E:/Vivado/Math/Math/solution1/.autopilot/db/distDouble.constraint.tcl 
+Execute       sc_get_clocks distDouble 
+Execute       ap_part_info -name xc7vx485t-ffg1157-1 -data names -quiet 
+Execute       ap_part_info -name xc7vx485t-ffg1157-1 -data info -quiet 
+Execute       source E:/Vivado/Math/Math/solution1/.autopilot/db/global.setting.tcl 
+Execute       get_config_debug -directory 
+Execute       source E:/Vivado/Math/Math/solution1/impl/misc/distDouble_ap_dadddsub_3_full_dsp_64_ip.tcl 
+Execute       source E:/Vivado/Math/Math/solution1/impl/misc/distDouble_ap_dsqrt_19_no_dsp_64_ip.tcl 
+Execute       source E:/Vivado/Math/Math/solution1/impl/misc/distDouble_ap_dsub_3_full_dsp_64_ip.tcl 
+Execute       source E:/Vivado/Math/Math/solution1/.autopilot/db/pow_generic_double_s.tbgen.tcl 
+Execute       source E:/Vivado/Math/Math/solution1/.autopilot/db/distDouble.tbgen.tcl 
+Execute       get_config_sdx -target 
+Execute       get_config_sdx -profile 
+Execute       get_config_rtl -kernel_profile 
+Execute       get_config_rtl -stall_sig_gen 
+Execute       get_config_rtl -profile 
+INFO-FLOW: DBG:CMD: add_json_sdx_info kernel file does not exist, skipping opencl info: E:/Vivado/Math/Math/solution1/.autopilot/db/kernel.internal.xml
+INFO-FLOW: DBG:CMD:       delete-temp-dirs (skipped for debug)
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:00:13 ; elapsed = 00:01:22 . Memory (MB): peak = 526.430 ; gain = 436.762
+INFO: [VHDL 208-304] Generating VHDL RTL for distDouble.
+INFO: [VLOG 209-307] Generating Verilog RTL for distDouble.
+Command     autosyn done; 10.455 sec.
+Command   csynth_design done; 79.315 sec.
+Command ap_source done; 81.049 sec.
+Execute cleanup_all 

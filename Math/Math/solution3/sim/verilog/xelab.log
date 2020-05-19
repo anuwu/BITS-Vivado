@@ -1,0 +1,34 @@
+INFO: [XSIM 43-3496] Using init file passed via -initfile option "C:/Xilinx/Vivado/2019.2/data/xsim/ip/xsim_ip.ini".
+Vivado Simulator 2019.2
+Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2019.2/bin/unwrapped/win64.o/xelab.exe xil_defaultlib.apatb_distFix_top glbl -prj distFix.prj -L smartconnect_v1_0 -L axi_protocol_checker_v1_1_12 -L axi_protocol_checker_v1_1_13 -L axis_protocol_checker_v1_1_11 -L axis_protocol_checker_v1_1_12 -L xil_defaultlib -L unisims_ver -L xpm --initfile C:/Xilinx/Vivado/2019.2/data/xsim/ip/xsim_ip.ini --lib ieee_proposed=./ieee_proposed -s distFix -debug wave 
+Multi-threading is on. Using 6 slave threads.
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/Vivado/Math/Math/solution3/sim/verilog/glbl.v" into library work
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/Vivado/Math/Math/solution3/sim/verilog/distFix.autotb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module apatb_distFix_top
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/Vivado/Math/Math/solution3/sim/verilog/distFix.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module distFix
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/Vivado/Math/Math/solution3/sim/verilog/distFix_mac_muladcud.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module distFix_mac_muladcud_DSP48_1
+INFO: [VRFC 10-311] analyzing module distFix_mac_muladcud
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/Vivado/Math/Math/solution3/sim/verilog/distFix_mul_mul_1bkb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module distFix_mul_mul_1bkb_DSP48_0
+INFO: [VRFC 10-311] analyzing module distFix_mul_mul_1bkb
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/Vivado/Math/Math/solution3/sim/verilog/sqrt_fixed_35_13_s.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module sqrt_fixed_35_13_s
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.sqrt_fixed_35_13_s
+Compiling module xil_defaultlib.distFix_mul_mul_1bkb_DSP48_0
+Compiling module xil_defaultlib.distFix_mul_mul_1bkb(ID=1,NUM_ST...
+Compiling module xil_defaultlib.distFix_mac_muladcud_DSP48_1
+Compiling module xil_defaultlib.distFix_mac_muladcud(ID=1,NUM_ST...
+Compiling module xil_defaultlib.distFix
+Compiling module xil_defaultlib.apatb_distFix_top
+Compiling module work.glbl
+Built simulation snapshot distFix
