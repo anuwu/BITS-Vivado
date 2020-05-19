@@ -1,0 +1,43 @@
+<InterfaceSummary>
+<RtlPorts>
+<name>inA_V</name>
+<CType>
+<TypeName>ap_uint 17</TypeName>
+<TypeWidth>17</TypeWidth>
+<PhysicalWidth>17</PhysicalWidth>
+</CType>
+<CFractionWidth>0</CFractionWidth>
+<InvalidType>0</InvalidType>
+</RtlPorts>
+<RtlPorts>
+<name>inB_V</name>
+<CType>
+<TypeName>ap_uint 17</TypeName>
+<TypeWidth>17</TypeWidth>
+<PhysicalWidth>17</PhysicalWidth>
+</CType>
+<CFractionWidth>0</CFractionWidth>
+<InvalidType>0</InvalidType>
+</RtlPorts>
+<RtlPorts>
+<name>op</name>
+<CType>
+<TypeName>unsigned char</TypeName>
+<TypeWidth>8</TypeWidth>
+<PhysicalWidth>8</PhysicalWidth>
+</CType>
+<CFractionWidth>0</CFractionWidth>
+<InvalidType>0</InvalidType>
+</RtlPorts>
+<RtlPorts>
+<name>ap_return</name>
+<CType>
+<TypeName>ap_uint 17</TypeName>
+<TypeWidth>17</TypeWidth>
+<PhysicalWidth>17</PhysicalWidth>
+</CType>
+<CFractionWidth>0</CFractionWidth>
+<InvalidType>0</InvalidType>
+</RtlPorts>
+</InterfaceSummary>
+
