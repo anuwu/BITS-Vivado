@@ -1,0 +1,207 @@
+
+
+================================================================
+== Vivado HLS Report for 'FFT0'
+================================================================
+* Date:           Sun May 24 12:19:45 2020
+
+* Version:        2019.2 (Build 2704478 on Wed Nov 06 22:10:23 MST 2019)
+* Project:        FFT
+* Solution:       solution1
+* Product family: virtex7
+* Target device:  xc7vx485t-ffg1157-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  | 10.00 ns | 8.604 ns |   1.25 ns  |
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+    |   min   |   max   |    min   |    max   | min | max |   Type  |
+    +---------+---------+----------+----------+-----+-----+---------+
+    |       65|       65| 0.650 us | 0.650 us |   65|   65|   none  |
+    +---------+---------+----------+----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +--------------+---------+---------+----------+-----------+-----------+------+----------+
+        |              |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
+        |   Loop Name  |   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
+        +--------------+---------+---------+----------+-----------+-----------+------+----------+
+        |- FFT_label1  |       64|       64|         4|          -|          -|    16|    no    |
+        +--------------+---------+---------+----------+-----------+-----------+------+----------+
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-------+--------+--------+-----+
+|       Name      | BRAM_18K| DSP48E|   FF   |   LUT  | URAM|
++-----------------+---------+-------+--------+--------+-----+
+|DSP              |        -|      4|       -|       -|    -|
+|Expression       |        -|      -|       0|     606|    -|
+|FIFO             |        -|      -|       -|       -|    -|
+|Instance         |        -|      -|       -|       -|    -|
+|Memory           |        0|      -|      19|       6|    -|
+|Multiplexer      |        -|      -|       -|     150|    -|
+|Register         |        -|      -|     471|       -|    -|
++-----------------+---------+-------+--------+--------+-----+
+|Total            |        0|      4|     490|     762|    0|
++-----------------+---------+-------+--------+--------+-----+
+|Available        |     2060|   2800|  607200|  303600|    0|
++-----------------+---------+-------+--------+--------+-----+
+|Utilization (%)  |        0|   ~0  |   ~0   |   ~0   |    0|
++-----------------+---------+-------+--------+--------+-----+
+
++ Detail: 
+    * Instance: 
+    N/A
+
+    * DSP48E: 
+    +-------------------------+----------------------+--------------+
+    |         Instance        |        Module        |  Expression  |
+    +-------------------------+----------------------+--------------+
+    |FFT_mac_muladd_10eOg_U4  |FFT_mac_muladd_10eOg  | i0 + i1 * i2 |
+    |FFT_mac_mulsub_9sdEe_U3  |FFT_mac_mulsub_9sdEe  | i0 - i1 * i2 |
+    |FFT_mul_mul_10s_1bkb_U1  |FFT_mul_mul_10s_1bkb  |    i0 * i1   |
+    |FFT_mul_mul_16s_9cud_U2  |FFT_mul_mul_16s_9cud  |    i0 * i1   |
+    +-------------------------+----------------------+--------------+
+
+    * Memory: 
+    +--------------+-----------------+---------+----+----+-----+------+-----+------+-------------+
+    |    Memory    |      Module     | BRAM_18K| FF | LUT| URAM| Words| Bits| Banks| W*Bits*Banks|
+    +--------------+-----------------+---------+----+----+-----+------+-----+------+-------------+
+    |W_M_imag_V_U  |FFT0_W_M_imag_V  |        0|   9|   3|    0|    16|    9|     1|          144|
+    |W_M_real_V_U  |FFT0_W_M_real_V  |        0|  10|   3|    0|    16|   10|     1|          160|
+    +--------------+-----------------+---------+----+----+-----+------+-----+------+-------------+
+    |Total         |                 |        0|  19|   6|    0|    32|   19|     2|          304|
+    +--------------+-----------------+---------+----+----+-----+------+-----+------+-------------+
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +----------------------------+----------+-------+---+----+------------+------------+
+    |        Variable Name       | Operation| DSP48E| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +----------------------------+----------+-------+---+----+------------+------------+
+    |Llimit_fu_287_p2            |     +    |      0|  0|  39|          32|          32|
+    |Ulimit_fu_281_p2            |     +    |      0|  0|  39|          32|          32|
+    |add_ln33_fu_235_p2          |     +    |      0|  0|  15|           2|           5|
+    |add_ln35_fu_249_p2          |     +    |      0|  0|  15|           2|           5|
+    |add_ln703_1_fu_408_p2       |     +    |      0|  0|  23|          16|          16|
+    |add_ln703_fu_402_p2         |     +    |      0|  0|  23|          16|          16|
+    |butterfly_pass_fu_320_p2    |     +    |      0|  0|  39|          32|           1|
+    |butterfly_span_fu_309_p2    |     +    |      0|  0|  39|          32|           1|
+    |i_fu_265_p2                 |     +    |      0|  0|  15|           5|           1|
+    |sub_ln703_1_fu_395_p2       |     -    |      0|  0|  23|          16|          16|
+    |sub_ln703_fu_388_p2         |     -    |      0|  0|  23|          16|          16|
+    |icmp_ln26_fu_259_p2         |   icmp   |      0|  0|  11|           5|           6|
+    |icmp_ln33_fu_304_p2         |   icmp   |      0|  0|  18|          32|          32|
+    |icmp_ln35_fu_315_p2         |   icmp   |      0|  0|  18|          32|          32|
+    |butterfly_pass_1_fu_326_p3  |  select  |      0|  0|  32|           1|          32|
+    |butterfly_pass_2_fu_342_p3  |  select  |      0|  0|  32|           1|          32|
+    |select_ln33_fu_334_p3       |  select  |      0|  0|  32|           1|          32|
+    |index_fu_271_p2             |    shl   |      0|  0|  85|          32|          32|
+    |shl_ln28_fu_276_p2          |    shl   |      0|  0|  85|          32|          32|
+    +----------------------------+----------+-------+---+----+------------+------------+
+    |Total                       |          |      0|  0| 606|         337|         371|
+    +----------------------------+----------+-------+---+----+------------+------------+
+
+    * Multiplexer: 
+    +----------------------------+----+-----------+-----+-----------+
+    |            Name            | LUT| Input Size| Bits| Total Bits|
+    +----------------------------+----+-----------+-----+-----------+
+    |ap_NS_fsm                   |  33|          6|    1|          6|
+    |butterfly_pass_0_reg_197    |   9|          2|   32|         64|
+    |butterfly_span_0_reg_186    |   9|          2|   32|         64|
+    |data_IN_M_imag_V_address0   |  15|          3|    5|         15|
+    |data_IN_M_real_V_address0   |  15|          3|    5|         15|
+    |data_OUT_M_imag_V_address0  |  15|          3|    5|         15|
+    |data_OUT_M_imag_V_d0        |  15|          3|   16|         48|
+    |data_OUT_M_real_V_address0  |  15|          3|    5|         15|
+    |data_OUT_M_real_V_d0        |  15|          3|   16|         48|
+    |i_0_reg_208                 |   9|          2|    5|         10|
+    +----------------------------+----+-----------+-----+-----------+
+    |Total                       | 150|         30|  122|        300|
+    +----------------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +-----------------------------+----+----+-----+-----------+
+    |             Name            | FF | LUT| Bits| Const Bits|
+    +-----------------------------+----+----+-----+-----------+
+    |FFT_stage_cast1_reg_450      |   6|   0|   32|         26|
+    |Ulimit_reg_473               |  32|   0|   32|          0|
+    |add_ln703_1_reg_560          |  16|   0|   16|          0|
+    |add_ln703_reg_555            |  16|   0|   16|          0|
+    |ap_CS_fsm                    |   5|   0|    5|          0|
+    |butterfly_pass_0_reg_197     |  32|   0|   32|          0|
+    |butterfly_pass_2_reg_509     |  32|   0|   32|          0|
+    |butterfly_span_0_reg_186     |  32|   0|   32|          0|
+    |data_IN_M_imag_V_lo_reg_514  |  16|   0|   16|          0|
+    |i_0_reg_208                  |   5|   0|    5|          0|
+    |i_reg_468                    |   5|   0|    5|          0|
+    |index_shift_cast_reg_445     |   4|   0|   32|         28|
+    |mul_ln1192_reg_534           |  24|   0|   24|          0|
+    |mul_ln700_reg_529            |  24|   0|   24|          0|
+    |pass_shift_cast_reg_440      |   4|   0|   32|         28|
+    |select_ln33_reg_504          |  32|   0|   32|          0|
+    |sext_ln1118_2_reg_524        |  24|   0|   24|          0|
+    |sext_ln1118_reg_519          |  24|   0|   24|          0|
+    |sext_ln30_1_reg_488          |  64|   0|   64|          0|
+    |sext_ln31_reg_539            |  64|   0|   64|          0|
+    |zext_ln33_reg_455            |   5|   0|   32|         27|
+    |zext_ln35_reg_460            |   5|   0|   32|         27|
+    +-----------------------------+----+----+-----+-----------+
+    |Total                        | 471|   0|  607|        136|
+    +-----------------------------+----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++----------------------------+-----+-----+------------+-------------------+--------------+
+|          RTL Ports         | Dir | Bits|  Protocol  |   Source Object   |    C Type    |
++----------------------------+-----+-----+------------+-------------------+--------------+
+|ap_clk                      |  in |    1| ap_ctrl_hs |        FFT0       | return value |
+|ap_rst                      |  in |    1| ap_ctrl_hs |        FFT0       | return value |
+|ap_start                    |  in |    1| ap_ctrl_hs |        FFT0       | return value |
+|ap_done                     | out |    1| ap_ctrl_hs |        FFT0       | return value |
+|ap_idle                     | out |    1| ap_ctrl_hs |        FFT0       | return value |
+|ap_ready                    | out |    1| ap_ctrl_hs |        FFT0       | return value |
+|FFT_stage                   |  in |    6|   ap_none  |     FFT_stage     |    scalar    |
+|pass_check                  |  in |    6|   ap_none  |     pass_check    |    scalar    |
+|index_shift                 |  in |    4|   ap_none  |    index_shift    |    scalar    |
+|pass_shift                  |  in |    4|   ap_none  |     pass_shift    |    scalar    |
+|data_IN_M_real_V_address0   | out |    5|  ap_memory |  data_IN_M_real_V |     array    |
+|data_IN_M_real_V_ce0        | out |    1|  ap_memory |  data_IN_M_real_V |     array    |
+|data_IN_M_real_V_q0         |  in |   16|  ap_memory |  data_IN_M_real_V |     array    |
+|data_IN_M_imag_V_address0   | out |    5|  ap_memory |  data_IN_M_imag_V |     array    |
+|data_IN_M_imag_V_ce0        | out |    1|  ap_memory |  data_IN_M_imag_V |     array    |
+|data_IN_M_imag_V_q0         |  in |   16|  ap_memory |  data_IN_M_imag_V |     array    |
+|data_OUT_M_real_V_address0  | out |    5|  ap_memory | data_OUT_M_real_V |     array    |
+|data_OUT_M_real_V_ce0       | out |    1|  ap_memory | data_OUT_M_real_V |     array    |
+|data_OUT_M_real_V_we0       | out |    1|  ap_memory | data_OUT_M_real_V |     array    |
+|data_OUT_M_real_V_d0        | out |   16|  ap_memory | data_OUT_M_real_V |     array    |
+|data_OUT_M_imag_V_address0  | out |    5|  ap_memory | data_OUT_M_imag_V |     array    |
+|data_OUT_M_imag_V_ce0       | out |    1|  ap_memory | data_OUT_M_imag_V |     array    |
+|data_OUT_M_imag_V_we0       | out |    1|  ap_memory | data_OUT_M_imag_V |     array    |
+|data_OUT_M_imag_V_d0        | out |   16|  ap_memory | data_OUT_M_imag_V |     array    |
++----------------------------+-----+-----+------------+-------------------+--------------+
+

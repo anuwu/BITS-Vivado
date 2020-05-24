@@ -1,0 +1,166 @@
+PASS
+
+E:\Vivado\FFT\FFT\solution1\sim\verilog>set PATH= 
+
+E:\Vivado\FFT\FFT\solution1\sim\verilog>call C:/Xilinx/Vivado/2019.2/bin/xelab xil_defaultlib.apatb_FFT_top glbl -prj FFT.prj -L smartconnect_v1_0 -L axi_protocol_checker_v1_1_12 -L axi_protocol_checker_v1_1_13 -L axis_protocol_checker_v1_1_11 -L axis_protocol_checker_v1_1_12 -L xil_defaultlib -L unisims_ver -L xpm --initfile "C:/Xilinx/Vivado/2019.2/data/xsim/ip/xsim_ip.ini" --lib "ieee_proposed=./ieee_proposed" -s FFT -debug wave 
+INFO: [XSIM 43-3496] Using init file passed via -initfile option "C:/Xilinx/Vivado/2019.2/data/xsim/ip/xsim_ip.ini".
+Vivado Simulator 2019.2
+Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2019.2/bin/unwrapped/win64.o/xelab.exe xil_defaultlib.apatb_FFT_top glbl -prj FFT.prj -L smartconnect_v1_0 -L axi_protocol_checker_v1_1_12 -L axi_protocol_checker_v1_1_13 -L axis_protocol_checker_v1_1_11 -L axis_protocol_checker_v1_1_12 -L xil_defaultlib -L unisims_ver -L xpm --initfile C:/Xilinx/Vivado/2019.2/data/xsim/ip/xsim_ip.ini --lib ieee_proposed=./ieee_proposed -s FFT -debug wave 
+Multi-threading is on. Using 6 slave threads.
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/Vivado/FFT/FFT/solution1/sim/verilog/glbl.v" into library work
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/Vivado/FFT/FFT/solution1/sim/verilog/AESL_axi_s_data_IN.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AESL_axi_s_data_IN
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/Vivado/FFT/FFT/solution1/sim/verilog/AESL_axi_s_data_OUT.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AESL_axi_s_data_OUT
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/Vivado/FFT/FFT/solution1/sim/verilog/AESL_fifo.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fifo
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/Vivado/FFT/FFT/solution1/sim/verilog/FFT.autotb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module apatb_FFT_top
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/Vivado/FFT/FFT/solution1/sim/verilog/FFT.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module FFT
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/Vivado/FFT/FFT/solution1/sim/verilog/FFT0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module FFT0
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/Vivado/FFT/FFT/solution1/sim/verilog/FFT0_W_M_imag_V.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module FFT0_W_M_imag_V_rom
+INFO: [VRFC 10-311] analyzing module FFT0_W_M_imag_V
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/Vivado/FFT/FFT/solution1/sim/verilog/FFT0_W_M_real_V.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module FFT0_W_M_real_V_rom
+INFO: [VRFC 10-311] analyzing module FFT0_W_M_real_V
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/Vivado/FFT/FFT/solution1/sim/verilog/FFT_mac_muladd_10eOg.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module FFT_mac_muladd_10eOg_DSP48_3
+INFO: [VRFC 10-311] analyzing module FFT_mac_muladd_10eOg
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/Vivado/FFT/FFT/solution1/sim/verilog/FFT_mac_mulsub_9sdEe.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module FFT_mac_mulsub_9sdEe_DSP48_2
+INFO: [VRFC 10-311] analyzing module FFT_mac_mulsub_9sdEe
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/Vivado/FFT/FFT/solution1/sim/verilog/FFT_mul_mul_10s_1bkb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module FFT_mul_mul_10s_1bkb_DSP48_0
+INFO: [VRFC 10-311] analyzing module FFT_mul_mul_10s_1bkb
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/Vivado/FFT/FFT/solution1/sim/verilog/FFT_mul_mul_16s_9cud.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module FFT_mul_mul_16s_9cud_DSP48_1
+INFO: [VRFC 10-311] analyzing module FFT_mul_mul_16s_9cud
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/Vivado/FFT/FFT/solution1/sim/verilog/FFT_rev_32.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module FFT_rev_32_rom
+INFO: [VRFC 10-311] analyzing module FFT_rev_32
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/Vivado/FFT/FFT/solution1/sim/verilog/FFT_xin_M_real_V.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module FFT_xin_M_real_V_ram
+INFO: [VRFC 10-311] analyzing module FFT_xin_M_real_V
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/Vivado/FFT/FFT/solution1/sim/verilog/regslice_core.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module regslice_both
+INFO: [VRFC 10-311] analyzing module regslice_forward
+INFO: [VRFC 10-311] analyzing module regslice_reverse
+INFO: [VRFC 10-311] analyzing module regslice_both_w1
+INFO: [VRFC 10-311] analyzing module regslice_forward_w1
+INFO: [VRFC 10-311] analyzing module regslice_reverse_w1
+INFO: [VRFC 10-311] analyzing module ibuf
+INFO: [VRFC 10-311] analyzing module obuf
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.FFT_xin_M_real_V_ram
+Compiling module xil_defaultlib.FFT_xin_M_real_V(DataWidth=16,Ad...
+Compiling module xil_defaultlib.FFT_rev_32_rom
+Compiling module xil_defaultlib.FFT_rev_32(DataWidth=5,AddressRa...
+Compiling module xil_defaultlib.FFT0_W_M_real_V_rom
+Compiling module xil_defaultlib.FFT0_W_M_real_V(DataWidth=10,Add...
+Compiling module xil_defaultlib.FFT0_W_M_imag_V_rom
+Compiling module xil_defaultlib.FFT0_W_M_imag_V(DataWidth=9,Addr...
+Compiling module xil_defaultlib.FFT_mul_mul_10s_1bkb_DSP48_0
+Compiling module xil_defaultlib.FFT_mul_mul_10s_1bkb(ID=1,NUM_ST...
+Compiling module xil_defaultlib.FFT_mul_mul_16s_9cud_DSP48_1
+Compiling module xil_defaultlib.FFT_mul_mul_16s_9cud(ID=1,NUM_ST...
+Compiling module xil_defaultlib.FFT_mac_mulsub_9sdEe_DSP48_2
+Compiling module xil_defaultlib.FFT_mac_mulsub_9sdEe(ID=1,NUM_ST...
+Compiling module xil_defaultlib.FFT_mac_muladd_10eOg_DSP48_3
+Compiling module xil_defaultlib.FFT_mac_muladd_10eOg(ID=1,NUM_ST...
+Compiling module xil_defaultlib.FFT0
+Compiling module xil_defaultlib.ibuf(W=33)
+Compiling module xil_defaultlib.obuf(W=33)
+Compiling module xil_defaultlib.regslice_both_default
+Compiling module xil_defaultlib.FFT
+Compiling module xil_defaultlib.fifo(DEPTH=32,WIDTH=32)
+Compiling module xil_defaultlib.AESL_axi_s_data_IN
+Compiling module xil_defaultlib.AESL_axi_s_data_OUT
+Compiling module xil_defaultlib.apatb_FFT_top
+Compiling module work.glbl
+Built simulation snapshot FFT
+
+****** Webtalk v2019.2 (64-bit)
+  **** SW Build 2708876 on Wed Nov  6 21:40:23 MST 2019
+  **** IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
+    ** Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+
+source E:/Vivado/FFT/FFT/solution1/sim/verilog/xsim.dir/FFT/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-206] Exiting Webtalk at Sun May 24 12:22:51 2020...
+
+****** xsim v2019.2 (64-bit)
+  **** SW Build 2708876 on Wed Nov  6 21:40:23 MST 2019
+  **** IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
+    ** Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+
+source xsim.dir/FFT/xsim_script.tcl
+# xsim {FFT} -autoloadwcfg -tclbatch {FFT.tcl}
+Vivado Simulator 2019.2
+Time resolution is 1 ps
+source FFT.tcl
+## log_wave -r /
+WARNING: [Simtcl 6-197] One or more HDL objects could not be logged because of object type or size limitations.  To see details please rerun the command with -verbose (-v).
+## set designtopgroup [add_wave_group "Design Top Signals"]
+## set coutputgroup [add_wave_group "C Outputs" -into $designtopgroup]
+## set data_OUT_group [add_wave_group data_OUT(axis) -into $coutputgroup]
+## add_wave /apatb_FFT_top/AESL_inst_FFT/data_OUT_TREADY -into $data_OUT_group -color #ffff00 -radix hex
+## add_wave /apatb_FFT_top/AESL_inst_FFT/data_OUT_TVALID -into $data_OUT_group -color #ffff00 -radix hex
+## add_wave /apatb_FFT_top/AESL_inst_FFT/data_OUT_TDATA -into $data_OUT_group -radix hex
+## set cinputgroup [add_wave_group "C Inputs" -into $designtopgroup]
+## set data_IN_group [add_wave_group data_IN(axis) -into $cinputgroup]
+## add_wave /apatb_FFT_top/AESL_inst_FFT/data_IN_TREADY -into $data_IN_group -color #ffff00 -radix hex
+## add_wave /apatb_FFT_top/AESL_inst_FFT/data_IN_TVALID -into $data_IN_group -color #ffff00 -radix hex
+## add_wave /apatb_FFT_top/AESL_inst_FFT/data_IN_TDATA -into $data_IN_group -radix hex
+## set blocksiggroup [add_wave_group "Block-level IO Handshake" -into $designtopgroup]
+## add_wave /apatb_FFT_top/AESL_inst_FFT/ap_start -into $blocksiggroup
+## add_wave /apatb_FFT_top/AESL_inst_FFT/ap_done -into $blocksiggroup
+## add_wave /apatb_FFT_top/AESL_inst_FFT/ap_idle -into $blocksiggroup
+## add_wave /apatb_FFT_top/AESL_inst_FFT/ap_ready -into $blocksiggroup
+## set resetgroup [add_wave_group "Reset" -into $designtopgroup]
+## add_wave /apatb_FFT_top/AESL_inst_FFT/ap_rst_n -into $resetgroup
+## set clockgroup [add_wave_group "Clock" -into $designtopgroup]
+## add_wave /apatb_FFT_top/AESL_inst_FFT/ap_clk -into $clockgroup
+## set testbenchgroup [add_wave_group "Test Bench Signals"]
+## set tbinternalsiggroup [add_wave_group "Internal Signals" -into $testbenchgroup]
+## set tb_simstatus_group [add_wave_group "Simulation Status" -into $tbinternalsiggroup]
+## set tb_portdepth_group [add_wave_group "Port Depth" -into $tbinternalsiggroup]
+## add_wave /apatb_FFT_top/AUTOTB_TRANSACTION_NUM -into $tb_simstatus_group -radix hex
+## add_wave /apatb_FFT_top/ready_cnt -into $tb_simstatus_group -radix hex
+## add_wave /apatb_FFT_top/done_cnt -into $tb_simstatus_group -radix hex
+## add_wave /apatb_FFT_top/LENGTH_data_IN -into $tb_portdepth_group -radix hex
+## add_wave /apatb_FFT_top/LENGTH_data_OUT -into $tb_portdepth_group -radix hex
+## set tbcoutputgroup [add_wave_group "C Outputs" -into $testbenchgroup]
+## set tb_data_OUT_group [add_wave_group data_OUT(axis) -into $tbcoutputgroup]
+## add_wave /apatb_FFT_top/data_OUT_TREADY -into $tb_data_OUT_group -color #ffff00 -radix hex
+## add_wave /apatb_FFT_top/data_OUT_TVALID -into $tb_data_OUT_group -color #ffff00 -radix hex
+## add_wave /apatb_FFT_top/data_OUT_TDATA -into $tb_data_OUT_group -radix hex
+## set tbcinputgroup [add_wave_group "C Inputs" -into $testbenchgroup]
+## set tb_data_IN_group [add_wave_group data_IN(axis) -into $tbcinputgroup]
+## add_wave /apatb_FFT_top/data_IN_TREADY -into $tb_data_IN_group -color #ffff00 -radix hex
+## add_wave /apatb_FFT_top/data_IN_TVALID -into $tb_data_IN_group -color #ffff00 -radix hex
+## add_wave /apatb_FFT_top/data_IN_TDATA -into $tb_data_IN_group -radix hex
+## save_wave_config FFT.wcfg
+## run all
+////////////////////////////////////////////////////////////////////////////////////
+// Inter-Transaction Progress: Completed Transaction / Total Transaction
+// Intra-Transaction Progress: Measured Latency / Latency Estimation * 100%
+//
+// RTL Simulation : "Inter-Transaction Progress" ["Intra-Transaction Progress"] @ "Simulation Time"
+////////////////////////////////////////////////////////////////////////////////////
+// RTL Simulation : 0 / 2 [0.00%] @ "125000"
+// RTL Simulation : 1 / 2 [100.00%] @ "5755000"
+// RTL Simulation : 2 / 2 [100.00%] @ "11375000"
+////////////////////////////////////////////////////////////////////////////////////
+$finish called at time : 11415 ns : File "E:/Vivado/FFT/FFT/solution1/sim/verilog/FFT.autotb.v" Line 249
+## quit
+INFO: [Common 17-206] Exiting xsim at Sun May 24 12:23:16 2020...
+PASS

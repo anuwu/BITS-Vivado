@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
+  <source>
+    <originFiles name="fft.cpp" path="E:\Vivado\teach-fpga\01-fft\vhls\fixed\fft.cpp"/>
+  </source>
+  <testbench>
+    <originFiles name="fft_tb.cpp" path="E:\Vivado\teach-fpga\01-fft\vhls\fixed\fft_tb.cpp"/>
+    <originFiles name="inp_cpp.txt" path="E:\Vivado\teach-fpga\01-fft\build\inp_cpp.txt"/>
+    <originFiles name="out_cpp.txt" path="E:\Vivado\teach-fpga\01-fft\build\out_cpp.txt"/>
+  </testbench>
+</autopilotfilemapping:AutoPilotFileMapping>
