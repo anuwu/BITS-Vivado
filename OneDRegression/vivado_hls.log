@@ -1,0 +1,64 @@
+INFO: [HLS 200-10] Running 'C:/Xilinx/Vivado/2019.2/bin/unwrapped/win64.o/vivado_hls.exe'
+INFO: [HLS 200-10] For user 'Anwesh Laptop' on host 'anwesh' (Windows NT_amd64 version 6.2) on Mon May 25 17:21:38 +0530 2020
+INFO: [HLS 200-10] In directory 'E:/Vivado/OneDRegression'
+Sourcing Tcl script 'E:/Vivado/OneDRegression/OneDRegression/solution1/csim.tcl'
+INFO: [HLS 200-10] Opening project 'E:/Vivado/OneDRegression/OneDRegression'.
+INFO: [HLS 200-10] Opening solution 'E:/Vivado/OneDRegression/OneDRegression/solution1'.
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+WARNING: [HLS 200-40] Cannot find library 'C:/Xilinx/Vivado/2019.2/common/technology/xilinx/Virtex-7/Virtex-7.lib'.
+WARNING: [HLS 200-40] Cannot find library 'xilinx/Virtex-7/Virtex-7'.
+INFO: [HLS 200-10] Setting target device to 'xc7vx485t-ffg1157-1'
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+   Compiling ../../../one_tb.cpp in debug mode
+   Compiling ../../../one.cpp in debug mode
+   Generating csim.exe
+In file included from C:/Xilinx/Vivado/2019.2/include/floating_point_v7_0_bitacc_cmodel.h:143:0,
+                 from C:/Xilinx/Vivado/2019.2/include/hls_fpo.h:186,
+                 from C:/Xilinx/Vivado/2019.2/include/hls_half.h:44,
+                 from C:/Xilinx/Vivado/2019.2/include/etc/ap_private.h:90,
+                 from C:/Xilinx/Vivado/2019.2/include/ap_common.h:641,
+                 from C:/Xilinx/Vivado/2019.2/include/ap_fixed.h:54,
+                 from ../../../one.h:1,
+                 from ../../../one_tb.cpp:2:
+C:/Xilinx/Vivado/2019.2/include/gmp.h:62:0: warning: "__GMP_LIBGMP_DLL" redefined
+ #define __GMP_LIBGMP_DLL  0
+ 
+In file included from C:/Xilinx/Vivado/2019.2/include/hls_fpo.h:186:0,
+                 from C:/Xilinx/Vivado/2019.2/include/hls_half.h:44,
+                 from C:/Xilinx/Vivado/2019.2/include/etc/ap_private.h:90,
+                 from C:/Xilinx/Vivado/2019.2/include/ap_common.h:641,
+                 from C:/Xilinx/Vivado/2019.2/include/ap_fixed.h:54,
+                 from ../../../one.h:1,
+                 from ../../../one_tb.cpp:2:
+C:/Xilinx/Vivado/2019.2/include/floating_point_v7_0_bitacc_cmodel.h:135:0: note: this is the location of the previous definition
+ #define __GMP_LIBGMP_DLL 1
+ 
+In file included from C:/Xilinx/Vivado/2019.2/include/floating_point_v7_0_bitacc_cmodel.h:143:0,
+                 from C:/Xilinx/Vivado/2019.2/include/hls_fpo.h:186,
+                 from C:/Xilinx/Vivado/2019.2/include/hls_half.h:44,
+                 from C:/Xilinx/Vivado/2019.2/include/hls_math.h:37,
+                 from ../../../one.cpp:1:
+C:/Xilinx/Vivado/2019.2/include/gmp.h:62:0: warning: "__GMP_LIBGMP_DLL" redefined
+ #define __GMP_LIBGMP_DLL  0
+ 
+In file included from C:/Xilinx/Vivado/2019.2/include/hls_fpo.h:186:0,
+                 from C:/Xilinx/Vivado/2019.2/include/hls_half.h:44,
+                 from C:/Xilinx/Vivado/2019.2/include/hls_math.h:37,
+                 from ../../../one.cpp:1:
+C:/Xilinx/Vivado/2019.2/include/floating_point_v7_0_bitacc_cmodel.h:135:0: note: this is the location of the previous definition
+ #define __GMP_LIBGMP_DLL 1
+ 
+The term = 1.000000, termSq = 1.000000, mse = 1.000000
+The term = 3.000000, termSq = 9.000000, mse = 10.000000
+The term = 2.600000, termSq = 6.760000, mse = -15.240000
+The term = 5.000000, termSq = -7.000000, mse = 9.760000
+The term = 5.500000, termSq = -1.750000, mse = 8.010000
+The term = 4.000000, termSq = -16.000000, mse = -7.990000
+The term = -0.500000, termSq = 0.250000, mse = -7.740000
+The term = 1.000000, termSq = 1.000000, mse = -6.740000
+The term = 3.200000, termSq = 10.240000, mse = 3.500000
+The term = 4.700000, termSq = -9.910000, mse = -6.410000
+MSE = -6.410000
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
+  <source>
+    <originFiles name="one.cpp" path="E:\Vivado\OneDRegression\OneDRegression\one.cpp"/>
+    <originFiles name="one.h" path="E:\Vivado\OneDRegression\OneDRegression\one.h"/>
+  </source>
+  <testbench>
+    <originFiles name="one_tb.cpp" path="E:\Vivado\OneDRegression\OneDRegression\one_tb.cpp"/>
+  </testbench>
+</autopilotfilemapping:AutoPilotFileMapping>

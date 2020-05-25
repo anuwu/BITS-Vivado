@@ -6,12 +6,12 @@
 open_project Math
 set_top distFix
 add_files math.cpp
-add_files -tb math_tb.cpp
+add_files -tb math_tb.cpp -cflags "-Wno-unknown-pragmas" -csimflags "-Wno-unknown-pragmas"
 open_solution "solution1"
-set_part {xc7vx485tffg1157-1}
+set_part {xc7vx485t-ffg1157-1}
 create_clock -period 10 -name default
 #source "./Math/solution1/directives.tcl"
 csim_design
 csynth_design
-cosim_design
+cosim_design -tool xsim
 export_design -format ip_catalog
