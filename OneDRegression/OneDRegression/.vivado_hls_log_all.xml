@@ -16,6 +16,8 @@
       <mgLog/>
       <packageLog/>
       <csimLog>
+        <logs message="WARNING: [HLS 200-40] Cannot find library 'xilinx/Virtex-7/Virtex-7'." projectName="OneDRegression" solutionName="solution1" date="2020-05-25T17:35:14.000+0530" type="Warning"/>
+        <logs message="WARNING: [HLS 200-40] Cannot find library 'C:/Xilinx/Vivado/2019.2/common/technology/xilinx/Virtex-7/Virtex-7.lib'." projectName="OneDRegression" solutionName="solution1" date="2020-05-25T17:35:13.157+0530" type="Warning"/>
         <logs message="WARNING: [HLS 200-40] Cannot find library 'xilinx/Virtex-7/Virtex-7'." projectName="OneDRegression" solutionName="solution1" date="2020-05-25T17:21:39.489+0530" type="Warning"/>
         <logs message="WARNING: [HLS 200-40] Cannot find library 'C:/Xilinx/Vivado/2019.2/common/technology/xilinx/Virtex-7/Virtex-7.lib'." projectName="OneDRegression" solutionName="solution1" date="2020-05-25T17:21:38.438+0530" type="Warning"/>
       </csimLog>

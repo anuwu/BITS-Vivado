@@ -1,5 +1,5 @@
 INFO: [HLS 200-10] Running 'C:/Xilinx/Vivado/2019.2/bin/unwrapped/win64.o/vivado_hls.exe'
-INFO: [HLS 200-10] For user 'Anwesh Laptop' on host 'anwesh' (Windows NT_amd64 version 6.2) on Mon May 25 17:21:38 +0530 2020
+INFO: [HLS 200-10] For user 'Anwesh Laptop' on host 'anwesh' (Windows NT_amd64 version 6.2) on Mon May 25 17:35:12 +0530 2020
 INFO: [HLS 200-10] In directory 'E:/Vivado/OneDRegression'
 Sourcing Tcl script 'E:/Vivado/OneDRegression/OneDRegression/solution1/csim.tcl'
 INFO: [HLS 200-10] Opening project 'E:/Vivado/OneDRegression/OneDRegression'.
@@ -51,14 +51,14 @@ C:/Xilinx/Vivado/2019.2/include/floating_point_v7_0_bitacc_cmodel.h:135:0: note:
  
 The term = 1.000000, termSq = 1.000000, mse = 1.000000
 The term = 3.000000, termSq = 9.000000, mse = 10.000000
-The term = 2.600000, termSq = 6.760000, mse = -15.240000
-The term = 5.000000, termSq = -7.000000, mse = 9.760000
-The term = 5.500000, termSq = -1.750000, mse = 8.010000
-The term = 4.000000, termSq = -16.000000, mse = -7.990000
-The term = -0.500000, termSq = 0.250000, mse = -7.740000
-The term = 1.000000, termSq = 1.000000, mse = -6.740000
-The term = 3.200000, termSq = 10.240000, mse = 3.500000
-The term = 4.700000, termSq = -9.910000, mse = -6.410000
-MSE = -6.410000
+The term = 2.599609, termSq = 6.757812, mse = -15.242188
+The term = 5.000000, termSq = -7.000000, mse = 9.757812
+The term = 5.500000, termSq = -1.750000, mse = 8.007812
+The term = 4.000000, termSq = -16.000000, mse = -7.992188
+The term = -0.500000, termSq = 0.250000, mse = -7.742188
+The term = 1.000000, termSq = 1.000000, mse = -6.742188
+The term = 3.199707, termSq = 10.237793, mse = 3.495605
+The term = 4.699707, termSq = -9.913086, mse = -6.417480
+MSE = -6.417480
 INFO: [SIM 211-1] CSim done with 0 errors.
 INFO: [SIM 211-3] *************** CSIM finish ***************
