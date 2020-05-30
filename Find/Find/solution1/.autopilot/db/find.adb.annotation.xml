@@ -1,8 +1,0 @@
-<annotationInfo>
-<annotationInfo>
-<item  id="14" filename="Find/find.cpp" linenumber="6" name="icmp_ln6" contextFuncName="find" moduleName="find" rtlName="icmp_ln6_fu_66_p2" latency="0" BRAM="-1" DSP="-1" FF="0" LUT="9" fileDirectory="E:\Vivado\Find"><\/item>
-<item  id="16" filename="Find/find.cpp" linenumber="6" name="idx" contextFuncName="find" moduleName="find" rtlName="idx_fu_72_p2" latency="0" BRAM="-1" DSP="-1" FF="0" LUT="13" fileDirectory="E:\Vivado\Find"><\/item>
-<item  id="20" filename="Find/find.cpp" linenumber="8" name="icmp_ln8" contextFuncName="find" moduleName="find" rtlName="icmp_ln8_fu_78_p2" latency="0" BRAM="-1" DSP="-1" FF="0" LUT="11" fileDirectory="E:\Vivado\Find"><\/item>
-<item  id="21" filename="Find/find.cpp" linenumber="8" name="zext_ln8" contextFuncName="find" moduleName="find" rtlName="out_vec_din" latency="0" BRAM="-1" DSP="-1" FF="-1" LUT="-1" fileDirectory="E:\Vivado\Find"><\/item>
-<\/annotationInfo>
-</annotationInfo>

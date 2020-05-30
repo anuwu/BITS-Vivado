@@ -1,9 +1,0 @@
-INFO: [SIM 2] *************** CSIM start ***************
-INFO: [SIM 4] CSIM will launch GCC as the compiler.
-   Compiling ../../../div_tb.cpp in debug mode
-   Compiling ../../../div.cpp in debug mode
-   Generating csim.exe
-Division of 8/3 is : <Q:2 R:2>
-Division of 4/2 is : <Q:2 R:0>
-INFO: [SIM 1] CSim done with 0 errors.
-INFO: [SIM 3] *************** CSIM finish ***************

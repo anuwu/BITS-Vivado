@@ -1,8 +1,0 @@
-<annotationInfo>
-<annotationInfo>
-<item  id="12" filename="csd.cpp" linenumber="5" name="icmp_ln5" contextFuncName="csd" moduleName="csd" rtlName="icmp_ln5_fu_38_p2" latency="0" BRAM="-1" DSP="-1" FF="0" LUT="11" fileDirectory="E:\Vivado\Custom_Size_Data"><\/item>
-<item  id="13" filename="csd.cpp" linenumber="8" name="sub_ln214" contextFuncName="csd" moduleName="csd" rtlName="sub_ln214_fu_44_p2" latency="0" BRAM="-1" DSP="-1" FF="0" LUT="24" fileDirectory="E:\Vivado\Custom_Size_Data"><\/item>
-<item  id="14" filename="csd.cpp" linenumber="6" name="add_ln209" contextFuncName="csd" moduleName="csd" rtlName="add_ln209_fu_50_p2" latency="0" BRAM="-1" DSP="-1" FF="0" LUT="24" fileDirectory="E:\Vivado\Custom_Size_Data"><\/item>
-<item  id="15" filename="csd.cpp" linenumber="5" name="select_ln5" contextFuncName="csd" moduleName="csd" rtlName="ap_return" latency="0" BRAM="-1" DSP="-1" FF="0" LUT="17" fileDirectory="E:\Vivado\Custom_Size_Data"><\/item>
-<\/annotationInfo>
-</annotationInfo>
