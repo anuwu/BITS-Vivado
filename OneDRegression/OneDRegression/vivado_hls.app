@@ -1,4 +1,4 @@
-<project xmlns="com.autoesl.autopilot.project" name="OneDRegression" top="getMse1">
+<project xmlns="com.autoesl.autopilot.project" top="getMse1" name="OneDRegression">
     <includePaths/>
     <libraryPaths/>
     <Simulation>
