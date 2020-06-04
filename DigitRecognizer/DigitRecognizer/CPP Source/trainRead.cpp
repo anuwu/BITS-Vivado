@@ -1,6 +1,10 @@
 #include <iostream>
 #include <fstream>
+#include <stdlib.h>
 using namespace std ;
+
+
+#define NO_TRAINING noTrain
 
 int ReverseInt (int i)
 {
@@ -12,11 +16,22 @@ int ReverseInt (int i)
     return((int)ch1<<24)+((int)ch2<<16)+((int)ch3<<8)+ch4;
 }
 
+void freeTrainData (int** data, int ex)
+{
+	int i ;
+
+	for (i = 0 ; i < ex ; i++)
+		free (data[i]) ;
+	
+	free(data) ;
+}
+
+
 int main ()
 {
 	FILE *fp ;
 	char buf[5] ;
-	int x ;
+	int noTrain, noRow, noCol, magicNo ;
 	unsigned char pix ;
 
 	ifstream myFile ("Train\\train_data", ios::in | ios::binary) ;
@@ -27,31 +42,39 @@ int main ()
 		exit (1) ;
 	}
 
-	myFile.read ((char *)&x, sizeof(int)) ;
-	x = ReverseInt (x) ;
-	cout << "Magic number = " << x << "\n" ;
+	myFile.read ((char *)&magicNo, sizeof(int)) ;
+	magicNo = ReverseInt (magicNo) ;
+	cout << "Magic number = " << magicNo << "\n" ;
 
-	myFile.read ((char *)&x, sizeof(int)) ;
-	x = ReverseInt (x) ;
-	cout << "No items = " << x << "\n" ;
+	myFile.read ((char *)&noTrain, sizeof(int)) ;
+	noTrain = ReverseInt (noTrain) ;
+	cout << "No items = " << noTrain << "\n" ;
 
-	myFile.read ((char *)&x, sizeof(int)) ;
-	x = ReverseInt (x) ;
-	cout << "No rows = " << x << "\n" ;
+	myFile.read ((char *)&noRow, sizeof(int)) ;
+	noRow = ReverseInt (noRow) ;
+	cout << "No rows = " << noRow << "\n" ;
 
-	myFile.read ((char *)&x, sizeof(int)) ;
-	x = ReverseInt (x) ;
-	cout << "No columns = " << x << "\n" ;
+	myFile.read ((char *)&noCol, sizeof(int)) ;
+	noCol = ReverseInt (noCol) ;
+	cout << "No columns = " << noCol << "\n" ;
 
-	for (int i = 0 ; i < 1000 ; i++)
+	int** trainData = (int **) malloc (sizeof (int *) * NO_TRAINING) ;
+
+	for (int i = 0 ; i < NO_TRAINING ; i++)
 	{
-		myFile.read ((char *)&pix, sizeof(unsigned char)) ;
-		x = (int)pix ;
-		cout << "Pixel = " << x << "\n" ;
+		trainData[i] = (int *) malloc (sizeof (int) * 28 * 28) ;
+		for (int j = 0 ; j < 28*28 ; j++)
+		{
+			myFile.read ((char *)&pix, sizeof(unsigned char)) ;
+			trainData[i][j] = (int) pix ;
+		}
 	}
 
 
+	cout << "Done reading " << NO_TRAINING << " training examples\n" ;
 	myFile.close () ;
+
+	freeTrainData (trainData, NO_TRAINING) ;
 
 	return 0 ;
 }
