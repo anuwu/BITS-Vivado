@@ -10,7 +10,7 @@ using namespace std ;
 #define HIDDEN_NEURONS 25
 #define OUTPUT_SIZE 10
 
-int noTrain, noRow, noCol, magicNo, featDim ;
+int noTrain, noRow, noCol, featDim ;
 
 int ReverseInt (int i)
 {
@@ -37,6 +37,11 @@ void freeMatrix (void** mat, int rows)
 	free(mat) ;
 }
 
+float sigmoid (float in)
+{
+	return 1.0/(1 + exp(-in)) ;
+}
+
 // Done only upto the hidden layer for now
 float** forward (float** trainData, float** theta1, float **theta2)
 {
@@ -55,7 +60,7 @@ float** forward (float** trainData, float** theta1, float **theta2)
 			for (k = 0 ; k <= featDim ; k++)
 				ele += trainData[i][k] * theta1[j][k] ;
 
-			mid[i][j+1] = ele ; 
+			mid[i][j+1] = sigmoid (ele) ; 
 		}
 	}
 	cout << "Created X1 of dimensions " << NO_TRAINING << " x " << HIDDEN_NEURONS + 1 << " (with bias term)\n" ;
@@ -71,13 +76,13 @@ float** forward (float** trainData, float** theta1, float **theta2)
 			for (k = 0 ; k <= HIDDEN_NEURONS ; k++)
 				ele += mid[i][k] * theta2[j][k] ;
 
-			output[i][j] = ele ;
+			output[i][j] = sigmoid (ele) ;
 		}
 
 		free (mid[i]) ;
 	}
 	free (mid) ;
-	cout << "Created X2 of dimensions " << NO_TRAINING << " x " << OUTPUT_SIZE << " (no bias required)\n" ;
+	cout << "Created X2 of dimensions " << NO_TRAINING << " x " << OUTPUT_SIZE << " (no bias required)\n\n" ;
 
 	return output ;
 }
@@ -96,7 +101,6 @@ void printMat (float** mat, int row, int col)
 }
 
 
-
 int main ()
 {
 	srand (time(0)) ;
@@ -104,29 +108,28 @@ int main ()
 	FILE *fp ;
 	char buf[5] ;
 	unsigned char pix ;
-	int i, j ;
+	int i, j, x ;
 
-	ifstream myFile ("Train\\train_data", ios::in | ios::binary) ;
-
-	if (!myFile)
+	ifstream dataFile ("Train\\train_data", ios::in | ios::binary) ;
+	if (!dataFile)
 	{
-		perror ("Error in reading input file\n") ;
+		perror ("Error in reading input data file\n") ;
 		exit (1) ;
 	}
 
-	myFile.read ((char *)&magicNo, sizeof(int)) ;
-	magicNo = ReverseInt (magicNo) ;
-	cout << "Magic number = " << magicNo << "\n" ;
+	dataFile.read ((char *)&x, sizeof(int)) ;
+	x = ReverseInt (x) ;
+	cout << "Magic number = " << x << "\n" ;
 
-	myFile.read ((char *)&noTrain, sizeof(int)) ;
+	dataFile.read ((char *)&noTrain, sizeof(int)) ;
 	noTrain = ReverseInt (noTrain) ;
 	cout << "No items = " << noTrain << "\n" ;
 
-	myFile.read ((char *)&noRow, sizeof(int)) ;
+	dataFile.read ((char *)&noRow, sizeof(int)) ;
 	noRow = ReverseInt (noRow) ;
 	cout << "No rows = " << noRow << "\n" ;
 
-	myFile.read ((char *)&noCol, sizeof(int)) ;
+	dataFile.read ((char *)&noCol, sizeof(int)) ;
 	noCol = ReverseInt (noCol) ;
 	cout << "No columns = " << noCol << "\n" ;
 
@@ -140,20 +143,41 @@ int main ()
 
 		for (int j = 1 ; j <= featDim ; j++)
 		{
-			myFile.read ((char *)&pix, sizeof(unsigned char)) ;
+			dataFile.read ((char *)&pix, sizeof(unsigned char)) ;
 			trainData[i][j] = (pix - 255.0/2) / 255 ;
 		}
 	}
-	cout << "Loaded " << NO_TRAINING << " training examples\n" ;
+	cout << "Loaded " << NO_TRAINING << " training examples\n\n" ;
 
+	/* --------------------------------------------------------------------------------------------------------------------- */
 
+	ifstream labelFile ("Train\\train_label", ios::in | ios::binary) ;
+	if (!labelFile)
+	{
+		perror ("Error in reading input label file\n") ;
+		exit (1) ;
+	}
 
-	
-	cout << "Loaded " << NO_TRAINING << " labels\n" ;
+	labelFile.read ((char *)&x, sizeof(int)) ;
+	x = ReverseInt (x) ;
+	cout << "Magic number = " << x << "\n" ;
 
+	labelFile.read ((char *)&noTrain, sizeof(int)) ;
+	noTrain = ReverseInt (noTrain) ;
+	cout << "No items = " << noTrain << "\n" ;
+
+	float *labelData = (float *) malloc (sizeof (float) * NO_TRAINING) ;
+	for (i = 0 ; i < NO_TRAINING ; i++)
+	{
+		labelFile.read ((char*)&pix, sizeof(unsigned char)) ;
+		labelData[i] = (float) pix ;
+	}
+	cout << "Loaded " << NO_TRAINING << " labels\n\n" ;
+
+	/* --------------------------------------------------------------------------------------------------------------------- */
 
 	cout << "Created X0 of dimensions " << NO_TRAINING << " x " << featDim + 1 << " (with bias term)\n" ;
-	myFile.close () ;
+	dataFile.close () ;
 
 	float epsRand = sqrt((float)6/(featDim + 1 + HIDDEN_NEURONS)) ;
 	float** theta1 = (float **) malloc (sizeof (float *) * HIDDEN_NEURONS) ;
@@ -174,10 +198,30 @@ int main ()
 		for (j = 0 ; j <= HIDDEN_NEURONS ; j++)
 			theta2[i][j] = 2 * epsRand * (getRand () - 0.5) ;
 	}
-	cout << "Created theta2 of dimensions " << OUTPUT_SIZE << " x " << HIDDEN_NEURONS + 1 << "\n" ;
+	cout << "Created theta2 of dimensions " << OUTPUT_SIZE << " x " << HIDDEN_NEURONS + 1 << "\n\n" ;
 
+	/* --------------------------------------------------------------------------------------------------------------------- */
+
+	float **output, loss = 0.0 ;
 	cout << "Doing one forward pass\n" ;
-	forward (trainData, theta1, theta2) ;
+	output = forward (trainData, theta1, theta2) ;
+
+	for (i = 0 ; i < NO_TRAINING ; i++)
+	{
+		for (j = 0 ; j < OUTPUT_SIZE ; j++)
+		{
+			if (j == labelData[i])
+				loss += -(log (output[i][j])) ;
+			else
+				loss += -(log (1 - output[i][j])) ;
+		}
+	}
+
+	loss /= NO_TRAINING ;
+	printf ("Total loss = %f\n", loss) ;
+
+
+	/* --------------------------------------------------------------------------------------------------------------------- */
 
 	cout << "Freeing training data\n" ;
 	freeMatrix ((void **)trainData, NO_TRAINING) ;
@@ -187,5 +231,8 @@ int main ()
 
 	cout << "Freeing theta2\n" ;
 	freeMatrix ((void**)theta2, OUTPUT_SIZE) ;
+
+	cout << "Freeing output\n" ;
+	freeMatrix ((void**)output, NO_TRAINING) ;
 	return 0 ;
 }
