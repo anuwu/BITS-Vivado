@@ -6,7 +6,8 @@
 using namespace std ;
 
 
-#define NO_TRAINING 64
+#define NO_TRAINING 5000
+#define ALPHA 0.01
 #define HIDDEN_NEURONS 25
 #define OUTPUT_SIZE 10
 
@@ -54,12 +55,12 @@ void forward (float** trainData, float** theta1, float **theta2, float **mid, fl
 		{
 			ele = 0 ;
 			for (k = 0 ; k <= featDim ; k++)
-				ele += trainData[i][k] * theta1[j][k] ;
+				ele += trainData[i][k] * theta1[j][k] ;   // X * theta1^T
 
 			mid[i][j+1] = sigmoid (ele) ; 
 		}
 	}
-	cout << "Created X1 of dimensions " << NO_TRAINING << " x " << HIDDEN_NEURONS + 1 << " (with bias term)\n" ;
+	//cout << "Created X1 of dimensions " << NO_TRAINING << " x " << HIDDEN_NEURONS + 1 << " (with bias term)\n" ;
 
 	for (i = 0 ; i < NO_TRAINING ; i++)
 	{
@@ -67,12 +68,67 @@ void forward (float** trainData, float** theta1, float **theta2, float **mid, fl
 		{
 			ele = 0 ;
 			for (k = 0 ; k <= HIDDEN_NEURONS ; k++)
-				ele += mid[i][k] * theta2[j][k] ;
+				ele += mid[i][k] * theta2[j][k] ;		// A * theta2^T
 
 			output[i][j] = sigmoid (ele) ;
 		}
 	}
-	cout << "Created X2 of dimensions " << NO_TRAINING << " x " << OUTPUT_SIZE << " (no bias required)\n\n" ;
+	//cout << "Created X2 of dimensions " << NO_TRAINING << " x " << OUTPUT_SIZE << " (no bias required)\n\n" ;
+}
+
+void backward (float **trainData, float** theta1, float** theta2, float** grad2, float **del2, float** mid, float** output)
+{
+	int i, j, k ;
+	float ele = 0 ;
+
+
+	// Grad2
+	for (i = 0 ; i < OUTPUT_SIZE ; i++)
+	{
+		for (j = 0 ; j <= HIDDEN_NEURONS ; j++)
+		{
+			ele = 0 ;
+			for (k = 0 ; k < NO_TRAINING ; k++)
+				ele += output[k][i] * mid[k][j] ;
+
+			grad2[i][j] = ele/NO_TRAINING ;
+		}
+	}
+
+	// Del2
+	for (i = 0 ; i < NO_TRAINING ; i++)
+	{
+		for (j = 0 ; j < HIDDEN_NEURONS ; j++)
+		{
+			ele = 0 ;
+			for (k = 0 ; k < OUTPUT_SIZE ; k++)
+				ele += output[i][k] * theta2[k][j] ;
+
+			del2[i][j] = ele * (j == 0 ? 0 : mid[i][j-1] * (1 - mid[i][j-1]))  ;
+		}
+	}
+
+	// Grad1 and new theta1
+	for (i = 0 ; i < HIDDEN_NEURONS ; i++)
+	{
+		for (j = 0 ; j <= featDim ; j++)
+		{
+			ele = 0 ;
+			for (k = 0 ; k < NO_TRAINING ; k++)
+				ele += del2[k][i+1] * trainData[k][j] ;
+
+			//grad1[i][j] = ele ;
+			theta1[i][j] -= ALPHA * ele/NO_TRAINING ;
+		}
+	}
+
+	// New theta2
+	for (i = 0 ; i < OUTPUT_SIZE ; i++)
+	{
+		for (j = 0 ; j <= HIDDEN_NEURONS ; j++)
+				theta2[i][j] -= ALPHA * grad2[i][j] ;
+	}
+
 }
 
 void printMat (float** mat, int row, int col)
@@ -88,15 +144,37 @@ void printMat (float** mat, int row, int col)
 	}
 }
 
+float getLoss (float* labelData, float** output)
+{
+	int i, j ;
+	float loss = 0 ;
 
-int main ()
+	for (i = 0 ; i < NO_TRAINING ; i++)	
+	{
+		for (j = 0 ; j < OUTPUT_SIZE ; j++)
+		{
+			if (j == labelData[i])
+			{
+				loss += -(log (output[i][j])) ;
+				output[i][j] -= 1 ;
+			}
+			else
+				loss += -(log (1 - output[i][j])) ;
+		}
+	}
+
+	loss /= NO_TRAINING ;
+	return loss ;
+}
+
+int main (int argc, char** argv)
 {
 	srand (time(0)) ;
 
 	FILE *fp ;
 	char buf[5] ;
 	unsigned char pix ;
-	int i, j, x ;
+	int i, j, x, epochs ;
 
 	ifstream dataFile ("Train\\train_data", ios::in | ios::binary) ;
 	if (!dataFile)
@@ -167,21 +245,24 @@ int main ()
 	cout << "Created X0 of dimensions " << NO_TRAINING << " x " << featDim + 1 << " (with bias term)\n" ;
 	dataFile.close () ;
 
+	float **theta1, **theta2, **grad2 ;
 	float epsRand = sqrt((float)6/(featDim + 1 + HIDDEN_NEURONS)) ;
-	float** theta1 = (float **) malloc (sizeof (float *) * HIDDEN_NEURONS) ;
+
+	theta1 = (float **) malloc (sizeof (float *) * HIDDEN_NEURONS) ;
 	for (i = 0 ; i < HIDDEN_NEURONS ; i++)
 	{
 		theta1[i] = (float *) malloc (sizeof (float) * (featDim + 1)) ;
-
 		for (j = 0 ; j <= featDim ; j++)
 			theta1[i][j] = 2 * epsRand * (getRand () - 0.5) ;
 	}
 	cout << "Created theta1 of dimensions " << HIDDEN_NEURONS << " x " << featDim + 1 << "\n" ;
 
-	float** theta2 = (float **) malloc (sizeof (float *) * OUTPUT_SIZE) ;
+	theta2 = (float **) malloc (sizeof (float *) * OUTPUT_SIZE) ;
+	grad2 = (float **) malloc (sizeof (float *) * OUTPUT_SIZE) ;
 	for (i = 0 ; i < OUTPUT_SIZE ; i++)
 	{
 		theta2[i] = (float *) malloc (sizeof (float) * (HIDDEN_NEURONS + 1)) ;
+		grad2[i] = (float *) malloc (sizeof (float) * (HIDDEN_NEURONS + 1)) ;
 
 		for (j = 0 ; j <= HIDDEN_NEURONS ; j++)
 			theta2[i][j] = 2 * epsRand * (getRand () - 0.5) ;
@@ -190,48 +271,78 @@ int main ()
 
 	/* --------------------------------------------------------------------------------------------------------------------- */
 
-	float loss, **mid, **output ;
+	float loss, **mid, **output, **del2 ;
 	mid = (float**) malloc (sizeof (float*) * NO_TRAINING) ;
 	output = (float**) malloc (sizeof (float*) * NO_TRAINING) ;
+	del2 = (float**) malloc (sizeof (float *) * NO_TRAINING) ;
+
 	for (i = 0 ; i < NO_TRAINING ; i++)
 	{
 		output[i] = (float*) malloc(sizeof (float) * OUTPUT_SIZE) ;
+		del2[i] = (float *) malloc (sizeof (float) * (HIDDEN_NEURONS + 1)) ;
+
 		mid[i] = (float*) malloc (sizeof (float) * (HIDDEN_NEURONS + 1)) ;
 		mid[i][0] = 1 ;
 	}
 
-	loss = 0.0 ;
-	cout << "Doing one forward pass\n" ;
-	forward (trainData, theta1, theta2, mid, output) ;
-
-	for (i = 0 ; i < NO_TRAINING ; i++)
+	for (epochs = 1 ; epochs <= atoi(argv[1]) ; epochs++)
 	{
-		free (mid[i]) ;
-		for (j = 0 ; j < OUTPUT_SIZE ; j++)
-		{
-			if (j == labelData[i])
-				loss += -(log (output[i][j])) ;
-			else
-				loss += -(log (1 - output[i][j])) ;
-		}
+		forward (trainData, theta1, theta2, mid, output) ;
+		loss = getLoss (labelData, output) ;
+		//cout << "Epoch " << epochs << " : Loss = " << loss << "\n" ;
+		printf ("Epoch %d : Loss = %f\n", epochs, loss) ;
+		backward (trainData, theta1, theta2, grad2, del2, mid, output) ;
 	}
-
-	free (mid) ;
-	loss /= NO_TRAINING ;
-	printf ("Total loss = %f\n", loss) ;
 
 	/* --------------------------------------------------------------------------------------------------------------------- */
 
-	cout << "Freeing training data\n" ;
+	int correct = 0 ;
+	float max, predLabel ;
+	for (i = 0 ; i < NO_TRAINING ; i++)
+	{
+		max = output[i][0] ;
+		for (j = 1 ; j < OUTPUT_SIZE ; j++)
+		{
+			if (output[i][j] > max)
+			{
+				max = output[i][j] ;
+				predLabel = j ;
+			}
+		}
+
+		if (labelData[i] == predLabel)
+			correct++ ;
+
+		// cout << "\nTruth : " << labelData[i] << " Prediction : " << predLabel ;
+	}
+
+	cout << "Training accuracy = " << correct/NO_TRAINING * 100 ;
+
+	/* --------------------------------------------------------------------------------------------------------------------- */
+
+	cout << "\nFreeing training data\n" ;
 	freeMatrix ((void **)trainData, NO_TRAINING) ;
+
+	cout << "Freeing training labels\n" ;
+	free (labelData) ;
 
 	cout << "Freeing theta1\n" ;
 	freeMatrix ((void **)theta1, HIDDEN_NEURONS) ;
 
+	cout << "Freeing mid\n" ;
+	freeMatrix ((void**)mid, NO_TRAINING) ;
+
 	cout << "Freeing theta2\n" ;
 	freeMatrix ((void**)theta2, OUTPUT_SIZE) ;
 
+	cout << "Freeing grad2\n" ;
+	freeMatrix ((void**)grad2, OUTPUT_SIZE) ;
+
+	cout << "Freeding del2\n" ;
+	freeMatrix ((void**)del2, NO_TRAINING) ;
+
 	cout << "Freeing output\n" ;
 	freeMatrix ((void**)output, NO_TRAINING) ;
+
 	return 0 ;
 }
