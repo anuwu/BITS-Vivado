@@ -6,7 +6,7 @@
 using namespace std ;
 
 
-#define NO_TRAINING 5000
+#define NO_TRAINING 10000
 #define ALPHA 0.01
 #define HIDDEN_NEURONS 25
 #define OUTPUT_SIZE 10
@@ -144,7 +144,7 @@ void printMat (float** mat, int row, int col)
 	}
 }
 
-float getLoss (float* labelData, float** output)
+float getLoss (float* labelData, float** output, int backPropStart)
 {
 	int i, j ;
 	float loss = 0 ;
@@ -156,7 +156,8 @@ float getLoss (float* labelData, float** output)
 			if (j == labelData[i])
 			{
 				loss += -(log (output[i][j])) ;
-				output[i][j] -= 1 ;
+				if (backPropStart)
+					output[i][j] -= 1 ;
 			}
 			else
 				loss += -(log (1 - output[i][j])) ;
@@ -288,10 +289,12 @@ int main (int argc, char** argv)
 	for (epochs = 1 ; epochs <= atoi(argv[1]) ; epochs++)
 	{
 		forward (trainData, theta1, theta2, mid, output) ;
-		loss = getLoss (labelData, output) ;
+		loss = getLoss (labelData, output, epochs == atoi (argv[1]) ? 0 : 1) ;
 		//cout << "Epoch " << epochs << " : Loss = " << loss << "\n" ;
 		printf ("Epoch %d : Loss = %f\n", epochs, loss) ;
-		backward (trainData, theta1, theta2, grad2, del2, mid, output) ;
+
+		if (epochs != atoi(argv[1]))
+			backward (trainData, theta1, theta2, grad2, del2, mid, output) ;
 	}
 
 	/* --------------------------------------------------------------------------------------------------------------------- */
@@ -301,7 +304,7 @@ int main (int argc, char** argv)
 	for (i = 0 ; i < NO_TRAINING ; i++)
 	{
 		max = output[i][0] ;
-		for (j = 1 ; j < OUTPUT_SIZE ; j++)
+		for (j = 0 ; j < OUTPUT_SIZE ; j++)
 		{
 			if (output[i][j] > max)
 			{
@@ -316,7 +319,7 @@ int main (int argc, char** argv)
 		// cout << "\nTruth : " << labelData[i] << " Prediction : " << predLabel ;
 	}
 
-	cout << "Training accuracy = " << correct/NO_TRAINING * 100 ;
+	cout << "Correct = " << correct << "\n" ;
 
 	/* --------------------------------------------------------------------------------------------------------------------- */
 
