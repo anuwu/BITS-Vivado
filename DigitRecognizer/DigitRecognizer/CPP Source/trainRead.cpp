@@ -43,17 +43,13 @@ float sigmoid (float in)
 }
 
 // Done only upto the hidden layer for now
-float** forward (float** trainData, float** theta1, float **theta2)
+void forward (float** trainData, float** theta1, float **theta2, float **mid, float **output)
 {
 	int i, j, k ;
 	float ele ;
 
-	float **mid = (float**) malloc (sizeof (float*) * NO_TRAINING) ;
 	for (i = 0 ; i < NO_TRAINING ; i++)
 	{
-		mid[i] = (float*) malloc (sizeof (float) * (HIDDEN_NEURONS + 1)) ;
-		mid[i][0] = 1 ;
-
 		for (j = 0 ; j < HIDDEN_NEURONS ; j++)
 		{
 			ele = 0 ;
@@ -65,11 +61,8 @@ float** forward (float** trainData, float** theta1, float **theta2)
 	}
 	cout << "Created X1 of dimensions " << NO_TRAINING << " x " << HIDDEN_NEURONS + 1 << " (with bias term)\n" ;
 
-	float **output = (float**) malloc (sizeof (float*) * NO_TRAINING) ;
 	for (i = 0 ; i < NO_TRAINING ; i++)
 	{
-		output[i] = (float*) malloc(sizeof (float) * OUTPUT_SIZE) ;
-
 		for (j = 0 ; j < OUTPUT_SIZE ; j++)
 		{
 			ele = 0 ;
@@ -78,13 +71,8 @@ float** forward (float** trainData, float** theta1, float **theta2)
 
 			output[i][j] = sigmoid (ele) ;
 		}
-
-		free (mid[i]) ;
 	}
-	free (mid) ;
 	cout << "Created X2 of dimensions " << NO_TRAINING << " x " << OUTPUT_SIZE << " (no bias required)\n\n" ;
-
-	return output ;
 }
 
 void printMat (float** mat, int row, int col)
@@ -202,12 +190,23 @@ int main ()
 
 	/* --------------------------------------------------------------------------------------------------------------------- */
 
-	float **output, loss = 0.0 ;
+	float loss, **mid, **output ;
+	mid = (float**) malloc (sizeof (float*) * NO_TRAINING) ;
+	output = (float**) malloc (sizeof (float*) * NO_TRAINING) ;
+	for (i = 0 ; i < NO_TRAINING ; i++)
+	{
+		output[i] = (float*) malloc(sizeof (float) * OUTPUT_SIZE) ;
+		mid[i] = (float*) malloc (sizeof (float) * (HIDDEN_NEURONS + 1)) ;
+		mid[i][0] = 1 ;
+	}
+
+	loss = 0.0 ;
 	cout << "Doing one forward pass\n" ;
-	output = forward (trainData, theta1, theta2) ;
+	forward (trainData, theta1, theta2, mid, output) ;
 
 	for (i = 0 ; i < NO_TRAINING ; i++)
 	{
+		free (mid[i]) ;
 		for (j = 0 ; j < OUTPUT_SIZE ; j++)
 		{
 			if (j == labelData[i])
@@ -217,9 +216,9 @@ int main ()
 		}
 	}
 
+	free (mid) ;
 	loss /= NO_TRAINING ;
 	printf ("Total loss = %f\n", loss) ;
-
 
 	/* --------------------------------------------------------------------------------------------------------------------- */
 
