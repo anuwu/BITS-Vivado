@@ -1,3 +1,8 @@
+/*
+Run 1 - 3445 (ALPHA = 0.01)
+Run 2 - Regularization (ALPHA = 0.1, LAMBDA = 1)
+*/
+
 #include <iostream>
 #include <fstream>
 #include <stdlib.h>
@@ -5,9 +10,9 @@
 #include <time.h>
 using namespace std ;
 
-
 #define NO_TRAINING 10000
-#define ALPHA 0.01
+#define ALPHA 0.1
+#define LAMBDA 1
 #define HIDDEN_NEURONS 25
 #define OUTPUT_SIZE 10
 
@@ -91,7 +96,7 @@ void backward (float **trainData, float** theta1, float** theta2, float** grad2,
 			for (k = 0 ; k < NO_TRAINING ; k++)
 				ele += output[k][i] * mid[k][j] ;
 
-			grad2[i][j] = ele/NO_TRAINING ;
+			grad2[i][j] = (ele + LAMBDA * (j == 0 ? 0 : theta2[i][j]))/NO_TRAINING ;
 		}
 	}
 
@@ -118,7 +123,7 @@ void backward (float **trainData, float** theta1, float** theta2, float** grad2,
 				ele += del2[k][i+1] * trainData[k][j] ;
 
 			//grad1[i][j] = ele ;
-			theta1[i][j] -= ALPHA * ele/NO_TRAINING ;
+			theta1[i][j] -= ALPHA * (ele + LAMBDA*(j == 0 ? 0 : theta1[i][j]))/NO_TRAINING ;
 		}
 	}
 
