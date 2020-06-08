@@ -10,7 +10,8 @@ Run 2 - Regularization (ALPHA = 0.1, LAMBDA = 1)
 #include <time.h>
 using namespace std ;
 
-#define NO_TRAINING 10000
+#define NO_TRAINING 60000
+#define NO_BATCH 100
 #define ALPHA 0.1
 #define LAMBDA 1
 #define HIDDEN_NEURONS 25
@@ -49,25 +50,25 @@ float sigmoid (float in)
 }
 
 // Done only upto the hidden layer for now
-void forward (float** trainData, float** theta1, float **theta2, float **mid, float **output)
+void forward (float** batchData, float** theta1, float **theta2, float **mid, float **output)
 {
 	int i, j, k ;
 	float ele ;
 
-	for (i = 0 ; i < NO_TRAINING ; i++)
+	for (i = 0 ; i < NO_BATCH ; i++)
 	{
 		for (j = 0 ; j < HIDDEN_NEURONS ; j++)
 		{
 			ele = 0 ;
 			for (k = 0 ; k <= featDim ; k++)
-				ele += trainData[i][k] * theta1[j][k] ;   // X * theta1^T
+				ele += batchData[i][k] * theta1[j][k] ;   // X * theta1^T
 
 			mid[i][j+1] = sigmoid (ele) ; 
 		}
 	}
-	//cout << "Created X1 of dimensions " << NO_TRAINING << " x " << HIDDEN_NEURONS + 1 << " (with bias term)\n" ;
+	//cout << "Created X1 of dimensions " << NO_BATCH << " x " << HIDDEN_NEURONS + 1 << " (with bias term)\n" ;
 
-	for (i = 0 ; i < NO_TRAINING ; i++)
+	for (i = 0 ; i < NO_BATCH ; i++)
 	{
 		for (j = 0 ; j < OUTPUT_SIZE ; j++)
 		{
@@ -78,10 +79,10 @@ void forward (float** trainData, float** theta1, float **theta2, float **mid, fl
 			output[i][j] = sigmoid (ele) ;
 		}
 	}
-	//cout << "Created X2 of dimensions " << NO_TRAINING << " x " << OUTPUT_SIZE << " (no bias required)\n\n" ;
+	//cout << "Created X2 of dimensions " << NO_BATCH << " x " << OUTPUT_SIZE << " (no bias required)\n\n" ;
 }
 
-void backward (float **trainData, float** theta1, float** theta2, float** grad2, float **del2, float** mid, float** output)
+void backward (float **batchData, float** theta1, float** theta2, float** grad2, float **del2, float** mid, float** output)
 {
 	int i, j, k ;
 	float ele = 0 ;
@@ -93,15 +94,15 @@ void backward (float **trainData, float** theta1, float** theta2, float** grad2,
 		for (j = 0 ; j <= HIDDEN_NEURONS ; j++)
 		{
 			ele = 0 ;
-			for (k = 0 ; k < NO_TRAINING ; k++)
+			for (k = 0 ; k < NO_BATCH ; k++)
 				ele += output[k][i] * mid[k][j] ;
 
-			grad2[i][j] = (ele + LAMBDA * (j == 0 ? 0 : theta2[i][j]))/NO_TRAINING ;
+			grad2[i][j] = (ele + LAMBDA * (j == 0 ? 0 : theta2[i][j]))/NO_BATCH ;
 		}
 	}
 
 	// Del2
-	for (i = 0 ; i < NO_TRAINING ; i++)
+	for (i = 0 ; i < NO_BATCH ; i++)
 	{
 		for (j = 0 ; j < HIDDEN_NEURONS ; j++)
 		{
@@ -119,11 +120,11 @@ void backward (float **trainData, float** theta1, float** theta2, float** grad2,
 		for (j = 0 ; j <= featDim ; j++)
 		{
 			ele = 0 ;
-			for (k = 0 ; k < NO_TRAINING ; k++)
-				ele += del2[k][i+1] * trainData[k][j] ;
+			for (k = 0 ; k < NO_BATCH ; k++)
+				ele += del2[k][i+1] * batchData[k][j] ;
 
 			//grad1[i][j] = ele ;
-			theta1[i][j] -= ALPHA * (ele + LAMBDA*(j == 0 ? 0 : theta1[i][j]))/NO_TRAINING ;
+			theta1[i][j] -= ALPHA * (ele + LAMBDA*(j == 0 ? 0 : theta1[i][j]))/NO_BATCH ;
 		}
 	}
 
@@ -154,7 +155,7 @@ float getLoss (float* labelData, float** output, int backPropStart)
 	int i, j ;
 	float loss = 0 ;
 
-	for (i = 0 ; i < NO_TRAINING ; i++)	
+	for (i = 0 ; i < NO_BATCH ; i++)	
 	{
 		for (j = 0 ; j < OUTPUT_SIZE ; j++)
 		{
@@ -169,7 +170,7 @@ float getLoss (float* labelData, float** output, int backPropStart)
 		}
 	}
 
-	loss /= NO_TRAINING ;
+	loss /= NO_BATCH ;
 	return loss ;
 }
 
@@ -207,16 +208,16 @@ int main (int argc, char** argv)
 
 	featDim = noRow * noCol ;
 
-	float** trainData = (float **) malloc (sizeof (float *) * NO_TRAINING) ;
+	float** allData = (float **) malloc (sizeof (float *) * NO_TRAINING) ;
 	for (int i = 0 ; i < NO_TRAINING ; i++)
 	{
-		trainData[i] = (float *) malloc (sizeof (float) * (featDim + 1)) ;
-		trainData[i][0] = 1 ;
+		allData[i] = (float *) malloc (sizeof (float) * (featDim + 1)) ;
+		allData[i][0] = 1 ;
 
 		for (int j = 1 ; j <= featDim ; j++)
 		{
 			dataFile.read ((char *)&pix, sizeof(unsigned char)) ;
-			trainData[i][j] = (pix - 255.0/2) / 255 ;
+			allData[i][j] = (pix - 255.0/2) / 255 ;
 		}
 	}
 	cout << "Loaded " << NO_TRAINING << " training examples\n\n" ;
@@ -238,17 +239,17 @@ int main (int argc, char** argv)
 	noTrain = ReverseInt (noTrain) ;
 	cout << "No items = " << noTrain << "\n" ;
 
-	float *labelData = (float *) malloc (sizeof (float) * NO_TRAINING) ;
-	for (i = 0 ; i < NO_TRAINING ; i++)
+	float *allLabel = (float *) malloc (sizeof (float) * NO_TRAIN) ;
+	for (i = 0 ; i < NO_TRAIN ; i++)
 	{
 		labelFile.read ((char*)&pix, sizeof(unsigned char)) ;
-		labelData[i] = (float) pix ;
+		allLabel[i] = (float) pix ;
 	}
 	cout << "Loaded " << NO_TRAINING << " labels\n\n" ;
 
 	/* --------------------------------------------------------------------------------------------------------------------- */
 
-	cout << "Created X0 of dimensions " << NO_TRAINING << " x " << featDim + 1 << " (with bias term)\n" ;
+	cout << "Created X0 of dimensions " << NO_BATCH << " x " << featDim + 1 << " (with bias term)\n" ;
 	dataFile.close () ;
 
 	float **theta1, **theta2, **grad2 ;
@@ -278,11 +279,11 @@ int main (int argc, char** argv)
 	/* --------------------------------------------------------------------------------------------------------------------- */
 
 	float loss, **mid, **output, **del2 ;
-	mid = (float**) malloc (sizeof (float*) * NO_TRAINING) ;
-	output = (float**) malloc (sizeof (float*) * NO_TRAINING) ;
-	del2 = (float**) malloc (sizeof (float *) * NO_TRAINING) ;
+	mid = (float**) malloc (sizeof (float*) * NO_BATCH) ;
+	output = (float**) malloc (sizeof (float*) * NO_BATCH) ;
+	del2 = (float**) malloc (sizeof (float *) * NO_BATCH) ;
 
-	for (i = 0 ; i < NO_TRAINING ; i++)
+	for (i = 0 ; i < NO_BATCH ; i++)
 	{
 		output[i] = (float*) malloc(sizeof (float) * OUTPUT_SIZE) ;
 		del2[i] = (float *) malloc (sizeof (float) * (HIDDEN_NEURONS + 1)) ;
@@ -293,20 +294,20 @@ int main (int argc, char** argv)
 
 	for (epochs = 1 ; epochs <= atoi(argv[1]) ; epochs++)
 	{
-		forward (trainData, theta1, theta2, mid, output) ;
+		forward (batchData, theta1, theta2, mid, output) ;
 		loss = getLoss (labelData, output, epochs == atoi (argv[1]) ? 0 : 1) ;
 		//cout << "Epoch " << epochs << " : Loss = " << loss << "\n" ;
 		printf ("Epoch %d : Loss = %f\n", epochs, loss) ;
 
 		if (epochs != atoi(argv[1]))
-			backward (trainData, theta1, theta2, grad2, del2, mid, output) ;
+			backward (batchData, theta1, theta2, grad2, del2, mid, output) ;
 	}
 
 	/* --------------------------------------------------------------------------------------------------------------------- */
 
 	int correct = 0 ;
 	float max, predLabel ;
-	for (i = 0 ; i < NO_TRAINING ; i++)
+	for (i = 0 ; i < NO_BATCH ; i++)
 	{
 		max = output[i][0] ;
 		for (j = 0 ; j < OUTPUT_SIZE ; j++)
@@ -329,7 +330,7 @@ int main (int argc, char** argv)
 	/* --------------------------------------------------------------------------------------------------------------------- */
 
 	cout << "\nFreeing training data\n" ;
-	freeMatrix ((void **)trainData, NO_TRAINING) ;
+	freeMatrix ((void **)batchData, NO_BATCH) ;
 
 	cout << "Freeing training labels\n" ;
 	free (labelData) ;
@@ -338,7 +339,7 @@ int main (int argc, char** argv)
 	freeMatrix ((void **)theta1, HIDDEN_NEURONS) ;
 
 	cout << "Freeing mid\n" ;
-	freeMatrix ((void**)mid, NO_TRAINING) ;
+	freeMatrix ((void**)mid, NO_BATCH) ;
 
 	cout << "Freeing theta2\n" ;
 	freeMatrix ((void**)theta2, OUTPUT_SIZE) ;
@@ -347,10 +348,10 @@ int main (int argc, char** argv)
 	freeMatrix ((void**)grad2, OUTPUT_SIZE) ;
 
 	cout << "Freeding del2\n" ;
-	freeMatrix ((void**)del2, NO_TRAINING) ;
+	freeMatrix ((void**)del2, NO_BATCH) ;
 
 	cout << "Freeing output\n" ;
-	freeMatrix ((void**)output, NO_TRAINING) ;
+	freeMatrix ((void**)output, NO_BATCH) ;
 
 	return 0 ;
 }
