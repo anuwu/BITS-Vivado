@@ -10,10 +10,10 @@ Run 2 - Regularization (ALPHA = 0.1, LAMBDA = 1)
 #include <time.h>
 using namespace std ;
 
-#define NO_TRAINING 60000
-#define NO_BATCH 100
-#define ALPHA 0.1
-#define LAMBDA 1
+#define NO_TRAINING noTrain
+#define NO_BATCH 200
+#define ALPHA 0.01
+#define LAMBDA 0
 #define HIDDEN_NEURONS 25
 #define OUTPUT_SIZE 10
 
@@ -150,7 +150,7 @@ void printMat (float** mat, int row, int col)
 	}
 }
 
-float getLoss (float* labelData, float** output, int backPropStart)
+float getLoss (float* batchLabel, float** output)
 {
 	int i, j ;
 	float loss = 0 ;
@@ -159,11 +159,10 @@ float getLoss (float* labelData, float** output, int backPropStart)
 	{
 		for (j = 0 ; j < OUTPUT_SIZE ; j++)
 		{
-			if (j == labelData[i])
+			if (j == batchLabel[i])
 			{
 				loss += -(log (output[i][j])) ;
-				if (backPropStart)
-					output[i][j] -= 1 ;
+				output[i][j] -= 1 ;
 			}
 			else
 				loss += -(log (1 - output[i][j])) ;
@@ -181,7 +180,7 @@ int main (int argc, char** argv)
 	FILE *fp ;
 	char buf[5] ;
 	unsigned char pix ;
-	int i, j, x, epochs ;
+	int i, j, x, epochs, batchNo ;
 
 	ifstream dataFile ("Train\\train_data", ios::in | ios::binary) ;
 	if (!dataFile)
@@ -239,8 +238,9 @@ int main (int argc, char** argv)
 	noTrain = ReverseInt (noTrain) ;
 	cout << "No items = " << noTrain << "\n" ;
 
-	float *allLabel = (float *) malloc (sizeof (float) * NO_TRAIN) ;
-	for (i = 0 ; i < NO_TRAIN ; i++)
+	float *allLabel = (float *) malloc (sizeof (float) * NO_TRAINING) ;
+	float *batchLabel = (float *) malloc (sizeof (float) * NO_BATCH) ;
+	for (i = 0 ; i < NO_TRAINING ; i++)
 	{
 		labelFile.read ((char*)&pix, sizeof(unsigned char)) ;
 		allLabel[i] = (float) pix ;
@@ -249,7 +249,6 @@ int main (int argc, char** argv)
 
 	/* --------------------------------------------------------------------------------------------------------------------- */
 
-	cout << "Created X0 of dimensions " << NO_BATCH << " x " << featDim + 1 << " (with bias term)\n" ;
 	dataFile.close () ;
 
 	float **theta1, **theta2, **grad2 ;
@@ -278,33 +277,48 @@ int main (int argc, char** argv)
 
 	/* --------------------------------------------------------------------------------------------------------------------- */
 
-	float loss, **mid, **output, **del2 ;
+	float loss, **batchData, **mid, **output, **del2 ;
+	batchData = (float**) malloc (sizeof (float*) * NO_BATCH) ;
 	mid = (float**) malloc (sizeof (float*) * NO_BATCH) ;
 	output = (float**) malloc (sizeof (float*) * NO_BATCH) ;
 	del2 = (float**) malloc (sizeof (float *) * NO_BATCH) ;
 
 	for (i = 0 ; i < NO_BATCH ; i++)
 	{
-		output[i] = (float*) malloc(sizeof (float) * OUTPUT_SIZE) ;
+		batchData[i] = (float *) malloc (sizeof (float) * (featDim + 1)) ;
 		del2[i] = (float *) malloc (sizeof (float) * (HIDDEN_NEURONS + 1)) ;
-
 		mid[i] = (float*) malloc (sizeof (float) * (HIDDEN_NEURONS + 1)) ;
 		mid[i][0] = 1 ;
+
+		output[i] = (float*) malloc(sizeof (float) * OUTPUT_SIZE) ;
 	}
 
 	for (epochs = 1 ; epochs <= atoi(argv[1]) ; epochs++)
 	{
-		forward (batchData, theta1, theta2, mid, output) ;
-		loss = getLoss (labelData, output, epochs == atoi (argv[1]) ? 0 : 1) ;
-		//cout << "Epoch " << epochs << " : Loss = " << loss << "\n" ;
-		printf ("Epoch %d : Loss = %f\n", epochs, loss) ;
+		for (batchNo = 0 ; batchNo < NO_TRAINING/NO_BATCH ; batchNo++)
+		{
+			for (i = 0 ; i < NO_BATCH ; i++)
+			{
+				for (j = 0 ; j <= featDim ; j++)
+					batchData[i][j] = allData[batchNo * NO_BATCH + i][j] ;
 
-		if (epochs != atoi(argv[1]))
+				batchLabel[i] = allLabel[batchNo * NO_BATCH + i] ;
+			}
+
+			forward (batchData, theta1, theta2, mid, output) ;
+			loss = getLoss (batchLabel, output) ;
+
+			if (batchNo % 100 == 0)
+				cout << "\tEpoch " << epochs << ", Batch " << batchNo << " : Loss = " << loss << "\n" ;
 			backward (batchData, theta1, theta2, grad2, del2, mid, output) ;
+		}		
+
+		cout << "Epoch " << epochs << ", Batch " << batchNo << " : Loss = " << loss << "\n" ;
 	}
 
 	/* --------------------------------------------------------------------------------------------------------------------- */
 
+	/*
 	int correct = 0 ;
 	float max, predLabel ;
 	for (i = 0 ; i < NO_BATCH ; i++)
@@ -319,21 +333,28 @@ int main (int argc, char** argv)
 			}
 		}
 
-		if (labelData[i] == predLabel)
+		if (batchLabel[i] == predLabel)
 			correct++ ;
 
-		// cout << "\nTruth : " << labelData[i] << " Prediction : " << predLabel ;
+		// cout << "\nTruth : " << batchLabel[i] << " Prediction : " << predLabel ;
 	}
 
 	cout << "Correct = " << correct << "\n" ;
+	*/
 
 	/* --------------------------------------------------------------------------------------------------------------------- */
 
-	cout << "\nFreeing training data\n" ;
-	freeMatrix ((void **)batchData, NO_BATCH) ;
+	cout << "\nFreeing all training data\n" ;
+	freeMatrix ((void **)allData, NO_TRAINING) ;
 
-	cout << "Freeing training labels\n" ;
-	free (labelData) ;
+	cout << "Freeing batch training data\n" ;
+	freeMatrix ((void**)batchData, NO_BATCH) ;
+
+	cout << "Freeing all training labels\n" ;
+	free (allLabel) ;
+
+	cout << "Freing batch training labels\n" ;
+	free (batchLabel) ;
 
 	cout << "Freeing theta1\n" ;
 	freeMatrix ((void **)theta1, HIDDEN_NEURONS) ;
