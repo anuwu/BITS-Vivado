@@ -1,6 +1,8 @@
 /*
-Run 1 - 3445 (ALPHA = 0.01)
-Run 2 - Regularization (ALPHA = 0.1, LAMBDA = 1)
+Run 1 - no_batch 200, alpha 0.01, lambda 0 --> Epoch 40, loss = 2.30
+Run 2 - no_batch 200, alpha 0.01, lambda 1 --> Epoch 40, loss = 2.26
+Run 3 - no_batch 200, alpha 0.05, lambda 10 --> Epoch 40, loss = 2.74
+Run 4 - no_batch 200, alpha 0.01, lambda 10 --> Epoch 40, loss = 3.1
 */
 
 #include <iostream>
@@ -13,7 +15,7 @@ using namespace std ;
 #define NO_TRAINING noTrain
 #define NO_BATCH 200
 #define ALPHA 0.01
-#define LAMBDA 0
+#define LAMBDA 1
 #define HIDDEN_NEURONS 25
 #define OUTPUT_SIZE 10
 
@@ -48,6 +50,39 @@ float sigmoid (float in)
 {
 	return 1.0/(1 + exp(-in)) ;
 }
+
+void forwardInf (float** allData, float** theta1, float **theta2, float **midInf, float **outputInf)
+{
+	int i, j, k ;
+	float ele ;
+
+	for (i = 0 ; i < NO_TRAINING ; i++)
+	{
+		for (j = 0 ; j < HIDDEN_NEURONS ; j++)
+		{
+			ele = 0 ;
+			for (k = 0 ; k <= featDim ; k++)
+				ele += allData[i][k] * theta1[j][k] ;   // X * theta1^T
+
+			midInf[i][j+1] = sigmoid (ele) ; 
+		}
+	}
+	//cout << "Created X1 of dimensions " << NO_TRAINING << " x " << HIDDEN_NEURONS + 1 << " (with bias term)\n" ;
+
+	for (i = 0 ; i < NO_TRAINING ; i++)
+	{
+		for (j = 0 ; j < OUTPUT_SIZE ; j++)
+		{
+			ele = 0 ;
+			for (k = 0 ; k <= HIDDEN_NEURONS ; k++)
+				ele += midInf[i][k] * theta2[j][k] ;		// A * theta2^T
+
+			outputInf[i][j] = sigmoid (ele) ;
+		}
+	}
+	//cout << "Created X2 of dimensions " << NO_TRAINING << " x " << OUTPUT_SIZE << " (no bias required)\n\n" ;
+}
+
 
 // Done only upto the hidden layer for now
 void forward (float** batchData, float** theta1, float **theta2, float **mid, float **output)
@@ -150,6 +185,26 @@ void printMat (float** mat, int row, int col)
 	}
 }
 
+float getLossInf (float* allLabel, float** outputInf)
+{
+	int i, j ;
+	float loss = 0 ;
+
+	for (i = 0 ; i < NO_TRAINING ; i++)	
+	{
+		for (j = 0 ; j < OUTPUT_SIZE ; j++)
+		{
+			if (j == allLabel[i])
+				loss += -(log (outputInf[i][j])) ;
+			else
+				loss += -(log (1 - outputInf[i][j])) ;
+		}
+	}
+
+	loss /= NO_TRAINING ;
+	return loss ;
+}
+
 float getLoss (float* batchLabel, float** output)
 {
 	int i, j ;
@@ -207,10 +262,16 @@ int main (int argc, char** argv)
 
 	featDim = noRow * noCol ;
 
-	float** allData = (float **) malloc (sizeof (float *) * NO_TRAINING) ;
+	float **midInf, **outputInf, **allData ;
+	allData = (float **) malloc (sizeof (float *) * NO_TRAINING) ;
+	outputInf = (float **) malloc (sizeof (float *) * NO_TRAINING) ;
+	midInf = (float **) malloc (sizeof (float *) * NO_TRAINING) ;
+
 	for (int i = 0 ; i < NO_TRAINING ; i++)
 	{
 		allData[i] = (float *) malloc (sizeof (float) * (featDim + 1)) ;
+		midInf[i] = (float *) malloc (sizeof (float) * (HIDDEN_NEURONS + 1)) ;
+		outputInf[i] = (float *) malloc (sizeof (float) * OUTPUT_SIZE) ;
 		allData[i][0] = 1 ;
 
 		for (int j = 1 ; j <= featDim ; j++)
@@ -318,29 +379,29 @@ int main (int argc, char** argv)
 
 	/* --------------------------------------------------------------------------------------------------------------------- */
 
-	/*
+	forwardInf (allData, theta1, theta2, midInf, outputInf) ;
+	getLossInf (allLabel, outputInf) ;
+
 	int correct = 0 ;
 	float max, predLabel ;
-	for (i = 0 ; i < NO_BATCH ; i++)
+	for (i = 0 ; i < NO_TRAINING ; i++)
 	{
-		max = output[i][0] ;
+		max = outputInf[i][0] ;
 		for (j = 0 ; j < OUTPUT_SIZE ; j++)
 		{
-			if (output[i][j] > max)
+			if (outputInf[i][j] > max)
 			{
-				max = output[i][j] ;
+				max = outputInf[i][j] ;
 				predLabel = j ;
 			}
 		}
 
-		if (batchLabel[i] == predLabel)
+		if (allLabel[i] == predLabel)
 			correct++ ;
-
-		// cout << "\nTruth : " << batchLabel[i] << " Prediction : " << predLabel ;
 	}
 
 	cout << "Correct = " << correct << "\n" ;
-	*/
+
 
 	/* --------------------------------------------------------------------------------------------------------------------- */
 
