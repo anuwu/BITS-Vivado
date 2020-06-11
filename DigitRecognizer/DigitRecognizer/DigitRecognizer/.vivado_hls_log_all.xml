@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vivadoHLSLog:LogRoot xmlns:vivadoHLSLog="www.xilinx.com/vivadoHLSLog">
+  <errorLogs>
+    <logs>
+      <synLog>
+        <logs message="ERROR: [HLS 200-70] Synthesizability check failed.&#xD;&#xA;command 'ap_source' returned error code&#xD;&#xA;    while executing&#xD;&#xA;&quot;source E:/Vivado/DigitRecognizer/DigitRecognizer/DigitRecognizer/solution1/csynth.tcl&quot;&#xD;&#xA;    invoked from within&#xD;&#xA;&quot;hls::main E:/Vivado/DigitRecognizer/DigitRecognizer/DigitRecognizer/solution1/csynth.tcl&quot;&#xD;&#xA;    (&quot;uplevel&quot; body line 1)&#xD;&#xA;    invoked from within&#xD;&#xA;&quot;uplevel 1 hls::main {*}$args&quot;&#xD;&#xA;    (procedure &quot;hls_proc&quot; line 5)&#xD;&#xA;    invoked from within&#xD;&#xA;&quot;hls_proc $argv&quot;&#xD;&#xA;" projectName="DigitRecognizer" solutionName="solution1" date="2020-06-10T21:15:04.040+0530"/>
+        <logs message="ERROR: [SYNCHK 200-61] DigitRecognizer/minibatch.cpp:74: unsupported memory access on variable 'batchData' which is (or contains) an array with unknown size at compile time." projectName="DigitRecognizer" solutionName="solution1" date="2020-06-10T21:15:03.912+0530"/>
+        <logs message="ERROR: [SYNCHK 200-11] DigitRecognizer/minibatch.cpp:63: Argument 'batchData' of function 'forward' (DigitRecognizer/minibatch.cpp:63) has an unsynthesizable type (possible cause(s): pointer to pointer or global pointer)." projectName="DigitRecognizer" solutionName="solution1" date="2020-06-10T21:15:03.906+0530"/>
+      </synLog>
+      <simLog/>
+      <mgLog/>
+      <packageLog/>
+      <csimLog/>
+    </logs>
+  </errorLogs>
+  <warningLogs>
+    <logs>
+      <synLog>
+        <logs message="WARNING: [HLS 200-40] Cannot find library 'xilinx/Virtex-7/Virtex-7'." projectName="DigitRecognizer" solutionName="solution1" date="2020-06-10T21:14:53.763+0530" type="Warning"/>
+        <logs message="WARNING: [HLS 200-40] Cannot find library 'C:/Xilinx/Vivado/2019.2/common/technology/xilinx/Virtex-7/Virtex-7.lib'." projectName="DigitRecognizer" solutionName="solution1" date="2020-06-10T21:14:52.819+0530" type="Warning"/>
+      </synLog>
+      <simLog/>
+      <mgLog/>
+      <packageLog/>
+      <csimLog/>
+    </logs>
+  </warningLogs>
+</vivadoHLSLog:LogRoot>

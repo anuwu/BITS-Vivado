@@ -1,0 +1,36 @@
+INFO: [HLS 200-10] Running 'C:/Xilinx/Vivado/2019.2/bin/unwrapped/win64.o/vivado_hls.exe'
+INFO: [HLS 200-10] For user 'Anwesh Laptop' on host 'anwesh' (Windows NT_amd64 version 6.2) on Wed Jun 10 21:14:52 +0530 2020
+INFO: [HLS 200-10] In directory 'E:/Vivado/DigitRecognizer/DigitRecognizer'
+Sourcing Tcl script 'E:/Vivado/DigitRecognizer/DigitRecognizer/DigitRecognizer/solution1/csynth.tcl'
+INFO: [HLS 200-10] Opening project 'E:/Vivado/DigitRecognizer/DigitRecognizer/DigitRecognizer'.
+INFO: [HLS 200-10] Adding design file 'DigitRecognizer/minibatch.cpp' to the project
+INFO: [HLS 200-10] Adding test bench file 'DigitRecognizer/minibatch_tp.cpp' to the project
+INFO: [HLS 200-10] Opening solution 'E:/Vivado/DigitRecognizer/DigitRecognizer/DigitRecognizer/solution1'.
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+WARNING: [HLS 200-40] Cannot find library 'C:/Xilinx/Vivado/2019.2/common/technology/xilinx/Virtex-7/Virtex-7.lib'.
+WARNING: [HLS 200-40] Cannot find library 'xilinx/Virtex-7/Virtex-7'.
+INFO: [HLS 200-10] Setting target device to 'xc7vx485t-ffg1157-1'
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'DigitRecognizer/minibatch.cpp' ... 
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:02 ; elapsed = 00:00:11 . Memory (MB): peak = 152.445 ; gain = 63.090
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:02 ; elapsed = 00:00:11 . Memory (MB): peak = 152.445 ; gain = 63.090
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:02 ; elapsed = 00:00:11 . Memory (MB): peak = 152.445 ; gain = 63.090
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [XFORM 203-602] Inlining function 'sigmoid' into 'forward' (DigitRecognizer/minibatch.cpp:76) automatically.
+ERROR: [SYNCHK 200-11] DigitRecognizer/minibatch.cpp:63: Argument 'batchData' of function 'forward' (DigitRecognizer/minibatch.cpp:63) has an unsynthesizable type (possible cause(s): pointer to pointer or global pointer).
+ERROR: [SYNCHK 200-61] DigitRecognizer/minibatch.cpp:74: unsupported memory access on variable 'batchData' which is (or contains) an array with unknown size at compile time.
+INFO: [SYNCHK 200-10] 2 error(s), 0 warning(s).
+ERROR: [HLS 200-70] Synthesizability check failed.
+command 'ap_source' returned error code
+    while executing
+"source E:/Vivado/DigitRecognizer/DigitRecognizer/DigitRecognizer/solution1/csynth.tcl"
+    invoked from within
+"hls::main E:/Vivado/DigitRecognizer/DigitRecognizer/DigitRecognizer/solution1/csynth.tcl"
+    ("uplevel" body line 1)
+    invoked from within
+"uplevel 1 hls::main {*}$args"
+    (procedure "hls_proc" line 5)
+    invoked from within
+"hls_proc $argv"

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
+  <source>
+    <originFiles name="minibatch.cpp" path="E:\Vivado\DigitRecognizer\DigitRecognizer\DigitRecognizer\minibatch.cpp"/>
+  </source>
+  <testbench>
+    <originFiles name="minibatch_tp.cpp" path="E:\Vivado\DigitRecognizer\DigitRecognizer\DigitRecognizer\minibatch_tp.cpp"/>
+  </testbench>
+</autopilotfilemapping:AutoPilotFileMapping>
